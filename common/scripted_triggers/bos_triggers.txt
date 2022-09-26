@@ -1,0 +1,5 @@
+has_BOS = {
+	THIS = {
+		has_state_flag = bos_state
+	} 
+}

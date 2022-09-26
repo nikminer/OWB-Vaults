@@ -1,0 +1,23 @@
+﻿l_english:
+  OPEN_VAULT_WINDOW_TT: "§GClick§! to show the §YVault Interface§!."
+  CLOSE_VAULT_WINDOW_TT: "§GClick§! to hide the §YVault Interface§!."
+  INFORMATION_NOT_FOUND: "INFORMATION NOT FOUND"
+  UNEXPLORED_VAULT: "An unexplored vault. It is necessary to send an expedition."  
+  SEND_EXPEDITION_BTN: "Send expedition"
+  
+  VAULT_EXPEDITION_PROGRESS:0 "Progress: §Y[?current_node_progress_percentage_temp|2%]§!"
+
+  send_vault_expedition_button_tt_can_select: "§GClick§! to send expedition on §Y[GetVaultName]§!"
+  send_vault_expedition_button_tt_cannot_select_not_controlled: "§Y[GetVaultName]§R is not fully controlled by us.§!"
+  send_vault_expedition_button_tt_cannot_select_not_enough_resources: "§RYou don't have the proper training to send an expedition to §Y[GetVaultName]§!"
+
+  Vault3: "Vault 3"
+  Vault11: "Vault 11"
+  Vault19: "Vault 19"
+  Vault21: "Vault 21"
+  Vault22: "Vault 22"
+  Vault34: "Vault 34"
+
+
+# Vault status
+  Vault_door: "Vault door"

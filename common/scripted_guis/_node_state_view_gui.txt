@@ -1,0 +1,535 @@
+scripted_gui = {
+	open_trade_node_state_view_window = {
+		context_type = selected_state_context
+
+		window_name = "open_trade_node_state_view_window"
+		parent_window_token = selected_state_view
+
+		effects = {
+			open_button_click = {
+				ROOT = {
+					hide_all_state_windows = yes
+					set_country_flag = show_trade_node_state_interface
+				}
+			}
+			close_button_click = {
+				ROOT = {
+					clr_country_flag = show_trade_node_state_interface
+				}
+			}
+		}
+
+		triggers = {
+			open_button_visible = {
+				ROOT = {
+					NOT = { has_country_flag = show_trade_node_state_interface }
+				}
+			}
+			close_button_visible = {
+				ROOT = {
+					has_country_flag = show_trade_node_state_interface
+				}
+			}
+		}
+	}
+
+	trade_node_state_view_window = {
+		context_type = selected_state_context
+
+		window_name = "trade_node_state_view_window"
+		parent_window_token = selected_state_view
+
+		visible = {
+			ROOT = {
+				is_ai = no
+				has_country_flag = show_trade_node_state_interface
+			}
+			OR = {
+				AND = {
+					is_in_array = { global.nodes_states = THIS.id }
+					set_temp_variable = { current_node_name = THIS.id }
+				}
+				AND = {
+					has_state_flag = node_partner
+					set_temp_variable = { current_node_name = partner_node }
+				}
+			}
+			set_temp_variable = { current_node_name_infrastructure = 0 }
+			set_temp_variable = { current_node_name_naval_base = 0 }
+			set_temp_variable = { current_node_name_arms_factory = 0 }
+			set_temp_variable = { current_node_name_industrial_complex = 0 }
+			var:current_node_name = {
+				set_temp_variable = { current_node_level = node_level }
+				set_temp_variable = { current_node_trade_value = node_trade_value }
+				set_temp_variable = { temp_base_modifier = modifier@caps_node_base_modifier }
+				set_temp_variable = { temp_trade_modifier = modifier@caps_node_trade_modifier }
+				CONTROLLER = {
+					add_to_temp_variable = { temp_trade_modifier = modifier@caps_country_trade_modifier }
+					add_to_temp_variable = { temp_base_modifier = modifier@evolution_income_source_modifier_2 }
+				}
+				multiply_temp_variable = { current_node_trade_value = temp_trade_modifier }
+
+				set_temp_variable = { current_node_base_value = node_base_value }
+				add_to_temp_variable = { temp_base_modifier = 1 }
+				multiply_temp_variable = { current_node_base_value = temp_base_modifier }
+
+				set_temp_variable = { current_node_value = node_value }
+				set_temp_variable = { current_node_progress = node_progress }
+				set_temp_variable = { current_node_value_multiplier = modifier@caps_node_base_modifier }
+				set_temp_variable = { current_node_trade_value_multiplier = modifier@caps_node_trade_modifier }
+				set_temp_variable = { current_node_economic_development = economic_development_level }
+				all_of_scopes = {
+					array = trade_node_member_states
+					add_to_temp_variable = { current_node_name_infrastructure = infrastructure_level }
+					add_to_temp_variable = { current_node_name_naval_base = building_level@dockyard }
+					add_to_temp_variable = { current_node_name_arms_factory = arms_factory_level }
+					add_to_temp_variable = { current_node_name_industrial_complex = industrial_complex_level }
+				}
+			}
+		}
+
+		effects = {
+			promote_node_button_click = {
+				ROOT = {
+					scoped_sound_effect = "node_level_up_notification_effect"
+					add_political_power = -20
+				}
+				promote_node_effect = yes
+				clr_state_flag = recently_developed_node
+			}
+		}
+
+		triggers = {
+			progress_bar_visible = {
+				check_variable = { current_node_level < 10 }
+				set_temp_variable = { current_node_progress_percentage_temp = node_progress }
+				subtract_from_temp_variable = { current_node_progress_percentage_temp = node_level }
+				set_temp_variable = { progress_bar_position = 200 }
+				multiply_temp_variable = { progress_bar_position = current_node_progress_percentage_temp }
+				subtract_from_temp_variable = { progress_bar_position = 200 }
+				if = {
+					limit = {
+						check_variable = { progress_bar_position < -200 }
+					}
+					set_temp_variable = { progress_bar_position = -200 }
+					set_temp_variable = { current_node_progress_percentage_temp = 0 }
+				}
+				else_if = {
+					limit = {
+						check_variable = { progress_bar_position > 0 }
+					}
+					set_temp_variable = { progress_bar_position = 0 }
+					set_temp_variable = { current_node_progress_percentage_temp = 1 }
+				}
+			}
+			progress_bar_overlay_visible = {
+				check_variable = { current_node_level < 10 }
+			}
+			progress_bar_upgrade_visible = {
+				has_state_flag = node_upgrading
+			}
+			node_progress_text_visible = {
+				check_variable = { current_node_level < 10 }
+				NOT = { has_state_flag = node_upgrading }
+			}
+			main_node_icon_visible = {
+				var:current_node_name = {
+					controller = {
+						set_temp_variable = { main_node_holder = THIS.id }
+					}
+					has_state_flag = main_node_@CONTROLLER
+				}
+			}
+
+			promote_node_button_visible = {
+				is_in_array = { global.nodes_states = THIS.id }
+				check_variable = { node_level < 10 }
+			}
+			promote_node_button_click_enabled = {
+				is_fully_controlled_by = ROOT
+				set_temp_variable = { node_progress_temp = node_progress }
+				subtract_from_temp_variable = { node_progress_temp = node_level }
+				NOT = { has_state_flag = node_upgrading }
+				check_variable = { var = node_progress_temp value = 1 compare = greater_than_or_equals }
+				ROOT = {
+					has_political_power > 19
+				}
+			}
+		}
+
+		properties = {
+			node_center_image = {
+				frame = current_node_level
+			}
+			progress_bar = {
+				x = progress_bar_position
+			}
+		}
+	}
+	_trade_node_disabled_window = {
+		context_type = selected_state_context
+		window_name = "_trade_node_disabled_window"
+		parent_window_name = "trade_node_state_view_window_instance"
+		triggers = {
+			state_disable_overlay_visible = {
+				OR = {
+					AND = {
+						has_variable = partner_node
+						var:partner_node = {
+							has_state_flag = state_node_disabled
+						}
+					}
+					has_state_flag = state_node_disabled
+				}
+			}
+		}
+	}
+	trade_node_state_view_member_states_list_window = {
+		context_type = selected_state_context
+
+		window_name = "trade_node_state_view_member_states_list_window"
+		parent_window_name = "organization_list_anchor"
+
+		visible = {
+			OR = {
+				AND = {
+					is_in_array = { global.nodes_states = THIS.id }
+					set_temp_variable = { current_node_name = THIS.id }
+				}
+				any_of_scopes = {
+					array = global.nodes_states
+					is_in_array = { trade_node_member_states = PREV.id }
+					set_temp_variable = { current_node_name = THIS.id }
+				}
+			}
+			clear_temp_array = trade_node_member_states_temp
+			var:current_node_name = {
+				all_of_scopes = {
+					array = trade_node_member_states
+					add_to_temp_array = { trade_node_member_states_temp = THIS.id }
+				}
+			}
+		}
+
+		effects = {
+			entry_button_click = {
+				ROOT = {
+					goto_state = PREV
+				}
+			}
+		}
+
+		dynamic_lists = {
+			node_member_states_list_gridbox = {
+				array = trade_node_member_states_temp
+				entry_container = node_member_states_list_entry
+				change_scope = yes
+			}
+		}
+	}
+
+	trade_node_state_view_organization_list_window = {
+		context_type = selected_state_context
+
+		window_name = "trade_node_state_view_organization_list_window"
+		parent_window_name = "organization_list_anchor"
+
+		visible = {
+			is_in_array = { global.nodes_states = THIS.id }
+		}
+
+		effects = {
+			org_entry_button_click = {
+
+			}
+		}
+		triggers = {
+			org_entry_button_visible = {
+			}
+			org_entry_button_click_enabled = {
+
+			}
+		}
+		dynamic_lists = {
+			node_member_states_list_gridbox = {
+				array = node_organizations
+				entry_container = node_state_organizations_entry
+				###CHANGE TO NO
+				change_scope = no
+			}
+		}
+	}
+	trade_node_trade_route_list_window = {
+		window_name = "trade_node_trade_route_list_window"
+		parent_window_name = "organization_list_anchor"
+		context_type = selected_state_context
+		visible = {
+			if = {
+				limit = {
+					has_state_flag = state_trade_route_selection_pending
+				}
+				all_of_scopes = {
+					array = trade_connections
+					add_to_temp_array = {
+						trade_route_targets_temp = THIS.id
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_state_flag = node_partner
+				}
+				var:partner_node = {
+					all_of_scopes = {
+						array = trade_route_targets
+						add_to_temp_array = {
+							trade_route_targets_temp = THIS.id
+						}
+					}
+					all_of_scopes = {
+						array = trade_recieved_from
+						if = {
+							limit = {
+								NOT = {
+									is_in_array = {
+										array = trade_route_targets_temp
+										value = THIS.id
+									}
+								}
+							}
+							add_to_temp_array = {
+								trade_route_targets_temp = THIS.id
+							}
+						}
+					}
+				}
+			}
+			else = {
+				all_of_scopes = {
+					array = trade_route_targets
+					add_to_temp_array = {
+						trade_route_targets_temp = THIS.id
+					}
+				}
+				all_of_scopes = {
+					array = trade_recieved_from
+					if = {
+						limit = {
+							NOT = {
+								is_in_array = {
+									array = trade_route_targets_temp
+									value = THIS.id
+								}
+							}
+						}
+						add_to_temp_array = {
+							trade_route_targets_temp = THIS.id
+						}
+					}
+				}
+			}
+		}
+		triggers = {
+			set_trade_route_button_click_enabled = {
+				if = {
+					limit = {
+						has_state_flag = state_trade_route_selection_pending
+						has_state_flag = state_trade_route_selection_pending_target
+					}
+					has_open_trade_route_slot = yes
+				}
+				else_if = {
+					limit = {
+						has_state_flag = state_trade_route_selection_pending
+					}
+					## Do Nothing
+				}
+				else = {
+					has_open_trade_route_slot = yes
+				}
+			}
+			set_trade_route_button_visible = {
+				is_fully_controlled_by = ROOT
+				NOT = { has_state_flag = node_partner }
+
+			}
+			route_entry_button_click_enabled = {
+				is_controlled_by = ROOT
+				if = {
+					limit = {
+						has_state_flag = state_trade_route_selection_pending
+					}
+					var:v = {
+						has_route_from_PREV = no
+					}
+				}
+			}
+			node_trade_route_desc_visible = {
+				### check for empty list for helpful text
+				if = {
+					limit = {
+						has_state_flag = node_partner
+					}
+					var:partner_node = {
+						check_variable = { trade_route_targets_temp^num = 0 }
+					}
+				}
+				else = {
+					check_variable = { trade_route_targets_temp^num = 0 }
+				}
+
+			}
+		}
+		effects = {
+			set_trade_route_button_click = {
+				if = {
+					limit = {
+						has_state_flag = state_trade_route_selection_pending
+						has_state_flag = state_trade_route_selection_pending_target
+					}
+					clr_state_flag = state_trade_route_selection_pending_target
+					create_trade_route_between = yes
+					clear_variable = node_map_selector
+					clear_variable = trade_route_selector_target
+					if = {
+						limit = {
+							has_open_trade_route_slot = no
+						}
+						clr_state_flag = state_trade_route_selection_pending
+					}
+				}
+				else_if = {
+					limit = {
+						has_state_flag = state_trade_route_selection_pending
+					}
+					clr_state_flag = state_trade_route_selection_pending
+				}
+				else = {
+					set_state_flag = state_trade_route_selection_pending
+					##log = "Generating State-Scope trade connection array"
+				}
+			}
+			set_trade_route_button_right_click = {
+				clear_variable = node_map_selector
+				clear_variable = trade_route_selector_target
+				clr_state_flag = state_trade_route_selection_pending_target
+				clr_state_flag = state_trade_route_selection_pending
+				custom_effect_tooltip = "string_set_trade_route_button_right_click_tt"
+			}
+			route_entry_button_click = {
+				### If we click again on the same state, clear that shit
+				if = {
+					limit = {
+						has_state_flag = state_trade_route_selection_pending
+						check_variable = { trade_route_selector_target = v }
+					}
+					custom_effect_tooltip = "string_trade_route_entry_button_selection_pending_clear_tt"
+					clr_state_flag = state_trade_route_selection_pending_target
+					clear_variable = node_map_selector
+					clear_variable = trade_route_selector_target
+				}
+				### We are in selection, and there is an existing route.
+				else_if = {
+					limit = {
+						has_state_flag = state_trade_route_selection_pending
+						var:v = {
+							has_route_from_PREV = yes
+						}
+					}
+					custom_effect_tooltip = "string_trade_route_entry_button_selection_exists_tt"
+				}
+				### If we are in selection mode, set target
+				else_if = {
+					limit = {
+						has_state_flag = state_trade_route_selection_pending
+
+					}
+					set_variable = { node_map_selector = THIS.id }
+					set_variable = { trade_route_selector_target = v }
+					custom_effect_tooltip = "string_trade_route_entry_button_selection_pending_tt"
+					set_state_flag = state_trade_route_selection_pending_target
+
+				}
+				### set remove target to current entry
+				else = {
+					if = {
+						limit = {
+							var:v = {
+								has_route_from_PREV = yes
+							}
+						}
+						set_variable = { trade_route_selector_target = v }
+						set_temp_variable = { temp_loc_key_target = v }
+						remove_trade_route_betwen = yes
+						clear_variable = trade_route_selector_target
+					}
+					else_if = {
+						limit = {
+							var:v = {
+								has_route_to_PREV = yes
+							}
+						}
+						var:v = {
+							set_variable = { trade_route_selector_target = PREV.id }
+							set_temp_variable = { temp_loc_key_target = PREV.id }
+							remove_trade_route_betwen = yes
+							clear_variable = trade_route_selector_target
+						}
+					}
+					else = {
+						log = "STATE NODE VIEW: NODE REMOVE EXCEPTION"
+					}
+				}
+				# else = {
+				# 	set_temp_variable = { trade_route_remove_target = var:v }
+				# 	if = {
+				# 		limit = {
+				# 			has_state_flag = node_partner
+				# 		}
+				# 		var:partner_node = {
+				# 			remove_trade_route_betwen = yes
+				# 		}
+				# 	}
+				# 	else = {
+				# 		remove_trade_route_betwen = yes
+				# 	}
+				# }
+			}
+		}
+		dynamic_lists = {
+			node_trade_routes_list_box = {
+				array = trade_route_targets_temp
+				entry_container = node_state_routes_entry
+			}
+		}
+	}
+	trade_node_state_view_center_state_info_window = {
+		context_type = selected_state_context
+
+		window_name = "trade_node_state_view_center_state_info_window"
+		parent_window_name = "trade_node_state_view_window_instance"
+
+		visible = {
+			always = no
+		}
+
+		effects = {
+			center_state_button_click = {
+				if = {
+					limit = {
+						any_of_scopes = {
+							array = global.nodes_states
+							is_in_array = { trade_node_member_states = PREV.id }
+							set_temp_variable = { current_node_center_state = THIS.id }
+						}
+					}
+					var:current_node_center_state = {
+						ROOT = {
+							goto_state = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_vault_view_open"
+		texturefile = "gfx/interface/gui/vault.dds"
+	}
+
+	spriteType = {
+		name = "GFX_vault_view_close"
+		texturefile = "gfx/interface/gui/vault_pressed.dds"
+	}
+
+	spriteType = {
+		name = "GFX_vault_connectors"
+		texturefile = "gfx/interface/gui/vault/connectors.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_vault_door"
+		texturefile = "gfx/interface/gui/vault/vaultdoor.dds"
+	}
+
+	spriteType = {
+		name = "GFX_vault_sectors"
+		texturefile = "gfx/interface/gui/vault/sectors.dds"
+		noOfFrames = 8
+	}
+}

@@ -1,0 +1,21 @@
+guiTypes = {
+	#containerWindowType = {
+	#	name = "vault_window_btn"
+	#	position = { x = 438 y = 245 }
+	#	size = { width = 50 height = 50 }
+#
+	#	buttonType = {
+	#		name = "open_button"
+	#		position = { x = 0 y = 0 }
+	#		spriteType = "GFX_vault_view_open"
+	#		pdx_tooltip = "OPEN_VAULT_WINDOW_TT"
+	#	}
+#
+	#	buttonType = {
+	#		name = "close_button"
+	#		position = { x = 0 y = 0 }
+	#		spriteType = "GFX_vault_view_close"
+	#		pdx_tooltip = "CLOSE_VAULT_WINDOW_TT"
+	#	}
+	#}
+}

@@ -1,0 +1,110 @@
+scripted_gui = {
+	#vault_window_btn = {
+	#	context_type = selected_state_context
+	#	parent_window_token = selected_state_view
+#
+	#	window_name = "vault_window_btn"
+#
+	#	effects = {
+	#		open_button_click = {
+	#			ROOT = {
+	#				hide_all_state_windows = yes
+	#				set_country_flag = show_vault_state_interface
+	#			}
+	#		}
+	#		close_button_click = {
+	#			ROOT = {
+	#				clr_country_flag = show_vault_state_interface
+	#			}
+	#		}
+	#	}
+#
+	#	triggers = {
+	#		open_button_visible = {
+	#			ROOT = {
+	#				NOT = { has_country_flag = show_vault_state_interface }
+	#			}
+	#		}
+	#		close_button_visible = {
+	#			ROOT = {
+	#				has_country_flag = show_vault_state_interface
+	#			}
+	#		}
+	#	}
+	#}
+#
+	#vault_window = {
+	#	context_type = selected_state_context
+	#	parent_window_token = selected_state_view
+	#	window_name = "vault_window"
+	#	
+	#	visible = {
+	#		ROOT = {
+	#			is_ai = no
+	#			has_country_flag = show_vault_state_interface
+	#		}
+	#		has_vault = yes
+	#	}
+#
+	#	triggers = {
+	#		vault_status_window_visible = {
+	#			always = yes
+	#		}
+	#		#vault_send_expeditions_window_visible = {
+	#		#	is_vault_unexplored = yes
+	#		#}
+	#	}
+	#}
+#
+	#vault_status_window = {
+	#	context_type = selected_state_context
+	#	parent_window_token = selected_state_view
+	#	window_name = "vault_status_window"
+#
+	#	properties = {
+	#		vault_slot1 = {
+	#			frame = vaultSlot1
+	#		}
+	#		
+	#		vault_slot2 = {
+	#			frame = vaultSlot2
+	#		}
+	#		
+	#		vault_slot3 = {
+	#			frame = vaultSlot3
+	#		}
+#
+	#		vault_slot4 = {
+	#			frame = vaultSlot4
+	#		}
+#
+	#		vault_slot5 = {
+	#			frame = vaultSlot5	
+	#		}
+#
+	#		vault_slot6 = {
+	#			frame = vaultSlot6
+	#		}			
+	#	}
+	#}
+
+	#vault_expedition_window = {
+	#	context_type = selected_state_context
+	#	parent_window_token = selected_state_view
+	#	window_name = "vault_expedition_window"
+#
+	#	effects = {
+	#		vault_send_expedition_btn_click = {
+	#			ROOT = {
+	#				add_political_power = -20
+	#			}
+	#			#promote_node_effect = yes
+	#			#clr_state_flag = recently_developed_node
+	#		}
+	#	}
+#
+	#	triggers = {
+	#		
+	#	}
+	#}
+}

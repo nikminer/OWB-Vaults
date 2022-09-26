@@ -1,0 +1,10 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_terminal_window"
+		texturefile = "gfx/interface/gui/terminal_window.dds"
+	}
+	spriteType = {
+		name = "GFX_terminal_overlay"
+		texturefile = "gfx/interface/gui/terminal_background_overlay.dds"
+	}
+}

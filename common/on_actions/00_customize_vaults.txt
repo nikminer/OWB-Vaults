@@ -1,0 +1,134 @@
+on_actions = {
+	on_startup = {
+		effect = {
+
+			set_variable = {
+				var = vault_expedition_cost_manpower
+				value = 100
+			}
+
+			set_variable = {
+				var = vault_expedition_cost_equipment
+				value = 250
+			}
+
+			set_variable = {
+				var = vault_expedition_cost_command_power
+				value = 50
+			}
+
+			# Vault buildings Enum
+			# empty sector = 1
+			# living sector = 2
+			# reactor sector = 3
+			# lab sector = 4
+			# civilian sector = 5
+			# weapon sector = 6
+			# storage sector = 7
+			# casino sector = 8
+
+			# Vault 3
+			380 = {
+				initialize_vault_states = yes
+				set_variable = {
+					var = vaultSlot1
+					value = 1
+				}
+				set_variable = {
+					var = vaultSlot2
+					value = 1
+				}
+				set_variable = {
+					var = vaultSlot6
+					value = 2
+				}
+			}
+			
+			# Vault 11
+			613 = {
+				initialize_vault_states = yes
+			}
+
+			# Vault 19
+			552 = {
+				initialize_vault_states = yes
+			}
+			
+			# Vault 21
+			211 = {
+				initialize_vault_states = yes
+			}
+
+			# Vault 22
+			313 = {
+				initialize_vault_states = yes
+			}
+
+			# Vault 34
+			154 = {
+				initialize_vault_states = yes
+			}
+			
+			
+			
+			
+
+			## Vault LA
+			#350 = {
+			#	add_to_array = {
+			#		array = global.vaults
+			#		value = THIS.id
+			#	}
+			#}
+			## Vault 12
+			#70 = {
+			#	add_to_array = {
+			#		array = global.vaults
+			#		value = THIS.id
+			#	}
+			#}
+			## Vault 13
+			#214 = {
+			#	add_to_array = {
+			#		array = global.vaults
+			#		value = THIS.id
+			#	}
+			#}
+			## Vault 15
+			#236 = {
+			#	add_to_array = {
+			#		array = global.vaults
+			#		value = THIS.id
+			#	}
+			#}
+			## Vault 17
+			#312 = {
+			#	add_to_array = {
+			#		array = global.vaults
+			#		value = THIS.id
+			#	}
+			#}
+			## Vault 8
+			#291 = {
+			#	add_to_array = {
+			#		array = global.vaults
+			#		value = THIS.id
+			#	}
+			#}
+			## Vault 70
+			#266 = {
+			#	add_to_array = {
+			#		array = global.vaults
+			#		value = THIS.id
+			#	}
+			#}
+			## Vault 29
+			#554 = {
+			#	add_to_array = {
+			#		array = global.vaults
+			#		value = THIS.id
+			#	}
+			#}
+		}
+	}
+}

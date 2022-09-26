@@ -1,0 +1,24 @@
+has_vault = {
+	THIS = {
+		has_state_flag = vault_state
+	} 
+}
+
+is_vault_unexplored = {
+	THIS = {
+		has_state_flag = vault_expedition
+	} 
+}
+
+is_vault_expedition = {
+	THIS = {
+		has_state_flag = vault_expedition
+	} 
+}
+
+is_vault_clear = {
+	THIS = {
+		has_state_flag = vault_clear
+		has_state_flag = vault_expedition
+	} 
+}

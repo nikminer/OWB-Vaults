@@ -1,0 +1,11 @@
+initialize_vault_states = {
+	set_state_flag = vault_state
+}
+
+set_vault_expedition = {
+	set_state_flag = vault_expedition
+}
+
+set_vault_clear = {
+	set_state_flag = vault_clear
+}

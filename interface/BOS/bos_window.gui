@@ -1,0 +1,188 @@
+guiTypes = {
+	containerWindowType = {
+		name = "bos_window"
+		position = { x = 488 y = 13 }
+		size = { width = 700 height = 500 }
+		fade_time = 300
+		fade_type = linear
+		clipping = no
+		background = {
+			name = "background"
+			spriteType = "GFX_tiled_window"
+		}
+		iconType = {
+			name = "TerminalBG"
+			spriteType = "GFX_terminal_window"
+			position = { x = 13 y = 10 }
+		}
+		iconType = {
+			name = "TerminalBGOverlay"
+			spriteType = "GFX_terminal_overlay"
+			position = { x = 14 y = 14 }
+		}
+
+		# HEADER
+			containerWindowType = {
+				name = "header_window"
+				position = { x = 200 y = 453 }
+				size = { width = 300 height = 35 }
+				instantTextBoxType = {
+					name = "header_text"
+					position = { x = 0 y = 5 }
+					text = LOST_HILLS_H
+					format = center
+					font = "fallout_decayed_26"
+					multiline = no
+					maxWidth = 300
+				}
+			}
+		# STATS
+			instantTextBoxType = {
+				name = "bos_space"
+				position = { x = 50 y = 55 }
+				text = LOST_HILLS_SPACE_H
+				format = left
+				font = "pipboy_16_green"
+				multiline = no
+				maxWidth = 300
+			}
+
+			instantTextBoxType = {
+				name = "bos_admin"
+				position = { x = 350 y = 55 }
+				text = LOST_HILLS_ADMIN_H
+				format = left
+				font = "pipboy_16_green"
+				multiline = no
+				maxWidth = 300
+			}
+
+			instantTextBoxType = {
+				name = "bos_slots"
+				position = { x = 50 y = 65 }
+				text = LOST_HILLS_SLOTS_H
+				format = left
+				font = "pipboy_16_green"
+				multiline = no
+				maxWidth = 300
+			}
+			
+			instantTextBoxType = {
+				name = "bos_works"
+				position = { x = 350 y = 65 }
+				text = LOST_HILLS_WORKS_H
+				format = left
+				font = "pipboy_16_green"
+				multiline = no
+				maxWidth = 300
+			}
+	}
+# LEVELS SWITCHER
+	containerWindowType = {
+		name = "bos_level_switcher"
+		position = { x = 50 y = 130 }
+		size = { width = 50 height = 300 }
+		clipping = no
+
+		buttonType = {
+			name = "bos_level1Btn"
+			position = { x = 0 y = 10 }
+			spriteType = "GFX_bos_level1btn"
+			frame = 1
+		}
+		buttonType = {
+			name = "bos_level1BtnSelect"
+			position = { x = 0 y = 10 }
+			spriteType = "GFX_bos_level1btn"
+			frame = 2
+		}
+		buttonType = {
+			name = "bos_level2Btn"
+			position = { x = 0 y = 60 }
+			spriteType = "GFX_bos_level2btn"
+			frame = 1
+		}
+		buttonType = {
+			name = "bos_level2BtnSelect"
+			position = { x = 0 y = 60 }
+			spriteType = "GFX_bos_level2btn"
+			frame = 2
+		}
+		buttonType = {
+			name = "bos_level3Btn"
+			position = { x = 0 y = 110 }
+			spriteType = "GFX_bos_level3btn"
+			frame = 1
+		}
+		buttonType = {
+			name = "bos_level3BtnSelect"
+			position = { x = 0 y = 110 }
+			spriteType = "GFX_bos_level3btn"
+			frame = 2
+		}
+		buttonType = {
+			name = "bos_level4Btn"
+			position = { x = 0 y = 160 }
+			spriteType = "GFX_bos_level4btn"
+			frame = 1
+		}
+		buttonType = {
+			name = "bos_level4BtnSelect"
+			position = { x = 0 y = 160 }
+			spriteType = "GFX_bos_level4btn"
+			frame = 2
+		}
+	}
+
+# LEVELS
+	containerWindowType = {
+		name = "bos_level_1_window"
+		position = { x = 75 y = 75 }
+		size = { width = 300 height = 300 }
+		clipping = no
+
+		iconType = {
+			name = "bos_level1"
+			spriteType = "GFX_bos_level1"
+			position = { x = 24 y = 45 }
+		}
+	}
+	containerWindowType = {
+		name = "bos_level_2_window"
+		position = { x = 75 y = 75 }
+		size = { width = 300 height = 300 }
+		clipping = no
+
+		iconType = {
+			name = "bos_level2"
+			spriteType = "GFX_bos_level2"
+			position = { x = 24 y = 45 }
+		}
+	}
+
+	containerWindowType = {
+		name = "bos_level_3_window"
+		position = { x = 75 y = 75 }
+		size = { width = 300 height = 300 }
+		clipping = no
+
+		iconType = {
+			name = "bos_level3"
+			spriteType = "GFX_bos_level3"
+			position = { x = 24 y = 45 }
+		}
+	}
+
+	containerWindowType = {
+		name = "bos_level_4_window"
+		position = { x = 75 y = 75 }
+		size = { width = 300 height = 300 }
+		clipping = no
+
+		iconType = {
+			name = "bos_level4"
+			spriteType = "GFX_bos_level4"
+			position = { x = 24 y = 45 }
+		}
+	}
+}

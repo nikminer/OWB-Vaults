@@ -1,0 +1,21 @@
+guiTypes = {
+	containerWindowType = {
+		name = "bos_window_btn"
+		position = { x = 438 y = 245 }
+		size = { width = 50 height = 50 }
+
+		buttonType = {
+			name = "open_button"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_bos_view_open"
+			pdx_tooltip = "OPEN_BOS_WINDOW_TT"
+		}
+
+		buttonType = {
+			name = "close_button"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_bos_view_close"
+			pdx_tooltip = "CLOSE_BOS_WINDOW_TT"
+		}
+	}
+}

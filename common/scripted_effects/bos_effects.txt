@@ -1,0 +1,45 @@
+hideAllLevel = {
+	if = {
+		limit = {
+			has_country_flag = bos_level1Flag
+		}
+		clr_country_flag = bos_level1Flag
+	}
+
+	if = {
+		limit = {
+			has_country_flag = bos_level2Flag
+		}
+		clr_country_flag = bos_level2Flag
+	}
+
+	if = {
+		limit = {
+			has_country_flag = bos_level3Flag
+		}
+		clr_country_flag = bos_level3Flag
+	}
+
+	if = {
+		limit = {
+			has_country_flag = bos_level4Flag
+		}
+		clr_country_flag = bos_level4Flag
+	}
+}
+
+initialize_bos_levels = {
+	if = {
+		limit ={
+			not = {
+				or = {
+					has_country_flag = bos_level1Flag
+					has_country_flag = bos_level2Flag
+					has_country_flag = bos_level3Flag
+					has_country_flag = bos_level4Flag
+				}
+			}
+		}	
+		set_country_flag = bos_level1Flag
+	}
+}

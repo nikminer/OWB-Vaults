@@ -1,0 +1,166 @@
+scripted_gui = {
+	bos_window_btn = {
+		context_type = selected_state_context
+		parent_window_token = selected_state_view
+
+		window_name = "bos_window_btn"
+
+		effects = {
+			open_button_click = {
+				ROOT = {
+					hide_all_state_windows = yes
+					set_country_flag = show_bos_state_interface
+					initialize_bos_levels = yes
+				}
+			}
+			close_button_click = {
+				ROOT = {
+					clr_country_flag = show_bos_state_interface
+				}
+			}
+		}
+
+		triggers = {
+			open_button_visible = {
+				has_BOS = yes
+				ROOT = {
+					NOT = { has_country_flag = show_bos_state_interface }
+				}
+			}
+			close_button_visible = {
+				has_BOS = yes
+				ROOT = {
+					has_country_flag = show_bos_state_interface
+				}
+			}
+		}
+	}
+
+
+	bos_window = {
+		context_type = selected_state_context
+		parent_window_token = selected_state_view
+		window_name = "bos_window"
+		
+		visible = {
+			ROOT = {
+				is_ai = no
+				has_country_flag = show_bos_state_interface
+			}
+			has_BOS = yes
+		}
+	}
+
+# Levels 
+	bos_level_1_window = {
+		window_name = "bos_level_1_window"
+		parent_window_name = "bos_window_instance"
+		visible = {
+			has_country_flag = bos_level1Flag
+		}
+	}
+
+	bos_level_2_window = {
+		window_name = "bos_level_2_window"
+		parent_window_name = "bos_window_instance"
+		visible = {
+			has_country_flag = bos_level2Flag
+		}
+	}
+
+	bos_level_3_window = {
+		window_name = "bos_level_3_window"
+		parent_window_name = "bos_window_instance"
+		visible = {
+			has_country_flag = bos_level3Flag
+		}
+	}
+
+	bos_level_4_window = {
+		window_name = "bos_level_4_window"
+		parent_window_name = "bos_window_instance"
+		visible = {
+			has_country_flag = bos_level4Flag
+		}
+	}
+	
+# Level Switcher
+	bos_level_switcher = {
+		window_name = "bos_level_switcher"
+		parent_window_name = "bos_window_instance"
+		
+		
+		effects = {
+			bos_level1Btn_click = {
+				ROOT = {
+					hideAllLevel = yes
+					set_country_flag = bos_level1Flag
+				}
+			}
+
+			bos_level2Btn_click = {
+				ROOT = {
+					hideAllLevel = yes
+					set_country_flag = bos_level2Flag
+				}
+			}
+
+			bos_level3Btn_click = {
+				ROOT = {
+					hideAllLevel = yes
+					set_country_flag = bos_level3Flag
+				}
+			}
+
+			bos_level4Btn_click = {
+				ROOT = {
+					hideAllLevel = yes
+					set_country_flag = bos_level4Flag
+				}
+			}
+		}
+
+		triggers = {
+			bos_level1Btn_visible = {
+				ROOT = {
+					NOT = { has_country_flag = bos_level1Flag }
+				}
+			}
+			bos_level1BtnSelect_visible = {
+				ROOT = {
+					has_country_flag = bos_level1Flag
+				}
+			}
+			bos_level2Btn_visible = {
+				ROOT = {
+					NOT = { has_country_flag = bos_level2Flag }
+				}
+			}
+			bos_level2BtnSelect_visible = {
+				ROOT = {
+					has_country_flag = bos_level2Flag
+				}
+			}
+			bos_level3Btn_visible = {
+				ROOT = {
+					NOT = { has_country_flag = bos_level3Flag }
+				}
+			}
+			bos_level3BtnSelect_visible = {
+				ROOT = {
+					has_country_flag = bos_level3Flag
+				}
+			}
+			bos_level4Btn_visible = {
+				ROOT = {
+					NOT = { has_country_flag = bos_level4Flag }
+				}
+			}
+			bos_level4BtnSelect_visible = {
+				ROOT = {
+					has_country_flag = bos_level4Flag
+				}
+			}
+		}
+	}
+}

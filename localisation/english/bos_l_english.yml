@@ -1,0 +1,8 @@
+﻿l_english:
+  OPEN_BOS_WINDOW_TT: "§GClick§! to show Lost Hills Underground Management!."
+  CLOSE_BOS_WINDOW_TT: "§GClick§! to hide Lost Hills Underground Management!."
+  LOST_HILLS_H: "Lost Hills Bunker"
+  LOST_HILLS_SPACE_H: "Maximum Available Space: [?BOS.BOS_space_usage]/[?BOS.BOS_space]"
+  LOST_HILLS_SLOTS_H: "Available Construction Slots: [?BOS.BOS_underground_construction_slots]"
+  LOST_HILLS_ADMIN_H: "Administrative Capacity: [?BOS.modifier@bos_administration_capacity_usage]/[?BOS.modifier@BOS_underground_administrative_capacity]"
+  LOST_HILLS_WORKS_H: "Underground Condensed Workshop: [?BOS.BOS_condensed_civilian_workshop]/[?BOS.BOS_maximum_condensed_workshops_allowed]"

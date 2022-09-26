@@ -1,0 +1,49 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_bos_view_open"
+		texturefile = "gfx/interface/gui/bos/bos_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_bos_view_close"
+		texturefile = "gfx/interface/gui/bos/bos_icon_pressed.dds"
+	}
+	
+	# LEVELS
+		spriteType = {
+			name = "GFX_bos_level1btn"
+			noOfFrames = 2
+			texturefile = "gfx/interface/gui/bos/lvl1btn.dds"
+		}
+		spriteType = {
+			name = "GFX_bos_level1"
+			texturefile = "gfx/interface/gui/bos/level 1.dds"
+		}
+		spriteType = {
+			name = "GFX_bos_level2btn"
+			noOfFrames = 2
+			texturefile = "gfx/interface/gui/bos/lvl2btn.dds"
+		}
+		spriteType = {
+			name = "GFX_bos_level2"
+			texturefile = "gfx/interface/gui/bos/level 2.dds"
+		}
+		spriteType = {
+			name = "GFX_bos_level3btn"
+			noOfFrames = 2
+			texturefile = "gfx/interface/gui/bos/lvl3btn.dds"
+		}
+		spriteType = {
+			name = "GFX_bos_level3"
+			texturefile = "gfx/interface/gui/bos/level 3.dds"
+		}
+		spriteType = {
+			name = "GFX_bos_level4btn"
+			noOfFrames = 2
+			texturefile = "gfx/interface/gui/bos/lvl4btn.dds"
+		}
+		spriteType = {
+			name = "GFX_bos_level4"
+			texturefile = "gfx/interface/gui/bos/level 4.dds"
+		}
+}

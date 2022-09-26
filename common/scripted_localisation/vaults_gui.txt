@@ -1,0 +1,30 @@
+defined_text = {
+	name = GetSendExpeditionButtonTooltip
+
+	#text = {
+	#	trigger = {
+	#		NOT = { is_fully_controlled_by = ROOT }
+	#	}
+	#	localization_key = send_vault_expedition_button_tt_cannot_select_not_controlled
+	#}
+	#text = {
+	#	trigger = {
+	#		not = {
+	#			or = {
+	#				command_power > vault_expedition_cost_command_power
+	#				has_manpower > vault_expedition_cost_manpower
+	#				has_equipment = {
+	#					infantry_equipment > vault_expedition_cost_equipment
+	#				}
+	#			}
+	#		}
+	#	}
+	#	localization_key = send_vault_expedition_button_tt_cannot_select_not_enough_resources
+	#}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = send_vault_expedition_button_tt_can_select
+	}
+}

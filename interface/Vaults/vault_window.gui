@@ -1,0 +1,186 @@
+guiTypes = {
+	#containerWindowType = {
+		#name = "vault_window"
+		#position = { x = 488 y = 13 }
+		#size = { width = 700 height = 500 }
+		#fade_time = 300
+		#fade_type = linear
+		#clipping = no
+		#background = {
+		#	name = "background"
+		#	spriteType = "GFX_tiled_window"
+		#}
+		#iconType = {
+		#	name = "TerminalBG"
+		#	spriteType = "GFX_vault_window"
+		#	position = { x = 13 y = 10 }
+		#}
+		#iconType = {
+		#	name = "TerminalBGOverlay"
+		#	spriteType = "GFX_vault_overlay"
+		#	position = { x = 14 y = 14 }
+		#}
+		
+
+		# HEADER
+		#containerWindowType = {
+		#	name = "header_window"
+		#	position = { x = 200 y = 455 }
+		#	size = { width = 300 height = 35 }
+#
+		#	instantTextBoxType = {
+		#		name = "header_text"
+		#		position = { x = 0 y = 5 }
+		#		text = "[GetVaultName]" 
+		#		format = center
+		#		font = "fallout_decayed_26"
+		#		multiline = no
+		#		maxWidth = 300
+		#	}
+		#}
+
+		# VAULT STATUS
+		#containerWindowType = {
+		#	name = "vault_status_window"
+		#	position = { x = 50 y = 50 }
+		#	size = { width = 600 height = 400 }
+		#	clipping = no
+		#	
+		#	iconType = {
+		#		name = "TerminalBGConnectors"
+		#		spriteType = "GFX_vault_connectors"
+		#		position = { x = 24 y = 45 }
+		#	}
+#
+		#	# Vault Door
+		#	instantTextBoxType = {
+				#name = "vault_door_text"
+				#position = { x = 50 y = 40 }
+				#text = "Vault_door" 
+				#format = center
+				#font = "pipboy_shadow_green_32"
+				#multiline = yes
+				#maxWidth = 150
+				#maxHeight = 50
+		#	}	
+#
+		#	iconType = {
+		#		name = "vault_door_icon"
+		#		position = { x = 50 y = 25 }
+		#		spriteType = "GFX_vault_door"
+		#	}
+#
+		#	iconType = {
+		#		name = "vault_slot1"
+		#		position = { x = 80 y = 80 }
+		#		spriteType = "GFX_vault_sectors"
+		#		frame = 1
+		#	}
+#
+		#	iconType = {
+		#		name = "vault_slot2"
+		#		position = { x = 202 y = 80 }
+		#		spriteType = "GFX_vault_sectors"
+		#		frame = 1
+		#	}
+#
+		#	iconType = {
+		#		name = "vault_slot3"
+		#		position = { x = 80 y = 135 }
+		#		spriteType = "GFX_vault_sectors"
+		#		frame = 1
+		#	}
+#
+		#	iconType = {
+		#		name = "vault_slot4"
+		#		position = { x = 202 y = 135 }
+		#		spriteType = "GFX_vault_sectors"
+		#		frame = 1
+		#	}
+#
+		#	iconType = {
+		#		name = "vault_slot5"
+		#		position = { x = 80 y = 190 }
+		#		spriteType = "GFX_vault_sectors"
+		#		frame = 1
+		#	}
+#
+		#	iconType = {
+		#		name = "vault_slot6"
+		#		position = { x = 202 y = 190 }
+		#		spriteType = "GFX_vault_sectors"
+		#		frame = 1
+		#	}
+		#}
+	#
+		#containerWindowType = {
+		#	name = "vault_send_expeditions_window"
+		#	position = { x = 200 y = 0 }
+		#	size = { width = 300 height = 400 }
+		#	clipping = no
+		#	
+		#	instantTextBoxType = {
+		#		name = "header_text"
+		#		position = { x = 0` y = 150 }
+		#		text = "INFORMATION_NOT_FOUND" 
+		#		format = center
+		#		font = "pipboy_32"
+		#		multiline = no
+		#		maxWidth = 300
+		#		maxHeight = 300
+		#	}	
+
+		#	instantTextBoxType = {
+		#		name = "underheader_text"
+		#		position = { x = 0 y = 200 }
+		#		text = "UNEXPLORED_VAULT" 
+		#		format = center
+		#		font = "pipboy_shadow_green_32"
+		#		multiline = yes
+		#		maxWidth = 300
+		#		maxHeight = 300
+		#	}	
+		#	
+		#	containerWindowType = {
+		#		name = "expedition_progress_bar_window"
+		#		position = {  x = 25 y = 350 }
+		#		size = { width = 300 height = 30 }
+		#		background = {
+		#			name = "background"
+		#			spriteType = "GFX_tiled_window_transparent_transparent"
+		#		}
+
+		#		iconType = {
+		#			name = "progress_bar"
+		#			position = { x = 0 y = 0 }
+		#			spriteType = "GFX_trade_node_progress_bar"
+		#			#pdx_tooltip = "TRADE_NODE_PROGRESS_TT"
+		#			#pdx_tooltip_delayed = "TRADE_NODE_PROGRESS_TRIGGER"
+		#		}
+
+		#		instantTextBoxType = {
+		#			name = "expedition_progress_text"
+		#			position = { x = -2 y = 5 }
+		#			format = center
+		#			maxWidth = 200
+		#			multiline = no
+		#			font = "hoi_18mbs"
+		#			text = "TRADE_NODE_PROGRESS"
+		#			#pdx_tooltip = "TRADE_NODE_PROGRESS_TT"
+		#			#pdx_tooltip_delayed = "TRADE_NODE_PROGRESS_TRIGGER"
+		#		}
+		#	}
+
+		#	buttonType = {
+		#		name = "vault_send_expedition_btn"
+		#		position = { x = 25 y = 350 }
+		#		size = { width = 300 height = 30 }
+		#		spriteType = "GFX_sort_button_140x29"
+		#		frame = 2
+		#		buttonFont = "pipboy_shadow_green_32"
+		#		buttonText = "SEND_EXPEDITION_BTN"
+		#		pdx_tooltip = "[GetSendExpeditionButtonTooltip]"
+		#	}
+		#}
+	#}
+}

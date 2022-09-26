@@ -1,0 +1,43 @@
+defined_text = {
+	name = GetVaultName
+	text = {
+		trigger = {
+			state = 380
+		}
+		localization_key = "Vault3"
+	}
+	text = {
+		trigger = {
+			state = 613
+		}
+		localization_key = "Vault11"
+	}
+
+	text = {
+		trigger = {
+			state = 552
+		}
+		localization_key = "Vault19"
+	}
+
+	text = {
+		trigger = {
+			state = 211
+		}
+		localization_key = "Vault21"
+	}
+
+	text = {
+		trigger = {
+			state = 313
+		}
+		localization_key = "Vault22"
+	}
+
+	text = {
+		trigger = {
+			state = 154
+		}
+		localization_key = "Vault34"
+	}
+}

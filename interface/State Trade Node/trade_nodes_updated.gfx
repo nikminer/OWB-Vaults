@@ -1,0 +1,11 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_state_node_view_open"
+		texturefile = "gfx/interface/gui/caps_trade_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_state_node_view_close"
+		texturefile = "gfx/interface/gui/caps_trade_icon_pressed.dds"
+	}
+}
