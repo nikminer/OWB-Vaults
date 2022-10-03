@@ -2,7 +2,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "bos_window"
 		position = { x = 488 y = 13 }
-		size = { width = 700 height = 500 }
+		size = { width = 800 height = 600 }
 		fade_time = 300
 		fade_type = linear
 		clipping = no
@@ -24,8 +24,8 @@ guiTypes = {
 		# HEADER
 			containerWindowType = {
 				name = "header_window"
-				position = { x = 200 y = 453 }
-				size = { width = 300 height = 35 }
+				position = { x = 200 y = 553 }
+				size = { width = 400 height = 35 }
 				instantTextBoxType = {
 					name = "header_text"
 					position = { x = 0 y = 5 }
@@ -33,56 +33,66 @@ guiTypes = {
 					format = center
 					font = "fallout_decayed_26"
 					multiline = no
-					maxWidth = 300
+					maxWidth = 400
 				}
 			}
 		# STATS
 			instantTextBoxType = {
 				name = "bos_space"
-				position = { x = 50 y = 55 }
+				position = { x = 50 y = 70 }
 				text = LOST_HILLS_SPACE_H
 				format = left
-				font = "pipboy_16_green"
+				font = "pipboy_18_green"
 				multiline = no
-				maxWidth = 300
+				maxWidth = 400
 			}
 
 			instantTextBoxType = {
 				name = "bos_admin"
-				position = { x = 350 y = 55 }
+				position = { x = 400 y = 70 }
 				text = LOST_HILLS_ADMIN_H
-				format = left
-				font = "pipboy_16_green"
+				format = right
+				font = "pipboy_18_green"
 				multiline = no
-				maxWidth = 300
+				maxWidth = 340
 			}
 
 			instantTextBoxType = {
 				name = "bos_slots"
-				position = { x = 50 y = 65 }
+				position = { x = 50 y = 90 }
 				text = LOST_HILLS_SLOTS_H
 				format = left
-				font = "pipboy_16_green"
+				font = "pipboy_18_green"
 				multiline = no
-				maxWidth = 300
+				maxWidth = 350
 			}
 			
 			instantTextBoxType = {
 				name = "bos_works"
-				position = { x = 350 y = 65 }
+				position = { x = 400 y = 90 }
 				text = LOST_HILLS_WORKS_H
-				format = left
-				font = "pipboy_16_green"
+				format = right
+				font = "pipboy_18_green"
 				multiline = no
-				maxWidth = 300
+				maxWidth = 340
 			}
 	}
 # LEVELS SWITCHER
 	containerWindowType = {
 		name = "bos_level_switcher"
-		position = { x = 50 y = 130 }
+		position = { x = 50 y = 150 }
 		size = { width = 50 height = 300 }
 		clipping = no
+
+		instantTextBoxType = {
+			name = "header_text"
+			position = { x = -5 y = -20 }
+			text = LVL
+			format = center
+			font = "pipboy_32_green"
+			multiline = no
+			maxWidth = 50
+		}
 
 		buttonType = {
 			name = "bos_level1Btn"
@@ -138,7 +148,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "bos_level_1_window"
 		position = { x = 75 y = 75 }
-		size = { width = 300 height = 300 }
+		size = { width = 400 height = 400 }
 		clipping = no
 
 		iconType = {
@@ -146,11 +156,77 @@ guiTypes = {
 			spriteType = "GFX_bos_level1"
 			position = { x = 24 y = 45 }
 		}
+
+		instantTextBoxType = {
+			name = "bos_expedition"
+			position = { x = 35 y = 115 }
+			text = LOST_HILLS_EXPED_H
+			format = center
+			font = "pipboy_18_green"
+			multiline = yes
+			maxWidth = 200
+			maxHeight = 100
+		}	
+
+		buttonType = {
+			name = "bos_expedition_btn"
+			position = { x = 115 y = 160 }
+			spriteType = "GFX_bos_btn_construction"
+		}
+
+		instantTextBoxType = {
+			name = "bos_constructions"
+			position = { x = 250 y = 115 }
+			text = LOST_HILLS_CONSTRUCT_H
+			format = center
+			font = "pipboy_18_green"
+			multiline = yes
+			maxWidth = 160
+			maxHeight = 100
+		}	
+		buttonType = {
+			name = "bos_constructions_btn"
+			position = { x = 310 y = 160 }
+			spriteType = "GFX_bos_btn_construction"
+		}
+		instantTextBoxType = {
+			name = "bos_simulators"
+			position = { x = 60 y = 270 }
+			text = LOST_HILLS_SIMUL_H
+			format = center
+			font = "pipboy_18_green"
+			multiline = yes
+			maxWidth = 150
+			maxHeight = 100
+		}
+
+		buttonType = {
+			name = "bos_simulator_btn"
+			position = { x = 115 y = 300 }
+			spriteType = "GFX_bos_btn_construction"
+		}
+
+		instantTextBoxType = {
+			name = "bos_training"
+			position = { x = 250 y = 270 }
+			text = LOST_HILLS_TRAIN_H
+			format = left
+			font = "pipboy_18_green"
+			multiline = yes
+			maxWidth = 150
+			maxHeight = 100
+		}	
+		
+		buttonType = {
+			name = "bos_training_btn"
+			position = { x = 250 y = 320 }
+			spriteType = "GFX_bos_btn_construction"
+		}
 	}
 	containerWindowType = {
 		name = "bos_level_2_window"
 		position = { x = 75 y = 75 }
-		size = { width = 300 height = 300 }
+		size = { width = 400 height = 400 }
 		clipping = no
 
 		iconType = {
@@ -158,12 +234,80 @@ guiTypes = {
 			spriteType = "GFX_bos_level2"
 			position = { x = 24 y = 45 }
 		}
+
+		instantTextBoxType = {
+			name = "bos_civil"
+			position = { x = 90 y = 130 }
+			text = LOST_HILLS_CIVIL_H
+			format = center
+			font = "pipboy_18_green"
+			multiline = yes
+			maxWidth = 150
+			maxHeight = 100
+		}
+
+		buttonType = {
+			name = "bos_civil_btn"
+			position = { x = 145 y = 160 }
+			spriteType = "GFX_bos_btn_construction"
+		}
+
+		instantTextBoxType = {
+			name = "bos_safety"
+			position = { x = 260 y = 130 }
+			text = LOST_HILLS_SAFETY_H
+			format = center
+			font = "pipboy_18_green"
+			multiline = yes
+			maxWidth = 150
+			maxHeight = 100
+		}
+
+		buttonType = {
+			name = "bos_safety_btn"
+			position = { x = 315 y = 160 }
+			spriteType = "GFX_bos_btn_construction"
+		}
+
+		instantTextBoxType = {
+			name = "bos_smelt"
+			position = { x = 90 y = 270 }
+			text = LOST_HILLS_SMELT_H
+			format = center
+			font = "pipboy_18_green"
+			multiline = yes
+			maxWidth = 150
+			maxHeight = 100
+		}	
+
+		buttonType = {
+			name = "bos_smelt_btn"
+			position = { x = 145 y = 310 }
+			spriteType = "GFX_bos_btn_construction"
+		}
+
+		instantTextBoxType = {
+			name = "bos_water"
+			position = { x = 260 y = 270 }
+			text = LOST_HILLS_WATER_H
+			format = center
+			font = "pipboy_18_green"
+			multiline = yes
+			maxWidth = 150
+			maxHeight = 100
+		}
+
+		buttonType = {
+			name = "bos_water_btn"
+			position = { x = 315 y = 310 }
+			spriteType = "GFX_bos_btn_construction"
+		}
 	}
 
 	containerWindowType = {
 		name = "bos_level_3_window"
 		position = { x = 75 y = 75 }
-		size = { width = 300 height = 300 }
+		size = { width = 400 height = 400 }
 		clipping = no
 
 		iconType = {
@@ -171,18 +315,184 @@ guiTypes = {
 			spriteType = "GFX_bos_level3"
 			position = { x = 24 y = 45 }
 		}
+
+		instantTextBoxType = {
+			name = "bos_circuit"
+			position = { x = 65 y = 170 }
+			text = LOST_HILLS_CIRCUIT_H
+			format = center
+			font = "pipboy_18_green"
+			multiline = yes
+			maxWidth = 150
+			maxHeight = 100
+		}
+
+		buttonType = {
+			name = "bos_circuit_btn"
+			position = { x = 125 y = 210 }
+			spriteType = "GFX_bos_btn_construction"
+		}
+
+		instantTextBoxType = {
+			name = "bos_arms"
+			position = { x = 220 y = 235 }
+			text = LOST_HILLS_ARMS_H
+			format = center
+			font = "pipboy_18_green"
+			multiline = yes
+			maxWidth = 150
+			maxHeight = 100
+		}
+
+		buttonType = {
+			name = "bos_arms_btn"
+			position = { x = 280 y = 270 }
+			spriteType = "GFX_bos_btn_construction"
+		}
+
+		instantTextBoxType = {
+			name = "bos_lab"
+			position = { x = 230 y = 80 }
+			text = LOST_HILLS_LAB_H
+			format = center
+			font = "pipboy_18_green"
+			multiline = yes
+			maxWidth = 150
+			maxHeight = 100
+		}
+
+		buttonType = {
+			name = "bos_lab_btn"
+			position = { x = 315 y = 110 }
+			spriteType = "GFX_bos_btn_construction"
+		}
 	}
 
 	containerWindowType = {
 		name = "bos_level_4_window"
 		position = { x = 75 y = 75 }
-		size = { width = 300 height = 300 }
+		size = { width = 400 height = 400 }
 		clipping = no
 
 		iconType = {
 			name = "bos_level4"
 			spriteType = "GFX_bos_level4"
 			position = { x = 24 y = 45 }
+		}
+
+		instantTextBoxType = {
+			name = "bos_admin"
+			position = { x = 80 y = 210 }
+			text = LOST_HILLS_ADM_H
+			format = center
+			font = "pipboy_18_green"
+			multiline = yes
+			maxWidth = 150
+			maxHeight = 100
+		}
+
+		buttonType = {
+			name = "bos_admin_btn"
+			position = { x = 140 y = 255 }
+			spriteType = "GFX_bos_btn_construction"
+		}
+
+		instantTextBoxType = {
+			name = "bos_power"
+			position = { x = 190 y = 210 }
+			text = LOST_HILLS_POWER_H
+			format = center
+			font = "pipboy_18_green"
+			multiline = yes
+			maxWidth = 150
+			maxHeight = 100
+		}
+
+		buttonType = {
+			name = "bos_power_btn"
+			position = { x = 245 y = 255 }
+			spriteType = "GFX_bos_btn_construction"
+		}
+	}
+# Decisions
+	containerWindowType = {
+		name = "bos_decisions_panel"
+		position = { x = 560 y = 120 }
+		size = { width = 50 height = 300 }
+		clipping = no
+		background = {
+			name = "background"
+			spriteType = "GFX_bos_decisions_bg" 
+		}
+		instantTextBoxType = {
+			name = "header_text"
+			position = { x = 0 y = 19 }
+			text = "Adm. Decisions"
+			format = center
+			font = "pipboy_18_green"
+			multiline = no
+			maxWidth = 175
+		}
+
+		buttonType = {
+			name = "bos_decision1"
+			position = { x = 0 y = 37 }
+			buttonText = "Initate construction effot"
+			buttonFont = "pipboy_16_green"
+			spriteType = "GFX_bos_decisions_btn_bg"
+		}
+		buttonType = {
+			name = "bos_decision2"
+			position = { x = 0 y = 71 }
+			buttonText = "Initate production effot"
+			buttonFont = "pipboy_16_green"
+			spriteType = "GFX_bos_decisions_btn_bg"
+		}
+		buttonType = {
+			name = "bos_decision3"
+			position = { x = 0 y = 105 }
+			buttonText = "Initate research effot"
+			buttonFont = "pipboy_16_green"
+			spriteType = "GFX_bos_decisions_btn_bg"
+		}
+		buttonType = {
+			name = "bos_decision4"
+			position = { x = 0 y = 139 }
+			buttonText = "Initate political effot"
+			buttonFont = "pipboy_16_green"
+			spriteType = "GFX_bos_decisions_btn_bg"
+		}
+
+		buttonType = {
+			name = "bos_decision5"
+			position = { x = 0 y = 173 }
+			buttonText = "Underground expansion"
+			buttonFont = "pipboy_16_green"
+			spriteType = "GFX_bos_decisions_btn_bg"
+		}
+
+		buttonType = {
+			name = "bos_decision6"
+			position = { x = 0 y = 207 }
+			buttonText = "Dig deeper"
+			buttonFont = "pipboy_16_green"
+			spriteType = "GFX_bos_decisions_btn_bg"
+		}
+
+		buttonType = {
+			name = "bos_decision7"
+			position = { x = 0 y = 241 }
+			buttonText = "Refubish Initiate Equipment"
+			buttonFont = "pipboy_16_green"
+			spriteType = "GFX_bos_decisions_btn_bg"
+		}
+
+		buttonType = {
+			name = "bos_decision8"
+			position = { x = 0 y = 275 }
+			buttonText = "Refubish Paladin Equipment"
+			buttonFont = "pipboy_16_green"
+			spriteType = "GFX_bos_decisions_btn_bg"
 		}
 	}
 }

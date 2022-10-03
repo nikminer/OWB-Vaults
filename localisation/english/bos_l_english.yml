@@ -1,8 +1,26 @@
 ﻿l_english:
-  OPEN_BOS_WINDOW_TT: "§GClick§! to show Lost Hills Underground Management!."
-  CLOSE_BOS_WINDOW_TT: "§GClick§! to hide Lost Hills Underground Management!."
+  OPEN_BOS_WINDOW_TT: "§GClick§! to show §YLost Hills Underground Management§!."
+  CLOSE_BOS_WINDOW_TT: "§GClick§! to hide §YLost Hills Underground Management§!."
   LOST_HILLS_H: "Lost Hills Bunker"
   LOST_HILLS_SPACE_H: "Maximum Available Space: [?BOS.BOS_space_usage]/[?BOS.BOS_space]"
   LOST_HILLS_SLOTS_H: "Available Construction Slots: [?BOS.BOS_underground_construction_slots]"
   LOST_HILLS_ADMIN_H: "Administrative Capacity: [?BOS.modifier@bos_administration_capacity_usage]/[?BOS.modifier@BOS_underground_administrative_capacity]"
-  LOST_HILLS_WORKS_H: "Underground Condensed Workshop: [?BOS.BOS_condensed_civilian_workshop]/[?BOS.BOS_maximum_condensed_workshops_allowed]"
+  LOST_HILLS_WORKS_H: "Condensed Workshop: [?BOS.BOS_condensed_civilian_workshop]/[?BOS.BOS_maximum_condensed_workshops_allowed]"
+  # Level 1
+  LOST_HILLS_EXPED_H: "Expeditionary\nDepartments\n[?BOS.BOS_expeditionary_departments]/[?BOS.BOS_maximum_expeditionary_departments_allowed]"
+  LOST_HILLS_SIMUL_H: "Combat\nSimulators"
+  LOST_HILLS_CONSTRUCT_H: "Constructions\nFacilities"
+  LOST_HILLS_TRAIN_H: "Training Facilities\n[?BOS.BOS_underground_building_training]/[?BOS.BOS_maximum_training_facilities_allowed]"
+  # Level 2
+  LOST_HILLS_CIVIL_H: "Civilian\nFacilities"
+  LOST_HILLS_SMELT_H: "Smelters\nFacilities"
+  LOST_HILLS_WATER_H: "Water\nPurifiers"
+  LOST_HILLS_SAFETY_H: "Safety\nDepartment"
+  # Level 3
+  LOST_HILLS_CIRCUIT_H: "Circuitry\nPlants"
+  LOST_HILLS_ARMS_H: "Arms\nFacilities"
+  LOST_HILLS_LAB_H: "Laboratories\n[?BOS.BOS_underground_building_lab]/[?BOS.BOS_maximum_labs_allowed]"
+  # Level 4
+  LOST_HILLS_POWER_H: "Power\nFacilities"
+  LOST_HILLS_ADM_H: "Admin\nCenters\n[?BOS.BOS_underground_building_administration_centers]/[?BOS.BOS_maximum_admin_centers_allowed]"
+ 

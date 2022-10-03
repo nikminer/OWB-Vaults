@@ -46,4 +46,22 @@ spriteTypes = {
 			name = "GFX_bos_level4"
 			texturefile = "gfx/interface/gui/bos/level 4.dds"
 		}
+
+		spriteType = {
+			name = "GFX_bos_btn_construction"
+			texturefile = "gfx/interface/gui/bos/construction.dds"
+		}
+
+	# Decisions
+		spriteType = {
+			name = "GFX_bos_decisions_bg"
+			texturefile = "gfx/interface/gui/bos/decisionBG.dds"
+		}
+
+		spriteType = {
+			name = "GFX_bos_decisions_btn_bg"
+			texturefile = "gfx/interface/gui/bos/buttonbg.dds"
+		}
+		
 }
+		

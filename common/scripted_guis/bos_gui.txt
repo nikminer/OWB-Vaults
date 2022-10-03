@@ -163,4 +163,14 @@ scripted_gui = {
 			}
 		}
 	}
+# Decisions
+	bos_decisions_panel = {
+		window_name = "bos_decisions_panel"
+		parent_window_name = "bos_window_instance"
+		effects = {
+			bos_decision1_click = {
+				add_political_power = 200
+			}
+		}
+	}
 }
