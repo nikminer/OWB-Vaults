@@ -63,5 +63,10 @@ spriteTypes = {
 			texturefile = "gfx/interface/gui/bos/buttonbg.dds"
 		}
 		
+		spriteType = {
+			name = "GFX_bos_executing_btn_bg"
+			texturefile = "gfx/interface/gui/bos/executing.dds"
+			noOfFrames = 5
+		}
 }
 		

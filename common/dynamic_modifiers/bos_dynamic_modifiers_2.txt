@@ -1,0 +1,3 @@
+bos_admin_decision_active = {
+	bos_administration_capacity_usage = 1
+}

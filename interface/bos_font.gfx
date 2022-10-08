@@ -1,0 +1,7 @@
+spriteTypes = {
+	bitmapfont = {
+		name = "pipboy_18_white"
+		path = "gfx/fonts/pipboy_18"
+		color = 0xffFFFFFF
+	}
+}

@@ -2,7 +2,7 @@ scripted_gui = {
 	bos_window_btn = {
 		context_type = selected_state_context
 		parent_window_token = selected_state_view
-
+		
 		window_name = "bos_window_btn"
 
 		effects = {
@@ -167,9 +167,222 @@ scripted_gui = {
 	bos_decisions_panel = {
 		window_name = "bos_decisions_panel"
 		parent_window_name = "bos_window_instance"
+		visible = {
+			tag = BOS
+		}
 		effects = {
 			bos_decision1_click = {
-				add_political_power = 200
+				set_country_flag = {
+					flag = BOS_AdmInitEffotConst
+					value = 1
+				}
+			}
+			bos_decision2_click = {
+				set_country_flag = {
+					flag = BOS_AdmInitEffotProd
+					value = 1
+				}
+			}
+			bos_decision3_click = {
+				set_country_flag = {
+					flag = BOS_AdmInitEffotResearch
+					value = 1
+				}
+			}
+			bos_decision4_click = {
+				set_country_flag = {
+					flag = BOS_AdmInitEffotPolit
+					value = 1
+				}
+			}
+			bos_decision5_click = {
+				set_country_flag = {
+					flag = BOS_AdmUndergroundConstruction
+					value = 1
+				}
+				add_political_power = -10
+				add_manpower = -100
+				
+				add_dynamic_modifier = {
+					modifier = bos_admin_decision_active
+					scope = BOS
+					days = BOS_underground_construction_time
+				}
+			}
+
+			bos_decision6_click = {
+				set_country_flag = {
+					flag = BOS_AdmDigDeeper
+					value = 1
+				}
+			}
+				
+			bos_decision7_click = {
+				set_country_flag = {
+					flag = BOS_AdmEquipInit
+					value = 1
+				}
+			}
+			bos_decision8_click = {
+				set_country_flag = {
+					flag = BOS_AdmEquipPalad
+					value = 1
+				}
+			}
+		}
+		triggers = {
+
+			# Decision 1
+			bos_decision1_visible = {
+				not = {
+					has_country_flag = BOS_AdmInitEffotConst
+				}
+			}
+
+			bos_decision1_executing_text_visible = {
+				has_country_flag = BOS_AdmInitEffotConst
+			}
+
+			# Decision 2
+			bos_decision2_visible = {
+				not = {
+					has_country_flag = BOS_AdmInitEffotProd
+				}
+			}
+
+			bos_decision2_executing_text_visible = {
+				has_country_flag = BOS_AdmInitEffotProd
+			}
+
+			# Decision 3
+			bos_decision3_visible = {
+				not = {
+					has_country_flag = BOS_AdmInitEffotResearch
+				}
+			}
+
+			bos_decision3_executing_text_visible = {
+				has_country_flag = BOS_AdmInitEffotResearch
+			}
+
+			# Decision 4
+			bos_decision4_visible = {
+				not = {
+					has_country_flag = BOS_AdmInitEffotPolit
+				}
+			}
+
+			bos_decision4_executing_text_visible = {
+				has_country_flag = BOS_AdmInitEffotPolit
+			}
+
+			# Decision 5
+			bos_decision5_visible = {
+				not = {
+					has_country_flag = BOS_AdmUndergroundConstruction
+				}
+			}
+
+			bos_decision5_click_enabled = {
+				has_political_power > 9
+				has_manpower > 99
+				BOS_has_x_available_administration_capacity = yes
+			}
+
+			bos_decision5_executing_visible = {
+				has_country_flag = BOS_AdmUndergroundConstruction
+
+				set_temp_variable = { bos_part = BOS_underground_construction_time }
+				divide_temp_variable = { bos_part = 5 }
+				set_temp_variable = { bos_current = bos_part }
+
+				if = {
+					limit = {
+						check_variable = { BOS_underground_construction_progress < bos_current }
+					}
+					set_temp_variable = { bos_decision5_executing_frame = 1 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_underground_construction_progress < bos_current }
+					}
+					set_temp_variable = { bos_decision5_executing_frame = 2 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_underground_construction_progress < bos_current }
+					}
+					set_temp_variable = { bos_decision5_executing_frame = 3 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_underground_construction_progress < bos_current }
+					}
+					set_temp_variable = { bos_decision5_executing_frame = 4 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_underground_construction_progress < bos_current }
+					}
+					set_temp_variable = { bos_decision5_executing_frame = 5 }
+				}
+			}
+
+			bos_decision5_executing_text_visible = {
+				has_country_flag = BOS_AdmUndergroundConstruction
+			}
+
+			# Decision 6
+			bos_decision6_visible = {
+				not = {
+					has_country_flag = BOS_AdmDigDeeper
+				}
+			}
+
+			bos_decision6_executing_text_visible = {
+				has_country_flag = BOS_AdmDigDeeper
+			}
+
+			# Decision 7
+			bos_decision7_visible = {
+				not = {
+					has_country_flag = BOS_AdmEquipInit
+				}
+			}
+
+			bos_decision7_executing_text_visible = {
+				has_country_flag = BOS_AdmEquipInit
+			}
+
+			# Decision 8
+			bos_decision8_visible = {
+				not = {
+					has_country_flag = BOS_AdmEquipPalad
+				}
+			}
+
+			bos_decision8_executing_text_visible = {
+				has_country_flag = BOS_AdmEquipPalad
+			}
+		}
+
+
+
+		properties = {
+			bos_decision5_executing = {
+				frame = bos_decision5_executing_frame
 			}
 		}
 	}

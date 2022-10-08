@@ -24,3 +24,7 @@
   LOST_HILLS_POWER_H: "Power\nFacilities"
   LOST_HILLS_ADM_H: "Admin\nCenters\n[?BOS.BOS_underground_building_administration_centers]/[?BOS.BOS_maximum_admin_centers_allowed]"
  
+  # Decisions
+  LOST_HILLS_EXEC_H: "Executing..."
+  LOST_HILLS_UNDEGROUND_EXPAND_H: "Underground expansion"
+  LOST_HILLS_UNDEGROUND_EXPAND_TT: "Add §Y[?BOS.BOS_underground_construction_slots_to_add]§! underground §YConstruction Slots§!.\n§gUnderground Construction Slots are special slots we can fill with various buildings or installations.\nTo see, and utilize your Underground Construction Slots, see the relevant decision category.§!"

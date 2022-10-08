@@ -1,0 +1,56 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			BOS = {
+				set_variable = {
+					BOS_underground_construction_slots_to_add = 1
+				}
+				set_variable = {
+					BOS_underground_construction_time = 5
+				}
+				set_variable = {
+					BOS_underground_construction_progress = 0
+				}
+
+				set_variable = {
+					BOS_dig_deeper_time = 5
+				}
+				set_variable = {
+					BOS_dig_deeper_progress = 0
+				}
+
+				set_variable = {
+					BOS_equip_init_time = 5
+				}
+				set_variable = {
+					BOS_equip_init_progress = 0
+				}
+
+				set_variable = {
+					BOS_equip_palad_time = 5
+				}
+				set_variable = {
+					BOS_equip_palad_progress = 0
+				}
+			}
+
+
+			157 = {
+				set_state_flag = bos_state
+			}	
+			70 = {
+				set_state_flag = bos_state
+			}
+			602 = {
+				set_state_flag = bos_state
+			}
+			357 = {
+				set_state_flag = bos_state
+			}
+			360 = {
+				set_state_flag = bos_state
+			}
+		}
+		
+	}
+}

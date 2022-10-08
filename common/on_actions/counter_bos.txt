@@ -1,0 +1,137 @@
+on_actions = {
+	on_daily_BOS = {
+		effect = {
+			# Decision 5
+			if = {
+				limit = {
+					has_country_flag = BOS_AdmUndergroundConstruction
+				}
+				add_to_variable = {
+					var = BOS_underground_construction_progress
+					value = 1
+				}
+			}
+
+			if = {
+				limit = {
+					check_variable = {
+						var = BOS_underground_construction_progress
+						value = BOS_underground_construction_time
+						compare = greater_than_or_equals
+					}
+				}
+				clr_country_flag = BOS_AdmUndergroundConstruction
+				set_variable = {
+					BOS_underground_construction_progress = 0
+				}
+
+				set_temp_variable = {
+					BOS_underground_construction_slots_to_add = 1
+				}
+
+				bos_add_underground_construction_slots = yes
+				random_list = {
+					80 = {
+						add_manpower = 100
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
+					}
+					10 = {
+						add_manpower = 90
+					}
+					5 = {
+						add_manpower = 80
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
+					5 = {
+						add_manpower = 40
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
+				}
+			}
+
+			# Decision 6
+			if = {
+				limit = {
+					has_country_flag = BOS_AdmDigDeeper
+				}
+				add_to_variable = {
+					var = BOS_dig_deeper_progress
+					value = 1
+				}
+			}
+
+			if = {
+				limit = {
+					check_variable = {
+						var = BOS_dig_deeper_progress
+						value = BOS_dig_deeper_time
+						compare = greater_than_or_equals
+					}
+				}
+				clr_country_flag = BOS_AdmDigDeeper
+				set_variable = {
+					BOS_dig_deeper_progress = 0
+				}
+			}
+
+			# Decision 7
+			if = {
+				limit = {
+					has_country_flag = BOS_AdmEquipInit
+				}
+				add_to_variable = {
+					var = BOS_equip_init_progress
+					value = 1
+				}
+			}
+
+			if = {
+				limit = {
+					check_variable = {
+						var = BOS_equip_init_progress
+						value = BOS_equip_init_time
+						compare = greater_than_or_equals
+					}
+				}
+				clr_country_flag = BOS_AdmEquipInit
+				set_variable = {
+					BOS_equip_init_progress = 0
+				}
+			}
+
+			# Decision 8
+			if = {
+				limit = {
+					has_country_flag = BOS_AdmEquipPalad
+				}
+				add_to_variable = {
+					var = BOS_equip_palad_progress
+					value = 1
+				}
+			}
+
+			if = {
+				limit = {
+					check_variable = {
+						var = BOS_equip_palad_progress
+						value = BOS_equip_palad_time
+						compare = greater_than_or_equals
+					}
+				}
+				clr_country_flag = BOS_AdmEquipPalad
+				set_variable = {
+					BOS_equip_palad_progress = 0
+				}
+			}
+		}
+	}
+}
