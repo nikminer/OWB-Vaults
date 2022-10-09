@@ -73,10 +73,66 @@ scripted_gui = {
 				bos_change_available_space = yes
 				bos_minus_one_construction_slots_simple = yes
 				
-				add_dynamic_modifier = {
-					modifier = bos_admin_decision_active
-					scope = BOS
-					days = BOS_construction_time
+				if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_2
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_2
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_3
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_3
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_4
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_4
+						scope = BOS
+						days = BOS_construction_time
+					}
 				}
 			}
 
@@ -99,10 +155,66 @@ scripted_gui = {
 				}
 				bos_change_available_space = yes
 				
-				add_dynamic_modifier = {
-					modifier = bos_admin_decision_active
-					scope = BOS
-					days = BOS_construction_time
+				if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_2
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_2
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_3
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_3
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_4
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_4
+						scope = BOS
+						days = BOS_construction_time
+					}
 				}
 			}
 
@@ -118,11 +230,66 @@ scripted_gui = {
 				}
 				bos_change_available_space = yes
 				add_manpower = -100
+				if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active
+						scope = BOS
+						days = BOS_simulator_construction_time
+					}
+				}
+				else_if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_2
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_2
+						scope = BOS
+						days = BOS_simulator_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_3
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_3
+						scope = BOS
+						days = BOS_simulator_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
 
-				add_dynamic_modifier = {
-					modifier = bos_admin_decision_active
-					scope = BOS
-					days = BOS_simulator_construction_time
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_4
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_4
+						scope = BOS
+						days = BOS_simulator_construction_time
+					}
 				}
 
 				add_dynamic_modifier = {
@@ -146,10 +313,66 @@ scripted_gui = {
 				bos_change_available_space = yes
 				bos_minus_one_construction_slots_simple = yes
 				
-				add_dynamic_modifier = {
-					modifier = bos_admin_decision_active
-					scope = BOS
-					days = BOS_construction_time
+				if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_2
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_2
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_3
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_3
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_4
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_4
+						scope = BOS
+						days = BOS_construction_time
+					}
 				}
 			}
 		}
@@ -508,10 +731,65 @@ scripted_gui = {
 				bos_change_available_space = yes
 				bos_minus_one_construction_slots_simple = yes
 				
-				add_dynamic_modifier = {
-					modifier = bos_admin_decision_active
-					scope = BOS
-					days = BOS_construction_time
+				if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_2
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_2
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_3
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_3
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_4
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_4
+						scope = BOS
+						days = BOS_construction_time
+					}
 				}
 			}
 
@@ -527,10 +805,66 @@ scripted_gui = {
 				}
 				bos_change_available_space = yes
 				bos_minus_one_construction_slots_simple = yes
-				add_dynamic_modifier = {
-					modifier = bos_admin_decision_active
-					scope = BOS
-					days = BOS_construction_time
+				if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_2
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_2
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_3
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_3
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_4
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_4
+						scope = BOS
+						days = BOS_construction_time
+					}
 				}
 			}
 
@@ -555,10 +889,66 @@ scripted_gui = {
 				bos_change_available_space = yes
 				bos_minus_one_construction_slots_simple = yes
 
-				add_dynamic_modifier = {
-					modifier = bos_admin_decision_active
-					scope = BOS
-					days = BOS_construction_time
+				if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_2
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_2
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_3
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_3
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_4
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_4
+						scope = BOS
+						days = BOS_construction_time
+					}
 				}
 			}
 
@@ -581,10 +971,66 @@ scripted_gui = {
 				}
 				bos_change_available_space = yes
 				bos_minus_one_construction_slots_simple = yes
-				add_dynamic_modifier = {
-					modifier = bos_admin_decision_active
-					scope = BOS
-					days = BOS_construction_time
+				if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_2
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_2
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_3
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_3
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_4
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_4
+						scope = BOS
+						days = BOS_construction_time
+					}
 				}
 			}
 		}
@@ -928,10 +1374,66 @@ scripted_gui = {
 				bos_change_available_space = yes
 				bos_minus_one_construction_slots_simple = yes
 				
-				add_dynamic_modifier = {
-					modifier = bos_admin_decision_active
-					scope = BOS
-					days = BOS_construction_time
+				if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_2
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_2
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_3
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_3
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_4
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_4
+						scope = BOS
+						days = BOS_construction_time
+					}
 				}
 			}
 
@@ -953,10 +1455,66 @@ scripted_gui = {
 				bos_change_available_space = yes
 				bos_minus_one_construction_slots_simple = yes
 				add_political_power = -10
-				add_dynamic_modifier = {
-					modifier = bos_admin_decision_active
-					scope = BOS
-					days = BOS_construction_time
+				if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_2
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_2
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_3
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_3
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_4
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_4
+						scope = BOS
+						days = BOS_construction_time
+					}
 				}
 			}
 
@@ -967,10 +1525,66 @@ scripted_gui = {
 				}
 
 				add_political_power = -10
-				add_dynamic_modifier = {
-					modifier = bos_admin_decision_active
-					scope = BOS
-					days = BOS_construction_time
+				if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_2
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_2
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_3
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_3
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_4
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_4
+						scope = BOS
+						days = BOS_construction_time
+					}
 				}
 
 				add_manpower = -500
@@ -1238,10 +1852,66 @@ scripted_gui = {
 				bos_minus_one_construction_slots_simple = yes
 
 				add_political_power = -10
-				add_dynamic_modifier = {
-					modifier = bos_admin_decision_active
-					scope = BOS
-					days = BOS_construction_time
+				if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_2
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_2
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_3
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_3
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_4
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_4
+						scope = BOS
+						days = BOS_construction_time
+					}
 				}
 			}
 
@@ -1252,10 +1922,66 @@ scripted_gui = {
 				}
 
 				add_political_power = -10
-				add_dynamic_modifier = {
-					modifier = bos_admin_decision_active
-					scope = BOS
-					days = BOS_construction_time
+				if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_2
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_2
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_3
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_3
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_4
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_4
+						scope = BOS
+						days = BOS_construction_time
+					}
 				}
 
 				add_manpower = -500
@@ -1530,10 +2256,66 @@ scripted_gui = {
 				add_command_power = -25
 				add_manpower = -100
 				
-				add_dynamic_modifier = {
-					modifier = bos_admin_decision_active
-					scope = BOS
-					days = BOS_effot_time
+				if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active
+						scope = BOS
+						days = BOS_effot_time
+					}
+				}
+				else_if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_2
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_2
+						scope = BOS
+						days = BOS_effot_time
+					}
+				}
+				else_if = {
+					limit = { 
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_3
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_3
+						scope = BOS
+						days = BOS_effot_time
+					}
+				}
+				else_if = {
+					limit = { 
+
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_4
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_4
+						scope = BOS
+						days = BOS_effot_time
+					}
 				}
 
 				add_dynamic_modifier = {
@@ -1552,10 +2334,66 @@ scripted_gui = {
 				add_command_power = -25
 				add_manpower = -100
 				
-				add_dynamic_modifier = {
-					modifier = bos_admin_decision_active
-					scope = BOS
-					days = BOS_effot_time
+				if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active
+						scope = BOS
+						days = BOS_effot_time
+					}
+				}
+				else_if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_2
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_2
+						scope = BOS
+						days = BOS_effot_time
+					}
+				}
+				else_if = {
+					limit = { 
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_3
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_3
+						scope = BOS
+						days = BOS_effot_time
+					}
+				}
+				else_if = {
+					limit = { 
+
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_4
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_4
+						scope = BOS
+						days = BOS_effot_time
+					}
 				}
 
 				add_dynamic_modifier = {
@@ -1574,10 +2412,66 @@ scripted_gui = {
 				add_command_power = -25
 				add_manpower = -100
 				
-				add_dynamic_modifier = {
-					modifier = bos_admin_decision_active
-					scope = BOS
-					days = BOS_effot_time
+				if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active
+						scope = BOS
+						days = BOS_effot_time
+					}
+				}
+				else_if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_2
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_2
+						scope = BOS
+						days = BOS_effot_time
+					}
+				}
+				else_if = {
+					limit = { 
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_3
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_3
+						scope = BOS
+						days = BOS_effot_time
+					}
+				}
+				else_if = {
+					limit = { 
+
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_4
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_4
+						scope = BOS
+						days = BOS_effot_time
+					}
 				}
 
 				add_dynamic_modifier = {
@@ -1596,10 +2490,66 @@ scripted_gui = {
 				add_command_power = -25
 				add_manpower = -100
 				
-				add_dynamic_modifier = {
-					modifier = bos_admin_decision_active
-					scope = BOS
-					days = BOS_effot_time
+				if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active
+						scope = BOS
+						days = BOS_effot_time
+					}
+				}
+				else_if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_2
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_2
+						scope = BOS
+						days = BOS_effot_time
+					}
+				}
+				else_if = {
+					limit = { 
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_3
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_3
+						scope = BOS
+						days = BOS_effot_time
+					}
+				}
+				else_if = {
+					limit = { 
+
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_4
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_4
+						scope = BOS
+						days = BOS_effot_time
+					}
 				}
 
 				add_dynamic_modifier = {
@@ -1617,10 +2567,66 @@ scripted_gui = {
 				add_political_power = -10
 				add_manpower = -100
 				
-				add_dynamic_modifier = {
-					modifier = bos_admin_decision_active
-					scope = BOS
-					days = BOS_construction_time
+				if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_2
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_2
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_3
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_3
+						scope = BOS
+						days = BOS_construction_time
+					}
+				}
+				else_if = {
+					limit = { 
+
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_4
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_4
+						scope = BOS
+						days = BOS_construction_time
+					}
 				}
 			}
 
@@ -1633,10 +2639,66 @@ scripted_gui = {
 				army_experience = -10
 				add_manpower = -100
 				
-				add_dynamic_modifier = {
-					modifier = bos_admin_decision_active
-					scope = BOS
-					days = BOS_construction_time
+				if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active
+						scope = BOS
+						days = BOS_equip_time
+					}
+				}
+				else_if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_2
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_2
+						scope = BOS
+						days = BOS_equip_time
+					}
+				}
+				else_if = {
+					limit = { 
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_3
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_3
+						scope = BOS
+						days = BOS_equip_time
+					}
+				}
+				else_if = {
+					limit = { 
+
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_4
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_4
+						scope = BOS
+						days = BOS_equip_time
+					}
 				}
 			}
 				
@@ -1648,10 +2710,66 @@ scripted_gui = {
 				army_experience = -10
 				add_manpower = -100
 				
-				add_dynamic_modifier = {
-					modifier = bos_admin_decision_active
-					scope = BOS
-					days = BOS_construction_time
+				if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active
+						scope = BOS
+						days = BOS_equip_time
+					}
+				}
+				else_if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_2
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_2
+						scope = BOS
+						days = BOS_equip_time
+					}
+				}
+				else_if = {
+					limit = { 
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_3
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_3
+						scope = BOS
+						days = BOS_equip_time
+					}
+				}
+				else_if = {
+					limit = { 
+
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_4
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_4
+						scope = BOS
+						days = BOS_equip_time
+					}
 				}
 			}
 
@@ -1661,15 +2779,71 @@ scripted_gui = {
 					value = 1
 				}
 				add_manpower = -1000
-				add_dynamic_modifier = {
-					modifier = bos_admin_decision_active
-					scope = BOS
-					days = BOS_construction_time
+				if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active
+						scope = BOS
+						days = BOS_dig_deeper_time
+					}
+				}
+				else_if = {
+					limit = {
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_2
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_2
+						scope = BOS
+						days = BOS_dig_deeper_time
+					}
+				}
+				else_if = {
+					limit = { 
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_3
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_3
+						scope = BOS
+						days = BOS_dig_deeper_time
+					}
+				}
+				else_if = {
+					limit = { 
+
+						not = {
+							has_dynamic_modifier = {
+								modifier = bos_admin_decision_active_4
+								scope = BOS
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = bos_admin_decision_active_4
+						scope = BOS
+						days = BOS_dig_deeper_time
+					}
 				}
 				add_dynamic_modifier = {
 					modifier = bos_admin_decision_dig_deeper_active
 					scope = BOS
-					days = BOS_construction_time
+					days = BOS_dig_deeper_time
 				}
 			}
 		}
@@ -1677,9 +2851,9 @@ scripted_gui = {
 
 			# Decision 1
 				bos_decision1_visible = {
-				not = {
-					has_country_flag = BOS_AdmInitEffotConst
-				}
+					not = {
+						has_country_flag = BOS_AdmInitEffotConst
+					}
 				}
 				bos_decision1_click_enabled = {
 					command_power > 24

@@ -1,6 +1,15 @@
 bos_admin_decision_active = {
 	bos_administration_capacity_usage = 1
 }
+bos_admin_decision_active_2 = {
+	bos_administration_capacity_usage = 1
+}
+bos_admin_decision_active_3 = {
+	bos_administration_capacity_usage = 1
+}
+bos_admin_decision_active_4 = {
+	bos_administration_capacity_usage = 1
+}
 
 bos_admin_decision_construct_active = {
 	production_speed_buildings_factor = 0.1
