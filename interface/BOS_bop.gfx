@@ -1,0 +1,14 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_bop_BOS_scribes_side"
+		texturefile = "gfx/interface/bop/BOS_bop_scribes_side.dds"
+	}
+
+	spriteType = {
+		name = "GFX_bop_BOS_paladins_side"
+		texturefile = "gfx/interface/bop/BOS_bop_paladins_side.dds"
+	}
+
+
+}
