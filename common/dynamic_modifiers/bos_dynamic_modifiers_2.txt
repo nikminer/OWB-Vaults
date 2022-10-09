@@ -21,3 +21,7 @@ bos_admin_decision_polit_active = {
 bos_admin_decision_dig_deeper_active = {
 	political_power_factor = -0.5
 }
+
+bos_admin_building_simulator_active = {
+	experience_gain_army_factor = -0.5
+}

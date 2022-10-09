@@ -4,49 +4,37 @@ on_actions = {
 			BOS = {
 				# Effot Decisions
 					set_variable = {
-						BOS_construct_effot_time = 100
+						BOS_effot_time = 100
 					}
 					set_variable = {
 						BOS_construct_effot_progress = 0
 					}
 					set_variable = {
-						BOS_Production_effot_time = 100
-					}
-					set_variable = {
 						BOS_Production_effot_progress = 0
 					}
 					set_variable = {
-						BOS_research_effot_time = 100
-					}
-					set_variable = {
 						BOS_research_effot_progress = 0
-					}
-					set_variable = {
-						BOS_polit_effot_time = 100
 					}
 					set_variable = {
 						BOS_polit_effot_progress = 0
 					}
 				# Army Decisions
 					set_variable = {
-						BOS_equip_init_time = 90
+						BOS_equip_time = 90
 					}
 					set_variable = {
 						BOS_equip_init_progress = 0
 					}
 					set_variable = {
-						BOS_equip_palad_time = 90
-					}
-					set_variable = {
 						BOS_equip_palad_progress = 0
 					}
 
+				set_variable = {
+					BOS_construction_time = 60
+				}	
 				# Expand Decisions
 					set_variable = {
 						BOS_underground_construction_slots_to_add = 1
-					}
-					set_variable = {
-						BOS_underground_construction_time = 60
 					}
 					set_variable = {
 						BOS_underground_construction_progress = 0
@@ -60,7 +48,52 @@ on_actions = {
 					set_variable = {
 						BOS_dig_deeper_progress = 0
 					}
-				
+				# Level 1
+					set_variable = {
+						BOS_simulator_construction_time = 180
+					}
+					set_variable = {
+						BOS_build_expedition_progress = 0
+					}
+					set_variable = {
+						BOS_build_simulator_progress = 0
+					}
+					set_variable = {
+						BOS_build_constructor_progress = 0
+					}
+					set_variable = {
+						BOS_build_training_progress = 0
+					}
+				# Level 2
+					set_variable = {
+						BOS_build_civil_progress = 0
+					}
+					set_variable = {
+						BOS_build_smelt_progress = 0
+					}
+					set_variable = {
+						BOS_build_safety_progress = 0
+					}
+					set_variable = {
+						BOS_build_water_progress = 0
+					}
+				# Level 3
+					set_variable = {
+						BOS_build_circuit_progress = 0
+					}
+					set_variable = {
+						BOS_build_arms_progress = 0
+					}
+					set_variable = {
+						BOS_build_lab_progress = 0
+					}
+				# Level 4
+					set_variable = {
+						BOS_build_admin_progress = 0
+					}
+					set_variable = {
+						BOS_build_power_progress = 0
+					}
 			}
 
 

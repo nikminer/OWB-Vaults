@@ -1,0 +1,67 @@
+bos_underground_construction_decisions = {
+	allowed = {
+		tag = BOS
+	}
+	visible = {
+		always = no
+		has_country_flag = bos_administrative_decisions_enabled
+	}
+	icon = GFX_decision_mainframe_2
+	picture = GFX_event_BOS_underground_construction
+}
+
+bos_paladin_soldiers_decisions = {
+	allowed = {
+		tag = BOS
+	}
+	visible = {
+		has_country_flag = bos_paladin_decisions_enabled
+	}
+	icon = GFX_decision_t51_vb_armor
+	#picture = GFX_event_MOJ_contact_the_west
+}
+
+bos_expeditions_decisions = {
+	allowed = {
+		tag = BOS
+	}
+	visible = {
+		has_country_flag = bos_enabled_expeditions
+	}
+	picture = GFX_ach_hood_decision_menu
+}
+
+bos_lost_hills_politics = {
+	icon = GFX_decision_note
+	allowed = {
+		tag = BOS
+	}
+	visible = {
+		NOT = { has_country_leader_with_trait = bos_absolute_brotherhood_high_elder }
+	}
+}
+
+bos_lost_hills_steel_plague = {
+	icon = GFX_decision_mainframe_2
+	picture = GFX_decision_cat_steel_plague
+	allowed = {
+		tag = BOS
+	}
+	visible = {
+		has_government = intellectuals
+	}
+}
+
+bos_lost_hills_diplomacy = {
+	visible = {
+		OR = {
+			original_tag = BOS
+			is_neighbor_of = BOS
+			is_in_array = {
+				array = global.bos_ledger_members
+				value = THIS
+			}
+		}
+	}
+	icon = GFX_decision_papers
+}

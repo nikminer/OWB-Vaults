@@ -1,1369 +1,1415 @@
 bos_underground_construction_decisions = {
 	# Expand Decisions
 		bos_underground_expansion_decision = {
-		icon = GFX_decision_blueprint_2
-		fire_only_once = no
-		days_remove = 60
-		cost = 10
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 0
+			icon = GFX_decision_blueprint_2
+			fire_only_once = no
+			days_remove = 60
+			cost = 10
+			# days_re_enable = 5
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 800
+					check_variable = {
+						var = BOS_underground_construction_slots
+						value = 1
+						compare = less_than
+					}
+				}
+			}
+			visible = {
+				always = no
+			}
+			available = {
+				has_manpower > 99
+				BOS_has_x_available_administration_capacity = yes
+			}
 			modifier = {
-				add = 800
-				check_variable = {
-					var = BOS_underground_construction_slots
-					value = 1
-					compare = less_than
-				}
+				bos_administration_capacity_usage = 1
 			}
-		}
-		visible = {
-			always = no
-		}
-		available = {
-			has_manpower > 99
-			BOS_has_x_available_administration_capacity = yes
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-		}
-		complete_effect = {
-			add_manpower = -100
-		}
-		remove_effect = {
-			set_temp_variable = {
-				BOS_underground_construction_slots_to_add = 1
+			complete_effect = {
+				add_manpower = -100
 			}
-			bos_add_underground_construction_slots = yes
-			random_list = {
-				80 = {
-					add_manpower = 100
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
+			remove_effect = {
+				set_temp_variable = {
+					BOS_underground_construction_slots_to_add = 1
+				}
+				bos_add_underground_construction_slots = yes
+				random_list = {
+					80 = {
+						add_manpower = 100
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
 					}
-				}
-				10 = {
-					add_manpower = 90
-				}
-				5 = {
-					add_manpower = 80
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
+					10 = {
+						add_manpower = 90
 					}
-				}
-				5 = {
-					add_manpower = 40
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
+					5 = {
+						add_manpower = 80
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
+					5 = {
+						add_manpower = 40
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
 					}
 				}
 			}
-		}
 		}
 		bos_underground_dig_deeper_decision = {
-		icon = GFX_decision_welding
-		fire_only_once = yes
-		days_remove = 365
-		custom_cost_text = army_xp_more_than_100
-		cost = 300
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 0
+			icon = GFX_decision_welding
+			fire_only_once = yes
+			days_remove = 365
+			custom_cost_text = army_xp_more_than_100
+			cost = 300
+			# days_re_enable = 5
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 800
+					set_temp_variable = {
+						BOS_available_space_to_check_num = 20
+					}
+					NOT = {
+						BOS_has_x_available_space = yes
+					}
+				}
+			}
+			visible = {
+				always = no
+			}
+			available = {
+				has_completed_focus = bos_nf_room_to_grow
+				custom_trigger_tooltip = {
+					tooltip = bos_underground_dig_deeper_decision_has_not_reached_the_bottom
+					NOT = {
+						check_variable = {
+							var = BOS_how_close_to_bottom
+							value = 10
+							compare = greater_than_or_equals
+						}
+					}
+				}
+				has_manpower > 999
+				BOS_has_x_available_administration_capacity = yes
+			}
 			modifier = {
-				add = 800
+				bos_administration_capacity_usage = 1
+				political_power_factor = -0.5
+			}
+			complete_effect = {
+				add_manpower = -1000
+			}
+			remove_effect = {
+				add_to_variable = {
+					BOS_how_close_to_bottom = 1
+				}
 				set_temp_variable = {
-					BOS_available_space_to_check_num = 20
+					BOS_maximum_space_to_change = 30
 				}
-				NOT = {
-					BOS_has_x_available_space = yes
-				}
-			}
-		}
-		visible = {
-			always = no
-		}
-		available = {
-			has_completed_focus = bos_nf_room_to_grow
-			custom_trigger_tooltip = {
-				tooltip = bos_underground_dig_deeper_decision_has_not_reached_the_bottom
-				NOT = {
-					check_variable = {
-						var = BOS_how_close_to_bottom
-						value = 10
-						compare = greater_than_or_equals
+				bos_change_maximum_space = yes
+				random_list = {
+					10 = {
+						add_manpower = 1000
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
+					}
+					30 = {
+						add_manpower = 900
+						modifier = {
+							factor = 1.5
+							BOS_has_safety_department = yes
+						}
+					}
+					30 = {
+						add_manpower = 500
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
+					25 = {
+						add_manpower = 200
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
+					5 = {
+						add_manpower = 5
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
 					}
 				}
 			}
-			has_manpower > 999
-			BOS_has_x_available_administration_capacity = yes
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-			political_power_factor = -0.5
-		}
-		complete_effect = {
-			add_manpower = -1000
-		}
-		remove_effect = {
-			add_to_variable = {
-				BOS_how_close_to_bottom = 1
-			}
-			set_temp_variable = {
-				BOS_maximum_space_to_change = 30
-			}
-			bos_change_maximum_space = yes
-			random_list = {
-				10 = {
-					add_manpower = 1000
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
-					}
-				}
-				30 = {
-					add_manpower = 900
-					modifier = {
-						factor = 1.5
-						BOS_has_safety_department = yes
-					}
-				}
-				30 = {
-					add_manpower = 500
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
-					}
-				}
-				25 = {
-					add_manpower = 200
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
-					}
-				}
-				5 = {
-					add_manpower = 5
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
-					}
-				}
-			}
-		}
 		}
 
 	# Effot Decisions
 		bos_underground_construction_boost_decision = {
-		icon = GFX_decision_wrench
-		fire_only_once = no
-		days_remove = 100
-		custom_cost_trigger = {
-			command_power > 24
-		}
-		visible = {
-			always = no
-		}
-		custom_cost_text = command_power_more_than_25
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 200
-		}
-		available = {
-			has_completed_focus = bos_nf_engineers_of_peace
-			has_manpower > 99
-			BOS_has_x_available_administration_capacity = yes
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-			production_speed_buildings_factor = 0.1
-		}
-		complete_effect = {
-			hidden_effect = {
-				add_command_power = -25
+			icon = GFX_decision_wrench
+			fire_only_once = no
+			days_remove = 100
+			custom_cost_trigger = {
+				command_power > 24
 			}
-			add_manpower = -100
-		}
-		remove_effect = {
-			random_list = {
-				90 = {
-					add_manpower = 100
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
+			visible = {
+				always = no
+			}
+			custom_cost_text = command_power_more_than_25
+			# days_re_enable = 5
+			ai_will_do = {
+				base = 200
+			}
+			available = {
+				has_completed_focus = bos_nf_engineers_of_peace
+				has_manpower > 99
+				BOS_has_x_available_administration_capacity = yes
+			}
+			modifier = {
+				bos_administration_capacity_usage = 1
+				production_speed_buildings_factor = 0.1
+			}
+			complete_effect = {
+				hidden_effect = {
+					add_command_power = -25
+				}
+				add_manpower = -100
+			}
+			remove_effect = {
+				random_list = {
+					90 = {
+						add_manpower = 100
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
+					}
+					10 = {
+						add_manpower = 95
 					}
 				}
-				10 = {
-					add_manpower = 95
-				}
 			}
-		}
 		}
 		bos_underground_production_boost_decision = {
-		icon = GFX_decision_hammer
-		fire_only_once = no
-		days_remove = 100
-		custom_cost_trigger = {
-			command_power > 24
-		}
-		visible = {
-			always = no
-		}
-		custom_cost_text = command_power_more_than_25
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 200
-		}
-		available = {
-			has_completed_focus = bos_nf_engineers_of_war
-			has_manpower > 99
-			BOS_has_x_available_administration_capacity = yes
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-			industrial_capacity_factory = 0.1
-		}
-		complete_effect = {
-			hidden_effect = {
-				add_command_power = -25
+			icon = GFX_decision_hammer
+			fire_only_once = no
+			days_remove = 100
+			custom_cost_trigger = {
+				command_power > 24
 			}
-			add_manpower = -100
-		}
-		remove_effect = {
-			random_list = {
-				90 = {
-					add_manpower = 100
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
+			visible = {
+				always = no
+			}
+			custom_cost_text = command_power_more_than_25
+			# days_re_enable = 5
+			ai_will_do = {
+				base = 200
+			}
+			available = {
+				has_completed_focus = bos_nf_engineers_of_war
+				has_manpower > 99
+				BOS_has_x_available_administration_capacity = yes
+			}
+			modifier = {
+				bos_administration_capacity_usage = 1
+				industrial_capacity_factory = 0.1
+			}
+			complete_effect = {
+				hidden_effect = {
+					add_command_power = -25
+				}
+				add_manpower = -100
+			}
+			remove_effect = {
+				random_list = {
+					90 = {
+						add_manpower = 100
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
+					}
+					10 = {
+						add_manpower = 95
 					}
 				}
-				10 = {
-					add_manpower = 95
-				}
 			}
-		}
 		}
 		bos_underground_research_boost_decision = {
-		icon = GFX_decision_category_research
-		fire_only_once = no
-		days_remove = 100
-		custom_cost_trigger = {
-			command_power > 24
-		}
-		visible = {
-			always = no
-		}
-		custom_cost_text = command_power_more_than_25
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 200
-		}
-		available = {
-			has_completed_focus = bos_nf_keepers_of_knowledge
-			has_manpower > 99
-			BOS_has_x_available_administration_capacity = yes
-		}
-		complete_effect = {
-			hidden_effect = {
-				add_command_power = -25
+			icon = GFX_decision_category_research
+			fire_only_once = no
+			days_remove = 100
+			custom_cost_trigger = {
+				command_power > 24
 			}
-			add_manpower = -100
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-			research_speed_factor = 0.1
-		}
-		remove_effect = {
-			random_list = {
-				90 = {
-					add_manpower = 100
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
+			visible = {
+				always = no
+			}
+			custom_cost_text = command_power_more_than_25
+			# days_re_enable = 5
+			ai_will_do = {
+				base = 200
+			}
+			available = {
+				has_completed_focus = bos_nf_keepers_of_knowledge
+				has_manpower > 99
+				BOS_has_x_available_administration_capacity = yes
+			}
+			complete_effect = {
+				hidden_effect = {
+					add_command_power = -25
+				}
+				add_manpower = -100
+			}
+			modifier = {
+				bos_administration_capacity_usage = 1
+				research_speed_factor = 0.1
+			}
+			remove_effect = {
+				random_list = {
+					90 = {
+						add_manpower = 100
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
+					}
+					10 = {
+						add_manpower = 95
 					}
 				}
-				10 = {
-					add_manpower = 95
-				}
 			}
-		}
 		}
 		bos_underground_pp_boost_decision = {
-		icon = GFX_decision_intercom
-		fire_only_once = no
-		days_remove = 100
-		custom_cost_trigger = {
-			command_power > 24
-		}
-		custom_cost_text = command_power_more_than_25
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 200
-		}
-		visible = {
-			always = no
-		}
-		available = {
-			has_completed_focus = bos_nf_bringers_of_progress
-			has_manpower > 99
-			BOS_has_x_available_administration_capacity = yes
-		}
-		complete_effect = {
-			hidden_effect = {
-				add_command_power = -25
+			icon = GFX_decision_intercom
+			fire_only_once = no
+			days_remove = 100
+			custom_cost_trigger = {
+				command_power > 24
 			}
-			add_manpower = -100
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-			political_power_factor = 0.1
-		}
-		remove_effect = {
-			random_list = {
-				90 = {
-					add_manpower = 100
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
+			custom_cost_text = command_power_more_than_25
+			# days_re_enable = 5
+			ai_will_do = {
+				base = 200
+			}
+			visible = {
+				always = no
+			}
+			available = {
+				has_completed_focus = bos_nf_bringers_of_progress
+				has_manpower > 99
+				BOS_has_x_available_administration_capacity = yes
+			}
+			complete_effect = {
+				hidden_effect = {
+					add_command_power = -25
+				}
+				add_manpower = -100
+			}
+			modifier = {
+				bos_administration_capacity_usage = 1
+				political_power_factor = 0.1
+			}
+			remove_effect = {
+				random_list = {
+					90 = {
+						add_manpower = 100
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
+					}
+					10 = {
+						add_manpower = 95
 					}
 				}
-				10 = {
-					add_manpower = 95
-				}
 			}
-		}
 		}
 	
 	# Army Decisions
 		bos_underground_infantry_boost_decision = {
-		icon = GFX_decision_armor
-		fire_only_once = yes
-		days_remove = 90
-		custom_cost_trigger = {
-			has_army_experience > 9
-		}
-		custom_cost_text = army_xp_more_than_10
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 800			#One time
-		}
-		visible = {
-			always = no
-		}
-		available = {
-			has_completed_focus = bos_nf_filled_with_purpose
-			has_manpower > 99
-			BOS_has_x_available_administration_capacity = yes
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-		}
-		complete_effect = {
-			hidden_effect = {
-				army_experience = -10
+			icon = GFX_decision_armor
+			fire_only_once = yes
+			days_remove = 90
+			custom_cost_trigger = {
+				has_army_experience > 9
 			}
-			add_manpower = -100
-		}
-		remove_effect = {
-			add_tech_bonus = {
-				name = bos_underground_infantry_boost_decision
-				bonus = 1
-				uses = 1
-				ahead_reduction = 4
-				category = infantry_tech_category
+			custom_cost_text = army_xp_more_than_10
+			# days_re_enable = 5
+			ai_will_do = {
+				base = 800			#One time
 			}
-			random_list = {
-				80 = {
-					add_manpower = 100
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
+			visible = {
+				always = no
+			}
+			available = {
+				has_completed_focus = bos_nf_filled_with_purpose
+				has_manpower > 99
+				BOS_has_x_available_administration_capacity = yes
+			}
+			modifier = {
+				bos_administration_capacity_usage = 1
+			}
+			complete_effect = {
+				hidden_effect = {
+					army_experience = -10
+				}
+				add_manpower = -100
+			}
+			remove_effect = {
+				add_tech_bonus = {
+					name = bos_underground_infantry_boost_decision
+					bonus = 1
+					uses = 1
+					ahead_reduction = 4
+					category = infantry_tech_category
+				}
+				random_list = {
+					80 = {
+						add_manpower = 100
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
+					}
+					10 = {
+						add_manpower = 95
+					}
+					10 = {
+						add_manpower = 70
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
 					}
 				}
-				10 = {
-					add_manpower = 95
-				}
-				10 = {
-					add_manpower = 70
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
-					}
-				}
 			}
-		}
 		}
 		bos_underground_power_armour_boost_decision = {
-		icon = GFX_decision_t51_vb_armor
-		fire_only_once = yes
-		days_remove = 90
-		custom_cost_trigger = {
-			has_army_experience > 9
-		}
-		custom_cost_text = army_xp_more_than_10
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 800			#One time
-		}
-		visible = {
-			always = no
-		}
-		available = {
-			has_completed_focus = bos_nf_memories_of_heroes
-			has_manpower > 99
-			BOS_has_x_available_administration_capacity = yes
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-		}
-		complete_effect = {
-			hidden_effect = {
-				army_experience = -10
+			icon = GFX_decision_t51_vb_armor
+			fire_only_once = yes
+			days_remove = 90
+			custom_cost_trigger = {
+				has_army_experience > 9
 			}
-			add_manpower = -100
-		}
-		remove_effect = {
-			add_tech_bonus = {
-				name = bos_underground_power_armour_boost_decision
-				bonus = 1
-				uses = 1
-				ahead_reduction = 4
-				category = power_armor_tech_category
+			custom_cost_text = army_xp_more_than_10
+			# days_re_enable = 5
+			ai_will_do = {
+				base = 800			#One time
 			}
-			random_list = {
-				80 = {
-					add_manpower = 100
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
+			visible = {
+				always = no
+			}
+			available = {
+				has_completed_focus = bos_nf_memories_of_heroes
+				has_manpower > 99
+				BOS_has_x_available_administration_capacity = yes
+			}
+			modifier = {
+				bos_administration_capacity_usage = 1
+			}
+			complete_effect = {
+				hidden_effect = {
+					army_experience = -10
+				}
+				add_manpower = -100
+			}
+			remove_effect = {
+				add_tech_bonus = {
+					name = bos_underground_power_armour_boost_decision
+					bonus = 1
+					uses = 1
+					ahead_reduction = 4
+					category = power_armor_tech_category
+				}
+				random_list = {
+					80 = {
+						add_manpower = 100
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
+					}
+					10 = {
+						add_manpower = 95
+					}
+					10 = {
+						add_manpower = 70
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
 					}
 				}
-				10 = {
-					add_manpower = 95
+			}
+		}
+	# Level 1
+		bos_underground_build_expeditionary_department_decision = {
+			icon = GFX_decision_jeep
+			fire_only_once = no
+			days_remove = 60
+			cost = 10
+			# days_re_enable = 5
+			ai_will_do = {
+				base = 400
+			}
+			visible = {
+				always = no
+			}
+			available = {
+				has_manpower > 499
+				set_temp_variable = {
+					BOS_need_construction_slots_num = 1
 				}
-				10 = {
-					add_manpower = 70
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
+				BOS_has_x_available_construction_slots = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 2
+				}
+				BOS_has_x_available_space = yes
+				BOS_has_x_available_administration_capacity = yes
+				set_temp_variable = {
+					BOS_temp_building_to_test = BOS.BOS_expeditionary_departments
+				}
+				set_temp_variable = {
+					BOS_temp_building_to_test_max = BOS.BOS_maximum_expeditionary_departments_allowed
+				}
+				bos_has_not_reached_building_cap = yes
+			}
+
+			complete_effect = {
+				add_manpower = -500
+				set_temp_variable = {
+					BOS_available_space_to_change = 2
+				}
+				bos_change_available_space = yes
+				bos_minus_one_construction_slots_simple = yes
+			}
+			modifier = {
+				bos_administration_capacity_usage = 1
+			}
+			remove_effect = {
+				bos_create_expeditionary_department = yes
+				random_list = {
+					50 = {
+						add_manpower = 500
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
+					}
+					30 = {
+						add_manpower = 450
+					}
+					15 = {
+						add_manpower = 400
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
+					5 = {
+						add_manpower = 300
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
 					}
 				}
 			}
 		}
-		}
-	# Building Decisions
-	bos_underground_build_civilian_workshop_decision = {
-		icon = GFX_decision_minning_helmet
-		fire_only_once = no
-		days_remove = 60
-		cost = 10
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 550			# Higher prio for civs and arms then resource buildings
-		}
-		available = {
-			has_manpower > 499
-			set_temp_variable = {
-				BOS_need_construction_slots_num = 1
+		bos_underground_build_simulators_decision = {
+			icon = GFX_decision_terminal
+			fire_only_once = yes
+			days_remove = 180		# Needs to be changed to 180
+			custom_cost_trigger = {
+				has_army_experience > 24
 			}
-			BOS_has_x_available_construction_slots = yes
-			set_temp_variable = {
-				BOS_available_space_to_check_num = 1
+			custom_cost_text = army_xp_more_than_25
+			cost = 30
+			# days_re_enable = 5
+			ai_will_do = {
+				base = 550
 			}
-			BOS_has_x_available_space = yes
-			BOS_has_x_available_administration_capacity = yes
-			157 = {
-				industrial_complex > 0
+			visible = {
+				always = no
+			}
+			available = {
+				has_completed_focus = bos_nf_new_developments
+				has_manpower > 99
+				BOS_has_x_available_administration_capacity = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 10
+				}
+				BOS_has_x_available_space = yes
+			}
+			modifier = {
+				bos_administration_capacity_usage = 1
+				experience_gain_army_factor = -0.5
+			}
+			complete_effect = {
+				hidden_effect = {
+					army_experience = -25
+				}
+				set_temp_variable = {
+					BOS_available_space_to_change = 10
+				}
+				bos_change_available_space = yes
+				add_manpower = -100
+			}
+			remove_effect = {
+				unlock_decision_category_tooltip = tbh_simulator_decisions
+				set_country_flag = simulator_decisions_enabled
+				random_list = {
+					80 = {
+						add_manpower = 100
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
+					}
+					10 = {
+						add_manpower = 95
+					}
+					10 = {
+						add_manpower = 70
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
+				}
 			}
 		}
-		modifier = {
-			bos_administration_capacity_usage = 1
+		bos_underground_condense_civilian_workshop_decision = {
+			icon = GFX_decision_hard_hat
+			fire_only_once = no
+			days_remove = 60
+			cost = 10
+			# days_re_enable = 5
+			ai_will_do = {
+				base = 500
+			}
+			visible = {
+				always = no
+			}
+			available = {
+				has_manpower > 499
+				BOS_has_x_available_administration_capacity = yes
+				custom_trigger_tooltip = {
+					tooltip = has_five_offmap_civs
+					check_variable = {
+						BOS_off_map_civs > 4
+					}
+				}
+				#Hide the tooltip if its not relevant
+				if = {
+					limit = {
+						NOT = {
+							num_of_civilian_factories > 5
+						}
+					}
+					num_of_civilian_factories > 5
+				}
+				set_temp_variable = {
+					BOS_temp_building_to_test = BOS_condensed_civilian_workshop
+				}
+				set_temp_variable = {
+					BOS_temp_building_to_test_max = BOS_maximum_condensed_workshops_allowed
+				}
+				bos_has_not_reached_building_cap = yes
+			}
+			modifier = {
+				bos_administration_capacity_usage = 1
+			}
+			complete_effect = {
+				add_manpower = -500
+				add_offsite_building = {
+					type = industrial_complex
+					level = -5
+				}
+				add_to_variable = {
+					BOS_off_map_civs = -5
+				}
+				set_temp_variable = {
+					BOS_available_space_to_change = -4
+				}
+				bos_change_available_space = yes
+			}
+			remove_effect = {
+				bos_create_condensed_civilian_workshop = yes
+				random_list = {
+					50 = {
+						add_manpower = 500
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
+					}
+					30 = {
+						add_manpower = 450
+					}
+					15 = {
+						add_manpower = 400
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
+					5 = {
+						add_manpower = 300
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
+				}
+			}
 		}
-		complete_effect = {
-			add_manpower = -500
-			157 = {
-				remove_building = {
+		bos_underground_build_paladin_training_decision = {
+			icon = GFX_decision_knife_2
+			fire_only_once = no
+			days_remove = 60
+			cost = 10
+			# days_re_enable = 5
+			ai_will_do = {
+				base = 400
+			}
+			visible = {
+				always = no
+			}
+			available = {
+				has_manpower > 499
+				set_temp_variable = {
+					BOS_need_construction_slots_num = 1
+				}
+				BOS_has_x_available_construction_slots = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 2
+				}
+				BOS_has_x_available_space = yes
+				BOS_has_x_available_administration_capacity = yes
+				set_temp_variable = {
+					BOS_temp_building_to_test = BOS_underground_building_training
+				}
+				set_temp_variable = {
+					BOS_temp_building_to_test_max = BOS_maximum_training_facilities_allowed
+				}
+				bos_has_not_reached_building_cap = yes
+			}
+			complete_effect = {
+				add_manpower = -500
+				set_temp_variable = {
+					BOS_available_space_to_change = 2
+				}
+				bos_change_available_space = yes
+				bos_minus_one_construction_slots_simple = yes
+			}
+			modifier = {
+				bos_administration_capacity_usage = 1
+			}
+			remove_effect = {
+				bos_create_training_facilities = yes
+				random_list = {
+					50 = {
+						add_manpower = 500
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
+					}
+					30 = {
+						add_manpower = 450
+					}
+					15 = {
+						add_manpower = 400
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
+					5 = {
+						add_manpower = 300
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
+				}
+			}
+		}
+	# Level 2
+		bos_underground_build_civilian_workshop_decision = {
+			icon = GFX_decision_minning_helmet
+			fire_only_once = no
+			days_remove = 60
+			cost = 10
+			# days_re_enable = 5
+			ai_will_do = {
+				base = 550			# Higher prio for civs and arms then resource buildings
+			}
+			visible = {
+				always = no
+			}
+			available = {
+				has_manpower > 499
+				set_temp_variable = {
+					BOS_need_construction_slots_num = 1
+				}
+				BOS_has_x_available_construction_slots = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 1
+				}
+				BOS_has_x_available_space = yes
+				BOS_has_x_available_administration_capacity = yes
+				157 = {
+					industrial_complex > 0
+				}
+			}
+			modifier = {
+				bos_administration_capacity_usage = 1
+			}
+			complete_effect = {
+				add_manpower = -500
+				157 = {
+					remove_building = {
+						type = industrial_complex
+						level = 1
+					}
+				}
+				set_temp_variable = {
+					BOS_available_space_to_change = 1
+				}
+				bos_change_available_space = yes
+				bos_minus_one_construction_slots_simple = yes
+			}
+
+			remove_effect = {
+				add_to_variable = {
+					BOS_off_map_civs = 1
+				}
+				add_offsite_building = {
 					type = industrial_complex
 					level = 1
 				}
-			}
-			set_temp_variable = {
-				BOS_available_space_to_change = 1
-			}
-			bos_change_available_space = yes
-			bos_minus_one_construction_slots_simple = yes
-		}
-		remove_effect = {
-			add_to_variable = {
-				BOS_off_map_civs = 1
-			}
-			add_offsite_building = {
-				type = industrial_complex
-				level = 1
-			}
-			random_list = {
-				50 = {
-					add_manpower = 500
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
+				random_list = {
+					50 = {
+						add_manpower = 500
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
 					}
-				}
-				30 = {
-					add_manpower = 450
-				}
-				15 = {
-					add_manpower = 400
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
+					30 = {
+						add_manpower = 450
 					}
-				}
-				5 = {
-					add_manpower = 300
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
+					15 = {
+						add_manpower = 400
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
+					5 = {
+						add_manpower = 300
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
 					}
 				}
 			}
 		}
-	}
-	bos_underground_build_military_workshop_decision = {
-		icon = GFX_decision_deagle
-		fire_only_once = no
-		days_remove = 60
-		cost = 10
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 550			#Higher prio for civs and arms then resource buildings
-		}
-		available = {
-			has_manpower > 499
-			set_temp_variable = {
-				BOS_need_construction_slots_num = 1
+		bos_underground_build_safety_department_decision = {
+			icon = GFX_decision_med_bag
+			fire_only_once = no
+			days_remove = 60
+			cost = 10
+			# days_re_enable = 5
+			ai_will_do = {
+				base = 900			#Highest, this is always top priority
 			}
-			BOS_has_x_available_construction_slots = yes
-			set_temp_variable = {
-				BOS_available_space_to_check_num = 1
+			visible = {
+				always = no
 			}
-			BOS_has_x_available_space = yes
-			BOS_has_x_available_administration_capacity = yes
-			157 = {
-				arms_factory > 0
+			available = {
+				has_manpower > 499
+				set_temp_variable = {
+					BOS_need_construction_slots_num = 1
+				}
+				BOS_has_x_available_construction_slots = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 10
+				}
+				BOS_has_x_available_space = yes
+				BOS_has_x_available_administration_capacity = yes
+				set_temp_variable = {
+					BOS_temp_building_to_test = BOS_underground_building_safety_department
+				}
+				set_temp_variable = {
+					BOS_temp_building_to_test_max = BOS_maximum_safety_departments_allowed
+				}
+				bos_has_not_reached_building_cap = yes
+			}
+			complete_effect = {
+				add_manpower = -500
+				set_temp_variable = {
+					BOS_available_space_to_change = 10
+				}
+				bos_change_available_space = yes
+				bos_minus_one_construction_slots_simple = yes
+			}
+			modifier = {
+				bos_administration_capacity_usage = 1
+			}
+			remove_effect = {
+				bos_create_safety_department = yes
+				add_manpower = 500
 			}
 		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-		}
-		complete_effect = {
-			add_manpower = -500
-			157 = {
-				remove_building = {
-					type = arms_factory
-					level = 1
+		bos_underground_build_metal_generator_decision = {
+			icon = GFX_decision_gold
+			fire_only_once = no
+			days_remove = 60
+			cost = 10
+			# days_re_enable = 5
+			ai_will_do = {
+				base = 500
+			}
+			visible = {
+				always = no
+			}
+			available = {
+				has_manpower > 499
+				set_temp_variable = {
+					BOS_need_construction_slots_num = 1
+				}
+				BOS_has_x_available_construction_slots = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 1
+				}
+				BOS_has_x_available_space = yes
+				BOS_has_x_available_administration_capacity = yes
+				157 = {
+					metal_generator > 0
 				}
 			}
-			set_temp_variable = {
-				BOS_available_space_to_change = 1
+			modifier = {
+				bos_administration_capacity_usage = 1
 			}
-			bos_change_available_space = yes
-			bos_minus_one_construction_slots_simple = yes
-		}
-		remove_effect = {
-			add_offsite_building = {
-				type = arms_factory
-				level = 1
-			}
-			random_list = {
-				50 = {
-					add_manpower = 500
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
+			complete_effect = {
+				add_manpower = -500
+				157 = {
+					remove_building = {
+						type = metal_generator
+						level = 1
 					}
 				}
-				30 = {
-					add_manpower = 450
+				set_temp_variable = {
+					BOS_available_space_to_change = 1
 				}
-				15 = {
-					add_manpower = 400
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
-					}
-				}
-				5 = {
-					add_manpower = 300
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
-					}
-				}
+				bos_change_available_space = yes
+				bos_minus_one_construction_slots_simple = yes
 			}
-		}
-	}
-	bos_underground_build_power_generator_decision = {
-		icon = GFX_decision_battery
-		fire_only_once = no
-		days_remove = 60
-		cost = 10
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 500
-		}
-		available = {
-			has_manpower > 499
-			set_temp_variable = {
-				BOS_need_construction_slots_num = 1
-			}
-			BOS_has_x_available_construction_slots = yes
-			set_temp_variable = {
-				BOS_available_space_to_check_num = 1
-			}
-			BOS_has_x_available_space = yes
-			BOS_has_x_available_administration_capacity = yes
-			157 = {
-				electricity_generator > 0
-			}
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-		}
-		complete_effect = {
-			add_manpower = -500
-			157 = {
-				remove_building = {
-					type = electricity_generator
-					level = 1
-				}
-			}
-			set_temp_variable = {
-				BOS_available_space_to_change = 1
-			}
-			bos_change_available_space = yes
-			bos_minus_one_construction_slots_simple = yes
-		}
-		remove_effect = {
-			add_offsite_building = {
-				type = electricity_generator
-				level = 1
-			}
-			random_list = {
-				50 = {
-					add_manpower = 500
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
-					}
-				}
-				30 = {
-					add_manpower = 450
-				}
-				15 = {
-					add_manpower = 400
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
-					}
-				}
-				5 = {
-					add_manpower = 300
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
-					}
-				}
-			}
-		}
-	}
-	bos_underground_build_metal_generator_decision = {
-		icon = GFX_decision_gold
-		fire_only_once = no
-		days_remove = 60
-		cost = 10
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 500
-		}
-		available = {
-			has_manpower > 499
-			set_temp_variable = {
-				BOS_need_construction_slots_num = 1
-			}
-			BOS_has_x_available_construction_slots = yes
-			set_temp_variable = {
-				BOS_available_space_to_check_num = 1
-			}
-			BOS_has_x_available_space = yes
-			BOS_has_x_available_administration_capacity = yes
-			157 = {
-				metal_generator > 0
-			}
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-		}
-		complete_effect = {
-			add_manpower = -500
-			157 = {
-				remove_building = {
+			remove_effect = {
+				add_offsite_building = {
 					type = metal_generator
 					level = 1
 				}
-			}
-			set_temp_variable = {
-				BOS_available_space_to_change = 1
-			}
-			bos_change_available_space = yes
-			bos_minus_one_construction_slots_simple = yes
-		}
-		remove_effect = {
-			add_offsite_building = {
-				type = metal_generator
-				level = 1
-			}
-			random_list = {
-				50 = {
-					add_manpower = 500
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
+				random_list = {
+					50 = {
+						add_manpower = 500
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
 					}
-				}
-				30 = {
-					add_manpower = 450
-				}
-				15 = {
-					add_manpower = 400
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
+					30 = {
+						add_manpower = 450
 					}
-				}
-				5 = {
-					add_manpower = 300
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
+					15 = {
+						add_manpower = 400
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
+					5 = {
+						add_manpower = 300
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
 					}
 				}
 			}
 		}
-	}
-	bos_underground_build_water_generator_decision = {
-		icon = GFX_decision_water_pump
-		fire_only_once = no
-		days_remove = 60
-		cost = 10
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 500
-		}
-		available = {
-			has_manpower > 499
-			set_temp_variable = {
-				BOS_need_construction_slots_num = 1
+		bos_underground_build_water_generator_decision = {
+			icon = GFX_decision_water_pump
+			fire_only_once = no
+			days_remove = 60
+			cost = 10
+			# days_re_enable = 5
+			ai_will_do = {
+				base = 500
 			}
-			BOS_has_x_available_construction_slots = yes
-			set_temp_variable = {
-				BOS_available_space_to_check_num = 1
+			visible = {
+				always = no
 			}
-			BOS_has_x_available_space = yes
-			BOS_has_x_available_administration_capacity = yes
-			157 = {
-				water_generator > 0
+			available = {
+				has_manpower > 499
+				set_temp_variable = {
+					BOS_need_construction_slots_num = 1
+				}
+				BOS_has_x_available_construction_slots = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 1
+				}
+				BOS_has_x_available_space = yes
+				BOS_has_x_available_administration_capacity = yes
+				157 = {
+					water_generator > 0
+				}
 			}
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-		}
-		complete_effect = {
-			add_manpower = -500
-			157 = {
-				remove_building = {
+			modifier = {
+				bos_administration_capacity_usage = 1
+			}
+			complete_effect = {
+				add_manpower = -500
+				157 = {
+					remove_building = {
+						type = water_generator
+						level = 1
+					}
+				}
+				set_temp_variable = {
+					BOS_available_space_to_change = 1
+				}
+				bos_change_available_space = yes
+				bos_minus_one_construction_slots_simple = yes
+			}
+			remove_effect = {
+				add_offsite_building = {
 					type = water_generator
 					level = 1
 				}
-			}
-			set_temp_variable = {
-				BOS_available_space_to_change = 1
-			}
-			bos_change_available_space = yes
-			bos_minus_one_construction_slots_simple = yes
-		}
-		remove_effect = {
-			add_offsite_building = {
-				type = water_generator
-				level = 1
-			}
-			random_list = {
-				50 = {
-					add_manpower = 500
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
+				random_list = {
+					50 = {
+						add_manpower = 500
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
 					}
-				}
-				30 = {
-					add_manpower = 450
-				}
-				15 = {
-					add_manpower = 400
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
+					30 = {
+						add_manpower = 450
 					}
-				}
-				5 = {
-					add_manpower = 300
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
+					15 = {
+						add_manpower = 400
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
+					5 = {
+						add_manpower = 300
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
 					}
 				}
 			}
 		}
-	}
-	bos_underground_build_circuitry_generator_decision = {
-		icon = GFX_decision_chip_blue
-		fire_only_once = no
-		days_remove = 60
-		cost = 10
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 500
-		}
-		available = {
-			has_manpower > 499
-			set_temp_variable = {
-				BOS_need_construction_slots_num = 1
+	# level 3
+		bos_underground_build_circuitry_generator_decision = {
+			icon = GFX_decision_chip_blue
+			fire_only_once = no
+			days_remove = 60
+			cost = 10
+			# days_re_enable = 5
+			ai_will_do = {
+				base = 500
 			}
-			BOS_has_x_available_construction_slots = yes
-			set_temp_variable = {
-				BOS_available_space_to_check_num = 1
+			visible = {
+				always = no
 			}
-			BOS_has_x_available_space = yes
-			BOS_has_x_available_administration_capacity = yes
-			157 = {
-				circuitry_generator > 0
+			available = {
+				has_manpower > 499
+				set_temp_variable = {
+					BOS_need_construction_slots_num = 1
+				}
+				BOS_has_x_available_construction_slots = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 1
+				}
+				BOS_has_x_available_space = yes
+				BOS_has_x_available_administration_capacity = yes
+				157 = {
+					circuitry_generator > 0
+				}
 			}
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-		}
-		complete_effect = {
-			add_manpower = -500
-			157 = {
-				remove_building = {
+			modifier = {
+				bos_administration_capacity_usage = 1
+			}
+			complete_effect = {
+				add_manpower = -500
+				157 = {
+					remove_building = {
+						type = circuitry_generator
+						level = 1
+					}
+				}
+				set_temp_variable = {
+					BOS_available_space_to_change = 1
+				}
+				bos_change_available_space = yes
+				bos_minus_one_construction_slots_simple = yes
+			}
+			remove_effect = {
+				add_offsite_building = {
 					type = circuitry_generator
 					level = 1
 				}
-			}
-			set_temp_variable = {
-				BOS_available_space_to_change = 1
-			}
-			bos_change_available_space = yes
-			bos_minus_one_construction_slots_simple = yes
-		}
-		remove_effect = {
-			add_offsite_building = {
-				type = circuitry_generator
-				level = 1
-			}
-			random_list = {
-				50 = {
-					add_manpower = 500
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
+				random_list = {
+					50 = {
+						add_manpower = 500
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
 					}
-				}
-				30 = {
-					add_manpower = 450
-				}
-				15 = {
-					add_manpower = 400
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
+					30 = {
+						add_manpower = 450
 					}
-				}
-				5 = {
-					add_manpower = 300
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
+					15 = {
+						add_manpower = 400
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
+					5 = {
+						add_manpower = 300
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
 					}
 				}
 			}
 		}
-	}
-	bos_underground_condense_civilian_workshop_decision = {
-		icon = GFX_decision_hard_hat
-		fire_only_once = no
-		days_remove = 60
-		cost = 10
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 500
-		}
-		available = {
-			has_manpower > 499
-			BOS_has_x_available_administration_capacity = yes
-			custom_trigger_tooltip = {
-				tooltip = has_five_offmap_civs
-				check_variable = {
-					BOS_off_map_civs > 4
+		bos_underground_build_military_workshop_decision = {
+			icon = GFX_decision_deagle
+			fire_only_once = no
+			days_remove = 60
+			cost = 10
+			# days_re_enable = 5
+			ai_will_do = {
+				base = 550			#Higher prio for civs and arms then resource buildings
+			}
+			visible = {
+				always = no
+			}
+			available = {
+				has_manpower > 499
+				set_temp_variable = {
+					BOS_need_construction_slots_num = 1
+				}
+				BOS_has_x_available_construction_slots = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 1
+				}
+				BOS_has_x_available_space = yes
+				BOS_has_x_available_administration_capacity = yes
+				157 = {
+					arms_factory > 0
 				}
 			}
-			#Hide the tooltip if its not relevant
-			if = {
-				limit = {
-					NOT = {
-						num_of_civilian_factories > 5
+			modifier = {
+				bos_administration_capacity_usage = 1
+			}
+			complete_effect = {
+				add_manpower = -500
+				157 = {
+					remove_building = {
+						type = arms_factory
+						level = 1
 					}
 				}
-				num_of_civilian_factories > 5
+				set_temp_variable = {
+					BOS_available_space_to_change = 1
+				}
+				bos_change_available_space = yes
+				bos_minus_one_construction_slots_simple = yes
 			}
-			set_temp_variable = {
-				BOS_temp_building_to_test = BOS_condensed_civilian_workshop
+			remove_effect = {
+				add_offsite_building = {
+					type = arms_factory
+					level = 1
+				}
+				random_list = {
+					50 = {
+						add_manpower = 500
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
+					}
+					30 = {
+						add_manpower = 450
+					}
+					15 = {
+						add_manpower = 400
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
+					5 = {
+						add_manpower = 300
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
+				}
 			}
-			set_temp_variable = {
-				BOS_temp_building_to_test_max = BOS_maximum_condensed_workshops_allowed
-			}
-			bos_has_not_reached_building_cap = yes
 		}
-		modifier = {
+		bos_underground_build_laboratory_decision = {
+			icon = GFX_decision_tool
+			fire_only_once = no
+			days_remove = 60
+			cost = 10
+			# days_re_enable = 5
+			ai_will_do = {
+				base = 400
+			}
+			visible = {
+				always = no
+			}
+			available = {
+				has_manpower > 499
+				set_temp_variable = {
+					BOS_need_construction_slots_num = 1
+				}
+				BOS_has_x_available_construction_slots = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 2
+				}
+				BOS_has_x_available_space = yes
+				BOS_has_x_available_administration_capacity = yes
+				set_temp_variable = {
+					BOS_temp_building_to_test = BOS_underground_building_lab
+				}
+				set_temp_variable = {
+					BOS_temp_building_to_test_max = BOS_maximum_labs_allowed
+				}
+				bos_has_not_reached_building_cap = yes
+			}
+			complete_effect = {
+				add_manpower = -500
+				set_temp_variable = {
+					BOS_available_space_to_change = 2
+				}
+				bos_change_available_space = yes
+				bos_minus_one_construction_slots_simple = yes
+			}
+			modifier = {
+				bos_administration_capacity_usage = 1
+			}
+			remove_effect = {
+				bos_create_laboratories = yes
+				random_list = {
+					50 = {
+						add_manpower = 500
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
+					}
+					30 = {
+						add_manpower = 450
+					}
+					15 = {
+						add_manpower = 400
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
+					5 = {
+						add_manpower = 300
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
+				}
+			}
+		}
+	# level 4
+		bos_underground_build_power_generator_decision = {
+			icon = GFX_decision_battery
+			fire_only_once = no
+			days_remove = 60
+			cost = 10
+			# days_re_enable = 5
+			ai_will_do = {
+				base = 500
+			}
+			visible = {
+				always = no
+			}
+			available = {
+				has_manpower > 499
+				set_temp_variable = {
+					BOS_need_construction_slots_num = 1
+				}
+				BOS_has_x_available_construction_slots = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 1
+				}
+				BOS_has_x_available_space = yes
+				BOS_has_x_available_administration_capacity = yes
+				157 = {
+					electricity_generator > 0
+				}
+			}
+			modifier = {
 			bos_administration_capacity_usage = 1
-		}
-		complete_effect = {
-			add_manpower = -500
-			add_offsite_building = {
-				type = industrial_complex
-				level = -5
 			}
-			add_to_variable = {
-				BOS_off_map_civs = -5
-			}
-			set_temp_variable = {
-				BOS_available_space_to_change = -4
-			}
-			bos_change_available_space = yes
-		}
-		remove_effect = {
-			bos_create_condensed_civilian_workshop = yes
-			random_list = {
-				50 = {
-					add_manpower = 500
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
+			complete_effect = {
+				add_manpower = -500
+				157 = {
+					remove_building = {
+						type = electricity_generator
+						level = 1
 					}
 				}
-				30 = {
-					add_manpower = 450
+				set_temp_variable = {
+					BOS_available_space_to_change = 1
 				}
-				15 = {
-					add_manpower = 400
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
+				bos_change_available_space = yes
+				bos_minus_one_construction_slots_simple = yes
+			}
+			remove_effect = {
+				add_offsite_building = {
+					type = electricity_generator
+					level = 1
+				}
+				random_list = {
+					50 = {
+						add_manpower = 500
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
 					}
-				}
-				5 = {
-					add_manpower = 300
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
+					30 = {
+						add_manpower = 450
 					}
-				}
-			}
-		}
-	}
-	bos_underground_build_laboratory_decision = {
-		icon = GFX_decision_tool
-		fire_only_once = no
-		days_remove = 60
-		cost = 10
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 400
-		}
-		available = {
-			has_manpower > 499
-			set_temp_variable = {
-				BOS_need_construction_slots_num = 1
-			}
-			BOS_has_x_available_construction_slots = yes
-			set_temp_variable = {
-				BOS_available_space_to_check_num = 2
-			}
-			BOS_has_x_available_space = yes
-			BOS_has_x_available_administration_capacity = yes
-			set_temp_variable = {
-				BOS_temp_building_to_test = BOS_underground_building_lab
-			}
-			set_temp_variable = {
-				BOS_temp_building_to_test_max = BOS_maximum_labs_allowed
-			}
-			bos_has_not_reached_building_cap = yes
-		}
-		complete_effect = {
-			add_manpower = -500
-			set_temp_variable = {
-				BOS_available_space_to_change = 2
-			}
-			bos_change_available_space = yes
-			bos_minus_one_construction_slots_simple = yes
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-		}
-		remove_effect = {
-			bos_create_laboratories = yes
-			random_list = {
-				50 = {
-					add_manpower = 500
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
+					15 = {
+						add_manpower = 400
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
 					}
-				}
-				30 = {
-					add_manpower = 450
-				}
-				15 = {
-					add_manpower = 400
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
-					}
-				}
-				5 = {
-					add_manpower = 300
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
+					5 = {
+						add_manpower = 300
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
 					}
 				}
 			}
 		}
-	}
-	bos_underground_build_paladin_training_decision = {
-		icon = GFX_decision_knife_2
-		fire_only_once = no
-		days_remove = 60
-		cost = 10
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 400
-		}
-		available = {
-			has_manpower > 499
-			set_temp_variable = {
-				BOS_need_construction_slots_num = 1
+		bos_underground_build_administration_centers_decision = {
+			icon = GFX_decision_book
+			fire_only_once = no
+			days_remove = 60
+			cost = 10
+			# days_re_enable = 5
+			ai_will_do = {
+				base = 600
 			}
-			BOS_has_x_available_construction_slots = yes
-			set_temp_variable = {
-				BOS_available_space_to_check_num = 2
+			visible = {
+				always = no
 			}
-			BOS_has_x_available_space = yes
-			BOS_has_x_available_administration_capacity = yes
-			set_temp_variable = {
-				BOS_temp_building_to_test = BOS_underground_building_training
+			available = {
+				has_manpower > 499
+				set_temp_variable = {
+					BOS_need_construction_slots_num = 1
+				}
+				BOS_has_x_available_construction_slots = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 10
+				}
+				BOS_has_x_available_space = yes
+				BOS_has_x_available_administration_capacity = yes
+				set_temp_variable = {
+					BOS_temp_building_to_test = BOS.BOS_underground_building_administration_centers
+				}
+				set_temp_variable = {
+					BOS_temp_building_to_test_max = BOS_maximum_admin_centers_allowed
+				}
+				bos_has_not_reached_building_cap = yes
 			}
-			set_temp_variable = {
-				BOS_temp_building_to_test_max = BOS_maximum_training_facilities_allowed
+			complete_effect = {
+				add_manpower = -500
+				set_temp_variable = {
+					BOS_available_space_to_change = 10
+				}
+				bos_change_available_space = yes
+				bos_minus_one_construction_slots_simple = yes
 			}
-			bos_has_not_reached_building_cap = yes
-		}
-		complete_effect = {
-			add_manpower = -500
-			set_temp_variable = {
-				BOS_available_space_to_change = 2
+			modifier = {
+				bos_administration_capacity_usage = 1
 			}
-			bos_change_available_space = yes
-			bos_minus_one_construction_slots_simple = yes
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-		}
-		remove_effect = {
-			bos_create_training_facilities = yes
-			random_list = {
-				50 = {
-					add_manpower = 500
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
+			remove_effect = {
+				bos_create_administration_center = yes
+				random_list = {
+					50 = {
+						add_manpower = 500
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
 					}
-				}
-				30 = {
-					add_manpower = 450
-				}
-				15 = {
-					add_manpower = 400
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
+					30 = {
+						add_manpower = 450
 					}
-				}
-				5 = {
-					add_manpower = 300
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
+					15 = {
+						add_manpower = 400
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
 					}
-				}
-			}
-		}
-	}
-	bos_underground_build_safety_department_decision = {
-		icon = GFX_decision_med_bag
-		fire_only_once = no
-		days_remove = 60
-		cost = 10
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 900			#Highest, this is always top priority
-		}
-		available = {
-			has_manpower > 499
-			set_temp_variable = {
-				BOS_need_construction_slots_num = 1
-			}
-			BOS_has_x_available_construction_slots = yes
-			set_temp_variable = {
-				BOS_available_space_to_check_num = 10
-			}
-			BOS_has_x_available_space = yes
-			BOS_has_x_available_administration_capacity = yes
-			set_temp_variable = {
-				BOS_temp_building_to_test = BOS_underground_building_safety_department
-			}
-			set_temp_variable = {
-				BOS_temp_building_to_test_max = BOS_maximum_safety_departments_allowed
-			}
-			bos_has_not_reached_building_cap = yes
-		}
-		complete_effect = {
-			add_manpower = -500
-			set_temp_variable = {
-				BOS_available_space_to_change = 10
-			}
-			bos_change_available_space = yes
-			bos_minus_one_construction_slots_simple = yes
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-		}
-		remove_effect = {
-			bos_create_safety_department = yes
-			add_manpower = 500
-		}
-	}
-	bos_underground_build_administration_centers_decision = {
-		icon = GFX_decision_book
-		fire_only_once = no
-		days_remove = 60
-		cost = 10
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 600
-		}
-		available = {
-			has_manpower > 499
-			set_temp_variable = {
-				BOS_need_construction_slots_num = 1
-			}
-			BOS_has_x_available_construction_slots = yes
-			set_temp_variable = {
-				BOS_available_space_to_check_num = 10
-			}
-			BOS_has_x_available_space = yes
-			BOS_has_x_available_administration_capacity = yes
-			set_temp_variable = {
-				BOS_temp_building_to_test = BOS.BOS_underground_building_administration_centers
-			}
-			set_temp_variable = {
-				BOS_temp_building_to_test_max = BOS_maximum_admin_centers_allowed
-			}
-			bos_has_not_reached_building_cap = yes
-		}
-		complete_effect = {
-			add_manpower = -500
-			set_temp_variable = {
-				BOS_available_space_to_change = 10
-			}
-			bos_change_available_space = yes
-			bos_minus_one_construction_slots_simple = yes
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-		}
-		remove_effect = {
-			bos_create_administration_center = yes
-			random_list = {
-				50 = {
-					add_manpower = 500
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
-					}
-				}
-				30 = {
-					add_manpower = 450
-				}
-				15 = {
-					add_manpower = 400
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
-					}
-				}
-				5 = {
-					add_manpower = 300
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
+					5 = {
+						add_manpower = 300
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
 					}
 				}
 			}
 		}
-	}
-	bos_underground_build_expeditionary_department_decision = {
-		icon = GFX_decision_jeep
-		fire_only_once = no
-		days_remove = 60
-		cost = 10
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 400
-		}
-		available = {
-			has_manpower > 499
-			set_temp_variable = {
-				BOS_need_construction_slots_num = 1
-			}
-			BOS_has_x_available_construction_slots = yes
-			set_temp_variable = {
-				BOS_available_space_to_check_num = 2
-			}
-			BOS_has_x_available_space = yes
-			BOS_has_x_available_administration_capacity = yes
-			set_temp_variable = {
-				BOS_temp_building_to_test = BOS.BOS_expeditionary_departments
-			}
-			set_temp_variable = {
-				BOS_temp_building_to_test_max = BOS.BOS_maximum_expeditionary_departments_allowed
-			}
-			bos_has_not_reached_building_cap = yes
-		}
-		complete_effect = {
-			add_manpower = -500
-			set_temp_variable = {
-				BOS_available_space_to_change = 2
-			}
-			bos_change_available_space = yes
-			bos_minus_one_construction_slots_simple = yes
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-		}
-		remove_effect = {
-			bos_create_expeditionary_department = yes
-			random_list = {
-				50 = {
-					add_manpower = 500
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
-					}
-				}
-				30 = {
-					add_manpower = 450
-				}
-				15 = {
-					add_manpower = 400
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
-					}
-				}
-				5 = {
-					add_manpower = 300
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
-					}
-				}
-			}
-		}
-	}
-	bos_underground_build_simulators_decision = {
-		icon = GFX_decision_terminal
-		fire_only_once = yes
-		days_remove = 180		# Needs to be changed to 180
-		custom_cost_trigger = {
-			has_army_experience > 24
-		}
-		custom_cost_text = army_xp_more_than_25
-		cost = 30
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 550
-		}
-		available = {
-			has_completed_focus = bos_nf_new_developments
-			has_manpower > 99
-			BOS_has_x_available_administration_capacity = yes
-			set_temp_variable = {
-				BOS_available_space_to_check_num = 10
-			}
-			BOS_has_x_available_space = yes
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-			experience_gain_army_factor = -0.5
-		}
-		complete_effect = {
-			hidden_effect = {
-				army_experience = -25
-			}
-			set_temp_variable = {
-				BOS_available_space_to_change = 10
-			}
-			bos_change_available_space = yes
-			add_manpower = -100
-		}
-		remove_effect = {
-			unlock_decision_category_tooltip = tbh_simulator_decisions
-			set_country_flag = simulator_decisions_enabled
-			random_list = {
-				80 = {
-					add_manpower = 100
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
-					}
-				}
-				10 = {
-					add_manpower = 95
-				}
-				10 = {
-					add_manpower = 70
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
-					}
-				}
-			}
-		}
-	}
+	
+	
 	
 }
 

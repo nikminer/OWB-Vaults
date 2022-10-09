@@ -58,6 +58,427 @@ scripted_gui = {
 		visible = {
 			has_country_flag = bos_level1Flag
 		}
+
+		effects = {
+			bos_expedition_btn_click = {
+				set_country_flag = {
+					flag = BOS_BuildExpedition
+					value = 1
+				}
+				add_political_power = -10
+				add_manpower = -500
+				set_temp_variable = {
+					BOS_available_space_to_change = 2
+				}
+				bos_change_available_space = yes
+				bos_minus_one_construction_slots_simple = yes
+				
+				add_dynamic_modifier = {
+					modifier = bos_admin_decision_active
+					scope = BOS
+					days = BOS_construction_time
+				}
+			}
+
+			bos_constructions_btn_click = {
+				set_country_flag = {
+					flag = BOS_BuildConstructions
+					value = 1
+				}
+				add_political_power = -10
+				add_manpower = -500
+				add_offsite_building = {
+					type = industrial_complex
+					level = -5
+				}
+				add_to_variable = {
+					BOS_off_map_civs = -5
+				}
+				set_temp_variable = {
+					BOS_available_space_to_change = -4
+				}
+				bos_change_available_space = yes
+				
+				add_dynamic_modifier = {
+					modifier = bos_admin_decision_active
+					scope = BOS
+					days = BOS_construction_time
+				}
+			}
+
+			bos_simulator_btn_click = {
+				set_country_flag = {
+					flag = BOS_BuildSimulator
+					value = 1
+				}
+				add_political_power = -30
+				army_experience = -25
+				set_temp_variable = {
+					BOS_available_space_to_change = 10
+				}
+				bos_change_available_space = yes
+				add_manpower = -100
+
+				add_dynamic_modifier = {
+					modifier = bos_admin_decision_active
+					scope = BOS
+					days = BOS_simulator_construction_time
+				}
+
+				add_dynamic_modifier = {
+					modifier = bos_admin_building_simulator_active
+					scope = BOS
+					days = BOS_simulator_construction_time
+				}
+			}
+
+			bos_training_btn_click = {
+				set_country_flag = {
+					flag = BOS_BuildTraining
+					value = 1
+				}
+
+				add_political_power = -10
+				add_manpower = -500
+				set_temp_variable = {
+					BOS_available_space_to_change = 2
+				}
+				bos_change_available_space = yes
+				bos_minus_one_construction_slots_simple = yes
+				
+				add_dynamic_modifier = {
+					modifier = bos_admin_decision_active
+					scope = BOS
+					days = BOS_construction_time
+				}
+			}
+		}
+
+		triggers = {
+			bos_expedition_btn_visible = {
+				not = {
+					has_country_flag = BOS_BuildExpedition
+				}
+
+				set_temp_variable = {
+					BOS_temp_building_to_test = BOS.BOS_expeditionary_departments
+				}
+				set_temp_variable = {
+					BOS_temp_building_to_test_max = BOS.BOS_maximum_expeditionary_departments_allowed
+				}
+				bos_has_not_reached_building_cap = yes
+			}
+			bos_expedition_btn_click_enabled = {
+				has_manpower > 499
+				has_political_power > 9
+				set_temp_variable = {
+					BOS_need_construction_slots_num = 1
+				}
+				BOS_has_x_available_construction_slots = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 2
+				}
+				BOS_has_x_available_space = yes
+				BOS_has_x_available_administration_capacity = yes
+			}
+			bos_expedition_btn_executing_visible = {
+				has_country_flag = BOS_BuildExpedition
+
+				set_temp_variable = { bos_part = BOS_construction_time }
+				divide_temp_variable = { bos_part = 5 }
+				set_temp_variable = { bos_current = bos_part }
+				
+				if = {
+					limit = {
+						check_variable = { BOS_build_expedition_progress < bos_current }
+					}
+					set_temp_variable = { bos_expedition_executing_frame = 1 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_expedition_progress < bos_current }
+					}
+					set_temp_variable = { bos_expedition_executing_frame = 2 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_expedition_progress < bos_current }
+					}
+					set_temp_variable = { bos_expedition_executing_frame = 3 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_expedition_progress < bos_current }
+					}
+					set_temp_variable = { bos_expedition_executing_frame = 4 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_expedition_progress < bos_current }
+					}
+					set_temp_variable = { bos_expedition_executing_frame = 5 }
+				}
+			}
+
+			bos_constructions_btn_visible = {
+				not = {
+					has_country_flag = BOS_BuildConstructions
+				}
+				set_temp_variable = {
+					BOS_temp_building_to_test = BOS_condensed_civilian_workshop
+				}
+				set_temp_variable = {
+					BOS_temp_building_to_test_max = BOS_maximum_condensed_workshops_allowed
+				}
+				bos_has_not_reached_building_cap = yes
+			}
+			bos_constructions_btn_click_enabled = {
+				has_political_power > 9
+				has_manpower > 499
+				BOS_has_x_available_administration_capacity = yes
+				custom_trigger_tooltip = {
+					tooltip = has_five_offmap_civs
+					check_variable = {
+						BOS_off_map_civs > 4
+					}
+				}
+				#Hide the tooltip if its not relevant
+				if = {
+					limit = {
+						NOT = {
+							num_of_civilian_factories > 5
+						}
+					}
+					num_of_civilian_factories > 5
+				}
+			}
+			bos_constructions_btn_executing_visible = {
+				has_country_flag = BOS_BuildConstructions
+
+				set_temp_variable = { bos_part = BOS_construction_time }
+				divide_temp_variable = { bos_part = 5 }
+				set_temp_variable = { bos_current = bos_part }
+				
+				if = {
+					limit = {
+						check_variable = { BOS_build_constructor_progress < bos_current }
+					}
+					set_temp_variable = { bos_constructions_executing_frame = 1 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_constructor_progress < bos_current }
+					}
+					set_temp_variable = { bos_constructions_executing_frame = 2 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_constructor_progress < bos_current }
+					}
+					set_temp_variable = { bos_constructions_executing_frame = 3 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_constructor_progress < bos_current }
+					}
+					set_temp_variable = { bos_constructions_executing_frame = 4 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_constructor_progress < bos_current }
+					}
+					set_temp_variable = { bos_constructions_executing_frame = 5 }
+				}
+			}
+
+			bos_simulator_btn_visible = {
+				not = {
+					or = {
+						has_country_flag = BOS_BuildSimulator
+						has_country_flag = simulator_decisions_enabled
+					}
+				}
+			}
+			bos_simulator_btn_click_enabled = {
+				
+				has_political_power > 29
+				has_army_experience > 24
+
+				has_completed_focus = bos_nf_new_developments
+				has_manpower > 99
+				BOS_has_x_available_administration_capacity = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 10
+				}
+				BOS_has_x_available_space = yes
+			}
+			bos_simulator_btn_executing_visible = {
+				has_country_flag = BOS_BuildSimulator
+
+				set_temp_variable = { bos_part = BOS_simulator_construction_time }
+				divide_temp_variable = { bos_part = 5 }
+				set_temp_variable = { bos_current = bos_part }
+				
+				if = {
+					limit = {
+						check_variable = { BOS_build_simulator_progress < bos_current }
+					}
+					set_temp_variable = { bos_simulator_executing_frame = 1 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_simulator_progress < bos_current }
+					}
+					set_temp_variable = { bos_simulator_executing_frame = 2 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_simulator_progress < bos_current }
+					}
+					set_temp_variable = { bos_simulator_executing_frame = 3 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_simulator_progress < bos_current }
+					}
+					set_temp_variable = { bos_simulator_executing_frame = 4 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_simulator_progress < bos_current }
+					}
+					set_temp_variable = { bos_simulator_executing_frame = 5 }
+				}
+			}
+
+			bos_training_btn_visible = {
+				not = {
+					has_country_flag = BOS_BuildTraining
+				}
+
+				set_temp_variable = {
+					BOS_temp_building_to_test = BOS_underground_building_training
+				}
+				set_temp_variable = {
+					BOS_temp_building_to_test_max = BOS_maximum_training_facilities_allowed
+				}
+				bos_has_not_reached_building_cap = yes
+			}
+			bos_training_btn_click_enabled = {
+				has_political_power > 9
+				has_manpower > 499
+				set_temp_variable = {
+					BOS_need_construction_slots_num = 1
+				}
+				BOS_has_x_available_construction_slots = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 2
+				}
+				BOS_has_x_available_space = yes
+				BOS_has_x_available_administration_capacity = yes
+			}
+			bos_training_btn_executing_visible = {
+				has_country_flag = BOS_BuildTraining
+				
+				set_temp_variable = { bos_part = BOS_construction_time }
+				divide_temp_variable = { bos_part = 5 }
+				set_temp_variable = { bos_current = bos_part }
+				
+				if = {
+					limit = {
+						check_variable = { BOS_build_training_progress < bos_current }
+					}
+					set_temp_variable = { bos_training_executing_frame = 1 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_training_progress < bos_current }
+					}
+					set_temp_variable = { bos_training_executing_frame = 2 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_training_progress < bos_current }
+					}
+					set_temp_variable = { bos_training_executing_frame = 3 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_training_progress < bos_current }
+					}
+					set_temp_variable = { bos_training_executing_frame = 4 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_training_progress < bos_current }
+					}
+					set_temp_variable = { bos_training_executing_frame = 5 }
+				}
+			}
+		}
+
+		properties = {
+			bos_expedition_btn_executing = {
+				frame = bos_expedition_executing_frame
+			}
+			bos_constructions_btn_executing = {
+				frame = bos_constructions_executing_frame
+			}
+			bos_simulator_btn_executing = {
+				frame = bos_simulator_executing_frame
+			}
+			bos_training_btn_executing = {
+				frame = bos_training_executing_frame
+			}
+		}
 	}
 
 	bos_level_2_window = {
@@ -65,6 +486,417 @@ scripted_gui = {
 		parent_window_name = "bos_window_instance"
 		visible = {
 			has_country_flag = bos_level2Flag
+		}
+
+		effects = {
+			bos_civil_btn_click = {
+				set_country_flag = {
+					flag = BOS_BuildCivil
+					value = 1
+				}
+				add_political_power = -10
+				add_manpower = -500
+				157 = {
+					remove_building = {
+						type = industrial_complex
+						level = 1
+					}
+				}
+				set_temp_variable = {
+					BOS_available_space_to_change = 1
+				}
+				bos_change_available_space = yes
+				bos_minus_one_construction_slots_simple = yes
+				
+				add_dynamic_modifier = {
+					modifier = bos_admin_decision_active
+					scope = BOS
+					days = BOS_construction_time
+				}
+			}
+
+			bos_safety_btn_click = {
+				set_country_flag = {
+					flag = BOS_BuildSafety
+					value = 1
+				}
+				add_political_power = -10
+				add_manpower = -500
+				set_temp_variable = {
+					BOS_available_space_to_change = 10
+				}
+				bos_change_available_space = yes
+				bos_minus_one_construction_slots_simple = yes
+				add_dynamic_modifier = {
+					modifier = bos_admin_decision_active
+					scope = BOS
+					days = BOS_construction_time
+				}
+			}
+
+			bos_smelt_btn_click = {
+				set_country_flag = {
+					flag = BOS_BuildSmelt
+					value = 1
+				}
+
+				add_political_power = -10
+				add_manpower = -500
+			
+				157 = {
+					remove_building = {
+						type = metal_generator
+						level = 1
+					}
+				}
+				set_temp_variable = {
+					BOS_available_space_to_change = 1
+				}
+				bos_change_available_space = yes
+				bos_minus_one_construction_slots_simple = yes
+
+				add_dynamic_modifier = {
+					modifier = bos_admin_decision_active
+					scope = BOS
+					days = BOS_construction_time
+				}
+			}
+
+			bos_water_btn_click = {
+				set_country_flag = {
+					flag = BOS_BuildWater
+					value = 1
+				}
+
+				add_political_power = -10
+				add_manpower = -500
+				157 = {
+					remove_building = {
+						type = water_generator
+						level = 1
+					}
+				}
+				set_temp_variable = {
+					BOS_available_space_to_change = 1
+				}
+				bos_change_available_space = yes
+				bos_minus_one_construction_slots_simple = yes
+				add_dynamic_modifier = {
+					modifier = bos_admin_decision_active
+					scope = BOS
+					days = BOS_construction_time
+				}
+			}
+		}
+
+		triggers = {
+			bos_civil_btn_visible = {
+				not = {
+					has_country_flag = BOS_BuildCivil
+				}
+			}
+			bos_civil_btn_click_enabled = {
+				has_manpower > 499
+				has_political_power > 9
+				set_temp_variable = {
+					BOS_need_construction_slots_num = 1
+				}
+				BOS_has_x_available_construction_slots = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 1
+				}
+				BOS_has_x_available_space = yes
+				BOS_has_x_available_administration_capacity = yes
+				157 = {
+					industrial_complex > 0
+				}
+			}
+			bos_civil_btn_executing_visible = {
+				has_country_flag = BOS_BuildCivil
+
+				set_temp_variable = { bos_part = BOS_construction_time }
+				divide_temp_variable = { bos_part = 5 }
+				set_temp_variable = { bos_current = bos_part }
+				
+				if = {
+					limit = {
+						check_variable = { BOS_build_civil_progress < bos_current }
+					}
+					set_temp_variable = { bos_civil_executing_frame = 1 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_civil_progress < bos_current }
+					}
+					set_temp_variable = { bos_civil_executing_frame = 2 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_civil_progress < bos_current }
+					}
+					set_temp_variable = { bos_civil_executing_frame = 3 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_civil_progress < bos_current }
+					}
+					set_temp_variable = { bos_civil_executing_frame = 4 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_civil_progress < bos_current }
+					}
+					set_temp_variable = { bos_civil_executing_frame = 5 }
+				}
+			}
+
+			bos_safety_btn_visible = {
+				not = {
+					has_country_flag = BOS_BuildSafety
+				}
+
+				set_temp_variable = {
+					BOS_temp_building_to_test = BOS_underground_building_safety_department
+				}
+				set_temp_variable = {
+					BOS_temp_building_to_test_max = BOS_maximum_safety_departments_allowed
+				}
+				bos_has_not_reached_building_cap = yes
+			}
+			bos_safety_btn_click_enabled = {
+				has_manpower > 499
+				has_political_power > 9
+				set_temp_variable = {
+					BOS_need_construction_slots_num = 1
+				}
+				BOS_has_x_available_construction_slots = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 10
+				}
+				BOS_has_x_available_space = yes
+				BOS_has_x_available_administration_capacity = yes
+			}
+			bos_safety_btn_executing_visible = {
+				has_country_flag = BOS_BuildSafety
+
+				set_temp_variable = { bos_part = BOS_construction_time }
+				divide_temp_variable = { bos_part = 5 }
+				set_temp_variable = { bos_current = bos_part }
+				
+				if = {
+					limit = {
+						check_variable = { BOS_build_safety_progress < bos_current }
+					}
+					set_temp_variable = { bos_safety_executing_frame = 1 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_safety_progress < bos_current }
+					}
+					set_temp_variable = { bos_safety_executing_frame = 2 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_safety_progress < bos_current }
+					}
+					set_temp_variable = { bos_safety_executing_frame = 3 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_safety_progress < bos_current }
+					}
+					set_temp_variable = { bos_safety_executing_frame = 4 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_safety_progress < bos_current }
+					}
+					set_temp_variable = { bos_safety_executing_frame = 5 }
+				}
+			}
+
+			bos_smelt_btn_visible = {
+				not = {
+					has_country_flag = BOS_BuildSmelt
+				}
+			}
+			bos_smelt_btn_click_enabled = {
+				has_manpower > 499
+				has_political_power > 9
+				set_temp_variable = {
+					BOS_need_construction_slots_num = 1
+				}
+				BOS_has_x_available_construction_slots = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 1
+				}
+				BOS_has_x_available_space = yes
+				BOS_has_x_available_administration_capacity = yes
+				157 = {
+					metal_generator > 0
+				}
+			}
+			bos_smelt_btn_executing_visible = {
+				has_country_flag = BOS_BuildSmelt
+
+				set_temp_variable = { bos_part = BOS_construction_time }
+				divide_temp_variable = { bos_part = 5 }
+				set_temp_variable = { bos_current = bos_part }
+				
+				if = {
+					limit = {
+						check_variable = { BOS_build_smelt_progress < bos_current }
+					}
+					set_temp_variable = { bos_smelt_executing_frame = 1 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_smelt_progress < bos_current }
+					}
+					set_temp_variable = { bos_smelt_executing_frame = 2 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_smelt_progress < bos_current }
+					}
+					set_temp_variable = { bos_smelt_executing_frame = 3 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_smelt_progress < bos_current }
+					}
+					set_temp_variable = { bos_smelt_executing_frame = 4 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_smelt_progress < bos_current }
+					}
+					set_temp_variable = { bos_smelt_executing_frame = 5 }
+				}
+			}
+
+			bos_water_btn_visible = {
+				not = {
+					has_country_flag = BOS_BuildWater
+				}
+			}
+			bos_water_btn_click_enabled = {
+				has_manpower > 499
+				has_political_power > 9
+				set_temp_variable = {
+					BOS_need_construction_slots_num = 1
+				}
+				BOS_has_x_available_construction_slots = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 1
+				}
+				BOS_has_x_available_space = yes
+				BOS_has_x_available_administration_capacity = yes
+				157 = {
+					water_generator > 0
+				}
+			}
+			bos_water_btn_executing_visible = {
+				has_country_flag = BOS_BuildWater
+
+				set_temp_variable = { bos_part = BOS_construction_time }
+				divide_temp_variable = { bos_part = 5 }
+				set_temp_variable = { bos_current = bos_part }
+				
+				if = {
+					limit = {
+						check_variable = { BOS_build_water_progress < bos_current }
+					}
+					set_temp_variable = { bos_water_executing_frame = 1 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_water_progress < bos_current }
+					}
+					set_temp_variable = { bos_water_executing_frame = 2 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_water_progress < bos_current }
+					}
+					set_temp_variable = { bos_water_executing_frame = 3 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_water_progress < bos_current }
+					}
+					set_temp_variable = { bos_water_executing_frame = 4 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_water_progress < bos_current }
+					}
+					set_temp_variable = { bos_water_executing_frame = 5 }
+				}
+			}
+		}
+
+		properties = {
+			bos_civil_btn_executing = {
+				frame = bos_civil_executing_frame
+			}
+			bos_safety_btn_executing = {
+				frame = bos_safety_executing_frame
+			}
+			bos_smelt_btn_executing = {
+				frame = bos_smelt_executing_frame
+			}
+			bos_water_btn_executing = {
+				frame = bos_water_executing_frame
+			}
 		}
 	}
 
@@ -74,6 +906,315 @@ scripted_gui = {
 		visible = {
 			has_country_flag = bos_level3Flag
 		}
+
+		effects = {
+			bos_circuit_btn_click = {
+				set_country_flag = {
+					flag = BOS_BuildCircuit
+					value = 1
+				}
+
+				add_political_power = -10
+				add_manpower = -500
+				157 = {
+					remove_building = {
+						type = circuitry_generator
+						level = 1
+					}
+				}
+				set_temp_variable = {
+					BOS_available_space_to_change = 1
+				}
+				bos_change_available_space = yes
+				bos_minus_one_construction_slots_simple = yes
+				
+				add_dynamic_modifier = {
+					modifier = bos_admin_decision_active
+					scope = BOS
+					days = BOS_construction_time
+				}
+			}
+
+			bos_arms_btn_click = {
+				set_country_flag = {
+					flag = BOS_BuildArms
+					value = 1
+				}
+				add_manpower = -500
+				157 = {
+					remove_building = {
+						type = arms_factory
+						level = 1
+					}
+				}
+				set_temp_variable = {
+					BOS_available_space_to_change = 1
+				}
+				bos_change_available_space = yes
+				bos_minus_one_construction_slots_simple = yes
+				add_political_power = -10
+				add_dynamic_modifier = {
+					modifier = bos_admin_decision_active
+					scope = BOS
+					days = BOS_construction_time
+				}
+			}
+
+			bos_lab_btn_click = {
+				set_country_flag = {
+					flag = BOS_BuildLab
+					value = 1
+				}
+
+				add_political_power = -10
+				add_dynamic_modifier = {
+					modifier = bos_admin_decision_active
+					scope = BOS
+					days = BOS_construction_time
+				}
+
+				add_manpower = -500
+				set_temp_variable = {
+					BOS_available_space_to_change = 2
+				}
+				bos_change_available_space = yes
+				bos_minus_one_construction_slots_simple = yes
+			}
+		}
+
+		triggers = {
+			bos_circuit_btn_visible = {
+				not = {
+					has_country_flag = BOS_BuildCircuit
+				}
+			}
+			bos_circuit_btn_click_enabled = {
+				has_political_power > 9
+				has_manpower > 499
+				set_temp_variable = {
+					BOS_need_construction_slots_num = 1
+				}
+				BOS_has_x_available_construction_slots = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 1
+				}
+				BOS_has_x_available_space = yes
+				BOS_has_x_available_administration_capacity = yes
+				157 = {
+					circuitry_generator > 0
+				}
+			}
+			bos_circuit_btn_executing_visible = {
+				has_country_flag = BOS_BuildCircuit
+
+				set_temp_variable = { bos_part = BOS_construction_time }
+				divide_temp_variable = { bos_part = 5 }
+				set_temp_variable = { bos_current = bos_part }
+				
+				if = {
+					limit = {
+						check_variable = { BOS_build_circuit_progress < bos_current }
+					}
+					set_temp_variable = { bos_circuit_executing_frame = 1 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_circuit_progress < bos_current }
+					}
+					set_temp_variable = { bos_circuit_executing_frame = 2 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_circuit_progress < bos_current }
+					}
+					set_temp_variable = { bos_circuit_executing_frame = 3 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_circuit_progress < bos_current }
+					}
+					set_temp_variable = { bos_circuit_executing_frame = 4 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_circuit_progress < bos_current }
+					}
+					set_temp_variable = { bos_circuit_executing_frame = 5 }
+				}
+			}
+
+			bos_arms_btn_visible = {
+				not = {
+					has_country_flag = BOS_BuildArms
+				}
+			}
+			bos_arms_btn_click_enabled = {
+				has_political_power > 9
+				has_manpower > 499
+				set_temp_variable = {
+					BOS_need_construction_slots_num = 1
+				}
+				BOS_has_x_available_construction_slots = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 1
+				}
+				BOS_has_x_available_space = yes
+				BOS_has_x_available_administration_capacity = yes
+				157 = {
+					arms_factory > 0
+				}
+			}
+			bos_arms_btn_executing_visible = {
+				has_country_flag = BOS_BuildArms
+
+				set_temp_variable = { bos_part = BOS_construction_time }
+				divide_temp_variable = { bos_part = 5 }
+				set_temp_variable = { bos_current = bos_part }
+				
+				if = {
+					limit = {
+						check_variable = { BOS_build_arms_progress < bos_current }
+					}
+					set_temp_variable = { bos_arms_executing_frame = 1 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_arms_progress < bos_current }
+					}
+					set_temp_variable = { bos_arms_executing_frame = 2 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_arms_progress < bos_current }
+					}
+					set_temp_variable = { bos_arms_executing_frame = 3 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_arms_progress < bos_current }
+					}
+					set_temp_variable = { bos_arms_executing_frame = 4 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_arms_progress < bos_current }
+					}
+					set_temp_variable = { bos_arms_executing_frame = 5 }
+				}
+			}
+
+			bos_lab_btn_visible = {
+				not = {
+					has_country_flag = BOS_BuildLab
+				}
+				set_temp_variable = {
+					BOS_temp_building_to_test = BOS_underground_building_lab
+				}
+				set_temp_variable = {
+					BOS_temp_building_to_test_max = BOS_maximum_labs_allowed
+				}
+				bos_has_not_reached_building_cap = yes
+			}
+			bos_lab_btn_click_enabled = {
+				has_political_power > 9
+				has_manpower > 499
+				set_temp_variable = {
+					BOS_need_construction_slots_num = 1
+				}
+				BOS_has_x_available_construction_slots = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 2
+				}
+				BOS_has_x_available_space = yes
+				BOS_has_x_available_administration_capacity = yes
+			}
+			bos_lab_btn_executing_visible = {
+				has_country_flag = BOS_BuildLab
+
+				set_temp_variable = { bos_part = BOS_construction_time }
+				divide_temp_variable = { bos_part = 5 }
+				set_temp_variable = { bos_current = bos_part }
+				
+				if = {
+					limit = {
+						check_variable = { BOS_build_lab_progress < bos_current }
+					}
+					set_temp_variable = { bos_lab_executing_frame = 1 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_lab_progress < bos_current }
+					}
+					set_temp_variable = { bos_lab_executing_frame = 2 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_lab_progress < bos_current }
+					}
+					set_temp_variable = { bos_lab_executing_frame = 3 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_lab_progress < bos_current }
+					}
+					set_temp_variable = { bos_lab_executing_frame = 4 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_lab_progress < bos_current }
+					}
+					set_temp_variable = { bos_lab_executing_frame = 5 }
+				}
+			}
+		}
+
+		properties = {
+			bos_circuit_btn_executing = {
+				frame = bos_circuit_executing_frame
+			}
+			bos_arms_btn_executing = {
+				frame = bos_arms_executing_frame
+			}
+			bos_lab_btn_executing = {
+				frame = bos_lab_executing_frame
+			}
+		}
 	}
 
 	bos_level_4_window = {
@@ -81,6 +1222,215 @@ scripted_gui = {
 		parent_window_name = "bos_window_instance"
 		visible = {
 			has_country_flag = bos_level4Flag
+		}
+
+		effects = {
+			bos_admin_btn_click = {
+				set_country_flag = {
+					flag = BOS_BuildAdmin
+					value = 1
+				}
+				add_manpower = -500
+				set_temp_variable = {
+					BOS_available_space_to_change = 10
+				}
+				bos_change_available_space = yes
+				bos_minus_one_construction_slots_simple = yes
+
+				add_political_power = -10
+				add_dynamic_modifier = {
+					modifier = bos_admin_decision_active
+					scope = BOS
+					days = BOS_construction_time
+				}
+			}
+
+			bos_power_btn_click = {
+				set_country_flag = {
+					flag = BOS_BuildPower
+					value = 1
+				}
+
+				add_political_power = -10
+				add_dynamic_modifier = {
+					modifier = bos_admin_decision_active
+					scope = BOS
+					days = BOS_construction_time
+				}
+
+				add_manpower = -500
+				157 = {
+					remove_building = {
+						type = electricity_generator
+						level = 1
+					}
+				}
+				set_temp_variable = {
+					BOS_available_space_to_change = 1
+				}
+				bos_change_available_space = yes
+				bos_minus_one_construction_slots_simple = yes
+			}
+		}
+
+		triggers = {
+			bos_admin_btn_visible = {
+				not = {
+					has_country_flag = BOS_BuildAdmin
+				}
+
+				set_temp_variable = {
+					BOS_temp_building_to_test = BOS.BOS_underground_building_administration_centers
+				}
+				set_temp_variable = {
+					BOS_temp_building_to_test_max = BOS_maximum_admin_centers_allowed
+				}
+				bos_has_not_reached_building_cap = yes
+			}
+			bos_admin_btn_click_enabled = {
+				has_political_power > 9
+				has_manpower > 499
+				set_temp_variable = {
+					BOS_need_construction_slots_num = 1
+				}
+				BOS_has_x_available_construction_slots = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 10
+				}
+				BOS_has_x_available_space = yes
+				BOS_has_x_available_administration_capacity = yes
+			}
+			bos_admin_btn_executing_visible = {
+				has_country_flag = BOS_BuildAdmin
+
+				set_temp_variable = { bos_part = BOS_construction_time }
+				divide_temp_variable = { bos_part = 5 }
+				set_temp_variable = { bos_current = bos_part }
+				
+				if = {
+					limit = {
+						check_variable = { BOS_build_admin_progress < bos_current }
+					}
+					set_temp_variable = { bos_admin_executing_frame = 1 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_admin_progress < bos_current }
+					}
+					set_temp_variable = { bos_admin_executing_frame = 2 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_admin_progress < bos_current }
+					}
+					set_temp_variable = { bos_admin_executing_frame = 3 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_admin_progress < bos_current }
+					}
+					set_temp_variable = { bos_admin_executing_frame = 4 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_admin_progress < bos_current }
+					}
+					set_temp_variable = { bos_admin_executing_frame = 5 }
+				}
+			}
+
+			bos_power_btn_visible = {
+				not = {
+					has_country_flag = BOS_BuildPower
+				}
+			}
+			bos_power_btn_click_enabled = {
+				has_political_power > 9
+				has_manpower > 499
+				set_temp_variable = {
+					BOS_need_construction_slots_num = 1
+				}
+				BOS_has_x_available_construction_slots = yes
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 1
+				}
+				BOS_has_x_available_space = yes
+				BOS_has_x_available_administration_capacity = yes
+				157 = {
+					electricity_generator > 0
+				}
+			}
+			bos_power_btn_executing_visible = {
+				has_country_flag = BOS_BuildPower
+
+				set_temp_variable = { bos_part = BOS_construction_time }
+				divide_temp_variable = { bos_part = 5 }
+				set_temp_variable = { bos_current = bos_part }
+				
+				if = {
+					limit = {
+						check_variable = { BOS_build_power_progress < bos_current }
+					}
+					set_temp_variable = { bos_power_executing_frame = 1 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_power_progress < bos_current }
+					}
+					set_temp_variable = { bos_power_executing_frame = 2 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_power_progress < bos_current }
+					}
+					set_temp_variable = { bos_power_executing_frame = 3 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_power_progress < bos_current }
+					}
+					set_temp_variable = { bos_power_executing_frame = 4 }
+				}
+				else_if = {
+					limit = {
+						add_to_temp_variable = {
+							bos_current = bos_part
+						}
+						check_variable = { BOS_build_power_progress < bos_current }
+					}
+					set_temp_variable = { bos_power_executing_frame = 5 }
+				}
+			}
+		}
+
+		properties = {
+			bos_admin_btn_executing = {
+				frame = bos_admin_executing_frame
+			}
+			bos_power_btn_executing = {
+				frame = bos_power_executing_frame
+			}
 		}
 	}
 	
@@ -183,13 +1533,13 @@ scripted_gui = {
 				add_dynamic_modifier = {
 					modifier = bos_admin_decision_active
 					scope = BOS
-					days = BOS_construct_effot_time
+					days = BOS_effot_time
 				}
 
 				add_dynamic_modifier = {
 					modifier = bos_admin_decision_construct_active
 					scope = BOS
-					days = BOS_construct_effot_time
+					days = BOS_effot_time
 				}
 			}
 
@@ -205,13 +1555,13 @@ scripted_gui = {
 				add_dynamic_modifier = {
 					modifier = bos_admin_decision_active
 					scope = BOS
-					days = BOS_Production_effot_time
+					days = BOS_effot_time
 				}
 
 				add_dynamic_modifier = {
 					modifier = bos_admin_decision_production_active
 					scope = BOS
-					days = BOS_Production_effot_time
+					days = BOS_effot_time
 				}
 			}
 
@@ -227,13 +1577,13 @@ scripted_gui = {
 				add_dynamic_modifier = {
 					modifier = bos_admin_decision_active
 					scope = BOS
-					days = BOS_Production_effot_time
+					days = BOS_effot_time
 				}
 
 				add_dynamic_modifier = {
 					modifier = bos_admin_decision_research_active
 					scope = BOS
-					days = BOS_Production_effot_time
+					days = BOS_effot_time
 				}
 			}
 
@@ -249,13 +1599,13 @@ scripted_gui = {
 				add_dynamic_modifier = {
 					modifier = bos_admin_decision_active
 					scope = BOS
-					days = BOS_Production_effot_time
+					days = BOS_effot_time
 				}
 
 				add_dynamic_modifier = {
 					modifier = bos_admin_decision_polit_active
 					scope = BOS
-					days = BOS_Production_effot_time
+					days = BOS_effot_time
 				}
 			}
 
@@ -270,7 +1620,7 @@ scripted_gui = {
 				add_dynamic_modifier = {
 					modifier = bos_admin_decision_active
 					scope = BOS
-					days = BOS_underground_construction_time
+					days = BOS_construction_time
 				}
 			}
 
@@ -286,7 +1636,7 @@ scripted_gui = {
 				add_dynamic_modifier = {
 					modifier = bos_admin_decision_active
 					scope = BOS
-					days = BOS_underground_construction_time
+					days = BOS_construction_time
 				}
 			}
 				
@@ -301,9 +1651,10 @@ scripted_gui = {
 				add_dynamic_modifier = {
 					modifier = bos_admin_decision_active
 					scope = BOS
-					days = BOS_underground_construction_time
+					days = BOS_construction_time
 				}
 			}
+
 			bos_decision8_click = {
 				set_country_flag = {
 					flag = BOS_AdmDigDeeper
@@ -313,367 +1664,436 @@ scripted_gui = {
 				add_dynamic_modifier = {
 					modifier = bos_admin_decision_active
 					scope = BOS
-					days = BOS_underground_construction_time
+					days = BOS_construction_time
 				}
 				add_dynamic_modifier = {
 					modifier = bos_admin_decision_dig_deeper_active
 					scope = BOS
-					days = BOS_underground_construction_time
+					days = BOS_construction_time
 				}
 			}
 		}
 		triggers = {
 
 			# Decision 1
-			bos_decision1_visible = {
+				bos_decision1_visible = {
 				not = {
 					has_country_flag = BOS_AdmInitEffotConst
 				}
-			}
-			bos_decision1_click_enabled = {
-				command_power > 24
-				has_completed_focus = bos_nf_engineers_of_peace
-				has_manpower > 99
-				BOS_has_x_available_administration_capacity = yes
-			}
-			bos_decision1_executing_visible = {
-				has_country_flag = BOS_AdmInitEffotConst
+				}
+				bos_decision1_click_enabled = {
+					command_power > 24
+					has_completed_focus = bos_nf_engineers_of_peace
+					has_manpower > 99
+					BOS_has_x_available_administration_capacity = yes
+				}
+				bos_decision1_executing_visible = {
+					has_country_flag = BOS_AdmInitEffotConst
 
-				set_temp_variable = { bos_part = BOS_construct_effot_time }
-				divide_temp_variable = { bos_part = 5 }
-				set_temp_variable = { bos_current = bos_part }
+					set_temp_variable = { bos_part = BOS_effot_time }
+					divide_temp_variable = { bos_part = 5 }
+					set_temp_variable = { bos_current = bos_part }
 
-				if = {
-					limit = {
-						check_variable = { BOS_construct_effot_progress < bos_current }
-					}
-					set_temp_variable = { bos_decision1_executing_frame = 1 }
-				}
-				else_if = {
-					limit = {
-						add_to_temp_variable = {
-							bos_current = bos_part
+					if = {
+						limit = {
+							check_variable = { BOS_construct_effot_progress < bos_current }
 						}
-						check_variable = { BOS_construct_effot_progress < bos_current }
+						set_temp_variable = { bos_decision1_executing_frame = 1 }
 					}
-					set_temp_variable = { bos_decision1_executing_frame = 2 }
-				}
-				else_if = {
-					limit = {
-						add_to_temp_variable = {
-							bos_current = bos_part
+					else_if = {
+						limit = {
+							add_to_temp_variable = {
+								bos_current = bos_part
+							}
+							check_variable = { BOS_construct_effot_progress < bos_current }
 						}
-						check_variable = { BOS_construct_effot_progress < bos_current }
+						set_temp_variable = { bos_decision1_executing_frame = 2 }
 					}
-					set_temp_variable = { bos_decision1_executing_frame = 3 }
-				}
-				else_if = {
-					limit = {
-						add_to_temp_variable = {
-							bos_current = bos_part
+					else_if = {
+						limit = {
+							add_to_temp_variable = {
+								bos_current = bos_part
+							}
+							check_variable = { BOS_construct_effot_progress < bos_current }
 						}
-						check_variable = { BOS_construct_effot_progress < bos_current }
+						set_temp_variable = { bos_decision1_executing_frame = 3 }
 					}
-					set_temp_variable = { bos_decision1_executing_frame = 4 }
-				}
-				else_if = {
-					limit = {
-						add_to_temp_variable = {
-							bos_current = bos_part
+					else_if = {
+						limit = {
+							add_to_temp_variable = {
+								bos_current = bos_part
+							}
+							check_variable = { BOS_construct_effot_progress < bos_current }
 						}
-						check_variable = { BOS_construct_effot_progress < bos_current }
+						set_temp_variable = { bos_decision1_executing_frame = 4 }
 					}
-					set_temp_variable = { bos_decision1_executing_frame = 5 }
+					else_if = {
+						limit = {
+							add_to_temp_variable = {
+								bos_current = bos_part
+							}
+							check_variable = { BOS_construct_effot_progress < bos_current }
+						}
+						set_temp_variable = { bos_decision1_executing_frame = 5 }
+					}
 				}
-			}
-			bos_decision1_executing_text_visible = {
-				has_country_flag = BOS_AdmInitEffotConst
-			}
+				bos_decision1_executing_text_visible = {
+					has_country_flag = BOS_AdmInitEffotConst
+				}
 
 			# Decision 2
-			bos_decision2_visible = {
-				not = {
+				bos_decision2_visible = {
+					not = {
+						has_country_flag = BOS_AdmInitEffotProd
+					}
+				}
+				bos_decision2_click_enabled = {
+					command_power > 24
+					has_completed_focus = bos_nf_engineers_of_war
+					has_manpower > 99
+					BOS_has_x_available_administration_capacity = yes
+				}
+				bos_decision2_executing_visible = {
+					has_country_flag = BOS_AdmInitEffotProd
+
+					set_temp_variable = { bos_part = BOS_effot_time }
+					divide_temp_variable = { bos_part = 5 }
+					set_temp_variable = { bos_current = bos_part }
+
+					if = {
+						limit = {
+							check_variable = { BOS_Production_effot_progress < bos_current }
+						}
+						set_temp_variable = { bos_decision2_executing_frame = 1 }
+					}
+					else_if = {
+						limit = {
+							add_to_temp_variable = {
+								bos_current = bos_part
+							}
+							check_variable = { BOS_Production_effot_progress < bos_current }
+						}
+						set_temp_variable = { bos_decision2_executing_frame = 2 }
+					}
+					else_if = {
+						limit = {
+							add_to_temp_variable = {
+								bos_current = bos_part
+							}
+							check_variable = { BOS_Production_effot_progress < bos_current }
+						}
+						set_temp_variable = { bos_decision2_executing_frame = 3 }
+					}
+					else_if = {
+						limit = {
+							add_to_temp_variable = {
+								bos_current = bos_part
+							}
+							check_variable = { BOS_Production_effot_progress < bos_current }
+						}
+						set_temp_variable = { bos_decision2_executing_frame = 4 }
+					}
+					else_if = {
+						limit = {
+							add_to_temp_variable = {
+								bos_current = bos_part
+							}
+							check_variable = { BOS_Production_effot_progress < bos_current }
+						}
+						set_temp_variable = { bos_decision2_executing_frame = 5 }
+					}
+				}
+				bos_decision2_executing_text_visible = {
 					has_country_flag = BOS_AdmInitEffotProd
 				}
-			}
-			bos_decision2_click_enabled = {
-				command_power > 24
-				has_completed_focus = bos_nf_engineers_of_war
-				has_manpower > 99
-				BOS_has_x_available_administration_capacity = yes
-			}
-			bos_decision2_executing_visible = {
-				has_country_flag = BOS_AdmInitEffotProd
-
-				set_temp_variable = { bos_part = BOS_construct_effot_time }
-				divide_temp_variable = { bos_part = 5 }
-				set_temp_variable = { bos_current = bos_part }
-
-				if = {
-					limit = {
-						check_variable = { BOS_Production_effot_progress < bos_current }
-					}
-					set_temp_variable = { bos_decision2_executing_frame = 1 }
-				}
-				else_if = {
-					limit = {
-						add_to_temp_variable = {
-							bos_current = bos_part
-						}
-						check_variable = { BOS_Production_effot_progress < bos_current }
-					}
-					set_temp_variable = { bos_decision2_executing_frame = 2 }
-				}
-				else_if = {
-					limit = {
-						add_to_temp_variable = {
-							bos_current = bos_part
-						}
-						check_variable = { BOS_Production_effot_progress < bos_current }
-					}
-					set_temp_variable = { bos_decision2_executing_frame = 3 }
-				}
-				else_if = {
-					limit = {
-						add_to_temp_variable = {
-							bos_current = bos_part
-						}
-						check_variable = { BOS_Production_effot_progress < bos_current }
-					}
-					set_temp_variable = { bos_decision2_executing_frame = 4 }
-				}
-				else_if = {
-					limit = {
-						add_to_temp_variable = {
-							bos_current = bos_part
-						}
-						check_variable = { BOS_Production_effot_progress < bos_current }
-					}
-					set_temp_variable = { bos_decision2_executing_frame = 5 }
-				}
-			}
-			bos_decision2_executing_text_visible = {
-				has_country_flag = BOS_AdmInitEffotProd
-			}
 
 			# Decision 3
-			bos_decision3_visible = {
-				not = {
+				bos_decision3_visible = {
+					not = {
+						has_country_flag = BOS_AdmInitEffotResearch
+					}
+				}
+				bos_decision3_click_enabled = {
+					command_power > 24
+					has_completed_focus = bos_nf_keepers_of_knowledge
+					has_manpower > 99
+					BOS_has_x_available_administration_capacity = yes
+				}
+				bos_decision3_executing_visible = {
+					has_country_flag = BOS_AdmInitEffotResearch
+
+					set_temp_variable = { bos_part = BOS_effot_time }
+					divide_temp_variable = { bos_part = 5 }
+					set_temp_variable = { bos_current = bos_part }
+
+					if = {
+						limit = {
+							check_variable = { BOS_research_effot_progress < bos_current }
+						}
+						set_temp_variable = { bos_decision3_executing_frame = 1 }
+					}
+					else_if = {
+						limit = {
+							add_to_temp_variable = {
+								bos_current = bos_part
+							}
+							check_variable = { BOS_research_effot_progress < bos_current }
+						}
+						set_temp_variable = { bos_decision3_executing_frame = 2 }
+					}
+					else_if = {
+						limit = {
+							add_to_temp_variable = {
+								bos_current = bos_part
+							}
+							check_variable = { BOS_research_effot_progress < bos_current }
+						}
+						set_temp_variable = { bos_decision3_executing_frame = 3 }
+					}
+					else_if = {
+						limit = {
+							add_to_temp_variable = {
+								bos_current = bos_part
+							}
+							check_variable = { BOS_research_effot_progress < bos_current }
+						}
+						set_temp_variable = { bos_decision3_executing_frame = 4 }
+					}
+					else_if = {
+						limit = {
+							add_to_temp_variable = {
+								bos_current = bos_part
+							}
+							check_variable = { BOS_research_effot_progress < bos_current }
+						}
+						set_temp_variable = { bos_decision3_executing_frame = 5 }
+					}
+				}
+				bos_decision3_executing_text_visible = {
 					has_country_flag = BOS_AdmInitEffotResearch
 				}
-			}
-			bos_decision3_click_enabled = {
-				command_power > 24
-				has_completed_focus = bos_nf_keepers_of_knowledge
-				has_manpower > 99
-				BOS_has_x_available_administration_capacity = yes
-			}
-			bos_decision3_executing_visible = {
-				has_country_flag = BOS_AdmInitEffotResearch
-
-				set_temp_variable = { bos_part = BOS_research_effot_time }
-				divide_temp_variable = { bos_part = 5 }
-				set_temp_variable = { bos_current = bos_part }
-
-				if = {
-					limit = {
-						check_variable = { BOS_research_effot_progress < bos_current }
-					}
-					set_temp_variable = { bos_decision3_executing_frame = 1 }
-				}
-				else_if = {
-					limit = {
-						add_to_temp_variable = {
-							bos_current = bos_part
-						}
-						check_variable = { BOS_research_effot_progress < bos_current }
-					}
-					set_temp_variable = { bos_decision3_executing_frame = 2 }
-				}
-				else_if = {
-					limit = {
-						add_to_temp_variable = {
-							bos_current = bos_part
-						}
-						check_variable = { BOS_research_effot_progress < bos_current }
-					}
-					set_temp_variable = { bos_decision3_executing_frame = 3 }
-				}
-				else_if = {
-					limit = {
-						add_to_temp_variable = {
-							bos_current = bos_part
-						}
-						check_variable = { BOS_research_effot_progress < bos_current }
-					}
-					set_temp_variable = { bos_decision3_executing_frame = 4 }
-				}
-				else_if = {
-					limit = {
-						add_to_temp_variable = {
-							bos_current = bos_part
-						}
-						check_variable = { BOS_research_effot_progress < bos_current }
-					}
-					set_temp_variable = { bos_decision3_executing_frame = 5 }
-				}
-			}
-			bos_decision3_executing_text_visible = {
-				has_country_flag = BOS_AdmInitEffotResearch
-			}
 
 			# Decision 4
-			bos_decision4_visible = {
-				not = {
+				bos_decision4_visible = {
+					not = {
+						has_country_flag = BOS_AdmInitEffotPolit
+					}
+				}
+				bos_decision4_click_enabled = {
+					command_power > 24
+					has_completed_focus = bos_nf_bringers_of_progress
+					has_manpower > 99
+					BOS_has_x_available_administration_capacity = yes
+				}
+				bos_decision4_executing_visible = {
+					has_country_flag = BOS_AdmInitEffotPolit
+
+					set_temp_variable = { bos_part = BOS_effot_time }
+					divide_temp_variable = { bos_part = 5 }
+					set_temp_variable = { bos_current = bos_part }
+
+					if = {
+						limit = {
+							check_variable = { BOS_polit_effot_progress < bos_current }
+						}
+						set_temp_variable = { bos_decision4_executing_frame = 1 }
+					}
+					else_if = {
+						limit = {
+							add_to_temp_variable = {
+								bos_current = bos_part
+							}
+							check_variable = { BOS_polit_effot_progress < bos_current }
+						}
+						set_temp_variable = { bos_decision4_executing_frame = 2 }
+					}
+					else_if = {
+						limit = {
+							add_to_temp_variable = {
+								bos_current = bos_part
+							}
+							check_variable = { BOS_polit_effot_progress < bos_current }
+						}
+						set_temp_variable = { bos_decision4_executing_frame = 3 }
+					}
+					else_if = {
+						limit = {
+							add_to_temp_variable = {
+								bos_current = bos_part
+							}
+							check_variable = { BOS_polit_effot_progress < bos_current }
+						}
+						set_temp_variable = { bos_decision4_executing_frame = 4 }
+					}
+					else_if = {
+						limit = {
+							add_to_temp_variable = {
+								bos_current = bos_part
+							}
+							check_variable = { BOS_polit_effot_progress < bos_current }
+						}
+						set_temp_variable = { bos_decision4_executing_frame = 5 }
+					}
+				}
+				bos_decision4_executing_text_visible = {
 					has_country_flag = BOS_AdmInitEffotPolit
 				}
-			}
-			bos_decision4_click_enabled = {
-				command_power > 24
-				has_completed_focus = bos_nf_bringers_of_progress
-				has_manpower > 99
-				BOS_has_x_available_administration_capacity = yes
-			}
-			bos_decision4_executing_visible = {
-				has_country_flag = BOS_AdmInitEffotPolit
-
-				set_temp_variable = { bos_part = BOS_polit_effot_time }
-				divide_temp_variable = { bos_part = 5 }
-				set_temp_variable = { bos_current = bos_part }
-
-				if = {
-					limit = {
-						check_variable = { BOS_polit_effot_progress < bos_current }
-					}
-					set_temp_variable = { bos_decision4_executing_frame = 1 }
-				}
-				else_if = {
-					limit = {
-						add_to_temp_variable = {
-							bos_current = bos_part
-						}
-						check_variable = { BOS_polit_effot_progress < bos_current }
-					}
-					set_temp_variable = { bos_decision4_executing_frame = 2 }
-				}
-				else_if = {
-					limit = {
-						add_to_temp_variable = {
-							bos_current = bos_part
-						}
-						check_variable = { BOS_polit_effot_progress < bos_current }
-					}
-					set_temp_variable = { bos_decision4_executing_frame = 3 }
-				}
-				else_if = {
-					limit = {
-						add_to_temp_variable = {
-							bos_current = bos_part
-						}
-						check_variable = { BOS_polit_effot_progress < bos_current }
-					}
-					set_temp_variable = { bos_decision4_executing_frame = 4 }
-				}
-				else_if = {
-					limit = {
-						add_to_temp_variable = {
-							bos_current = bos_part
-						}
-						check_variable = { BOS_polit_effot_progress < bos_current }
-					}
-					set_temp_variable = { bos_decision4_executing_frame = 5 }
-				}
-			}
-			bos_decision4_executing_text_visible = {
-				has_country_flag = BOS_AdmInitEffotPolit
-			}
 
 			# Decision 5
 				bos_decision5_visible = {
-				not = {
-					has_country_flag = BOS_AdmUndergroundConstruction
-				}
+					not = {
+						has_country_flag = BOS_AdmUndergroundConstruction
+					}
 				}
 				bos_decision5_click_enabled = {
-				has_political_power > 9
-				has_manpower > 99
-				BOS_has_x_available_administration_capacity = yes
+					has_political_power > 9
+					has_manpower > 99
+					BOS_has_x_available_administration_capacity = yes
 				}
 				bos_decision5_executing_visible = {
-				has_country_flag = BOS_AdmUndergroundConstruction
+					has_country_flag = BOS_AdmUndergroundConstruction
 
-				set_temp_variable = { bos_part = BOS_underground_construction_time }
-				divide_temp_variable = { bos_part = 5 }
-				set_temp_variable = { bos_current = bos_part }
+					set_temp_variable = { bos_part = BOS_construction_time }
+					divide_temp_variable = { bos_part = 5 }
+					set_temp_variable = { bos_current = bos_part }
 
-				if = {
-					limit = {
-						check_variable = { BOS_underground_construction_progress < bos_current }
-					}
-					set_temp_variable = { bos_decision5_executing_frame = 1 }
-				}
-				else_if = {
-					limit = {
-						add_to_temp_variable = {
-							bos_current = bos_part
+					if = {
+						limit = {
+							check_variable = { BOS_underground_construction_progress < bos_current }
 						}
-						check_variable = { BOS_underground_construction_progress < bos_current }
+						set_temp_variable = { bos_decision5_executing_frame = 1 }
 					}
-					set_temp_variable = { bos_decision5_executing_frame = 2 }
-				}
-				else_if = {
-					limit = {
-						add_to_temp_variable = {
-							bos_current = bos_part
+					else_if = {
+						limit = {
+							add_to_temp_variable = {
+								bos_current = bos_part
+							}
+							check_variable = { BOS_underground_construction_progress < bos_current }
 						}
-						check_variable = { BOS_underground_construction_progress < bos_current }
+						set_temp_variable = { bos_decision5_executing_frame = 2 }
 					}
-					set_temp_variable = { bos_decision5_executing_frame = 3 }
-				}
-				else_if = {
-					limit = {
-						add_to_temp_variable = {
-							bos_current = bos_part
+					else_if = {
+						limit = {
+							add_to_temp_variable = {
+								bos_current = bos_part
+							}
+							check_variable = { BOS_underground_construction_progress < bos_current }
 						}
-						check_variable = { BOS_underground_construction_progress < bos_current }
+						set_temp_variable = { bos_decision5_executing_frame = 3 }
 					}
-					set_temp_variable = { bos_decision5_executing_frame = 4 }
-				}
-				else_if = {
-					limit = {
-						add_to_temp_variable = {
-							bos_current = bos_part
+					else_if = {
+						limit = {
+							add_to_temp_variable = {
+								bos_current = bos_part
+							}
+							check_variable = { BOS_underground_construction_progress < bos_current }
 						}
-						check_variable = { BOS_underground_construction_progress < bos_current }
+						set_temp_variable = { bos_decision5_executing_frame = 4 }
 					}
-					set_temp_variable = { bos_decision5_executing_frame = 5 }
-				}
+					else_if = {
+						limit = {
+							add_to_temp_variable = {
+								bos_current = bos_part
+							}
+							check_variable = { BOS_underground_construction_progress < bos_current }
+						}
+						set_temp_variable = { bos_decision5_executing_frame = 5 }
+					}
 				}
 				bos_decision5_executing_text_visible = {
-				has_country_flag = BOS_AdmUndergroundConstruction
+					has_country_flag = BOS_AdmUndergroundConstruction
 				}
 
 			# Decision 6
 				bos_decision6_visible = {
-				not = {
-					has_country_flag = BOS_AdmEquipPalad 
-				}
-				}
+						not = {
+							or = {
+								has_country_flag = BOS_AdmEquipPalad 
+								has_country_flag = BOS_AdmEquipPaladComplete 
+							}
+						}
+					}
 				bos_decision6_click_enabled = {
 					has_completed_focus = bos_nf_memories_of_heroes
 					has_manpower > 99
 					has_army_experience > 9
 					BOS_has_x_available_administration_capacity = yes
 				}
+				bos_decision6_executing_visible = {
+					or = {
+						has_country_flag = BOS_AdmEquipPalad 
+						has_country_flag = BOS_AdmEquipPaladComplete 
+					}
+					if = {
+						limit = {
+							has_country_flag = BOS_AdmEquipPaladComplete 
+						}
+						set_temp_variable = { bos_decision6_executing_frame = 6 }
+						else = {
+							set_temp_variable = { bos_part = BOS_equip_time }
+							divide_temp_variable = { bos_part = 5 }
+							set_temp_variable = { bos_current = bos_part }
+		
+							if = {
+								limit = {
+									check_variable = { BOS_equip_palad_progress < bos_current }
+								}
+								set_temp_variable = { bos_decision6_executing_frame = 1 }
+							}
+							else_if = {
+								limit = {
+									add_to_temp_variable = {
+										bos_current = bos_part
+									}
+									check_variable = { BOS_equip_palad_progress < bos_current }
+								}
+								set_temp_variable = { bos_decision6_executing_frame = 2 }
+							}
+							else_if = {
+								limit = {
+									add_to_temp_variable = {
+										bos_current = bos_part
+									}
+									check_variable = { BOS_equip_palad_progress < bos_current }
+								}
+								set_temp_variable = { bos_decision6_executing_frame = 3 }
+							}
+							else_if = {
+								limit = {
+									add_to_temp_variable = {
+										bos_current = bos_part
+									}
+									check_variable = { BOS_equip_palad_progress < bos_current }
+								}
+								set_temp_variable = { bos_decision6_executing_frame = 4 }
+							}
+							else_if = {
+								limit = {
+									add_to_temp_variable = {
+										bos_current = bos_part
+									}
+									check_variable = { BOS_equip_palad_progress < bos_current }
+								}
+								set_temp_variable = { bos_decision6_executing_frame = 5 }
+							}
+						}
+					}
+				}
+				bos_decision6_complete_text_visible = {
+					has_country_flag = BOS_AdmEquipPaladComplete
+				}
 				bos_decision6_executing_text_visible = {
-				has_country_flag = BOS_AdmEquipPalad
+					has_country_flag = BOS_AdmEquipPalad
 				}
 
 			# Decision 7
 				bos_decision7_visible = {
-				not = {
-					has_country_flag = BOS_AdmEquipInit
-				}
+					not = {
+						or = {
+							has_country_flag = BOS_AdmEquipInit 
+							has_country_flag = BOS_AdmEquipInitComplete 
+						}
+					}
 				}
 				bos_decision7_click_enabled = {
 					has_completed_focus = bos_nf_filled_with_purpose
@@ -681,14 +2101,81 @@ scripted_gui = {
 					has_army_experience > 9
 					BOS_has_x_available_administration_capacity = yes
 				}
+				bos_decision7_executing_visible = {
+					or = {
+						has_country_flag = BOS_AdmEquipInit 
+						has_country_flag = BOS_AdmEquipInitComplete
+					}
+
+					if = {
+						limit = {
+							has_country_flag = BOS_AdmEquipInitComplete
+						}
+						set_temp_variable = { bos_decision7_executing_frame = 6 }
+						else = {
+							set_temp_variable = { bos_part = BOS_equip_time }
+							divide_temp_variable = { bos_part = 5 }
+							set_temp_variable = { bos_current = bos_part }
+		
+							if = {
+								limit = {
+									check_variable = { BOS_equip_init_progress < bos_current }
+								}
+								set_temp_variable = { bos_decision7_executing_frame = 1 }
+							}
+							else_if = {
+								limit = {
+									add_to_temp_variable = {
+										bos_current = bos_part
+									}
+									check_variable = { BOS_equip_init_progress < bos_current }
+								}
+								set_temp_variable = { bos_decision7_executing_frame = 2 }
+							}
+							else_if = {
+								limit = {
+									add_to_temp_variable = {
+										bos_current = bos_part
+									}
+									check_variable = { BOS_equip_init_progress < bos_current }
+								}
+								set_temp_variable = { bos_decision7_executing_frame = 3 }
+							}
+							else_if = {
+								limit = {
+									add_to_temp_variable = {
+										bos_current = bos_part
+									}
+									check_variable = { BOS_equip_init_progress < bos_current }
+								}
+								set_temp_variable = { bos_decision7_executing_frame = 4 }
+							}
+							else_if = {
+								limit = {
+									add_to_temp_variable = {
+										bos_current = bos_part
+									}
+									check_variable = { BOS_equip_init_progress < bos_current }
+								}
+								set_temp_variable = { bos_decision7_executing_frame = 5 }
+							}
+						}
+					}
+				}
+				bos_decision7_complete_text_visible = {
+					has_country_flag = BOS_AdmEquipInitComplete
+				}
 				bos_decision7_executing_text_visible = {
-				has_country_flag = BOS_AdmEquipInit
+					has_country_flag = BOS_AdmEquipInit
 				}
 
 			# Decision 8
 				bos_decision8_visible = {
 					not = {
-						has_country_flag = BOS_AdmDigDeeper
+						or = {
+							has_country_flag = BOS_AdmDigDeeper 
+							has_country_flag = BOS_AdmDigDeeperComplete 
+						}
 					}
 				}
 				bos_decision8_click_enabled = {
@@ -706,13 +2193,73 @@ scripted_gui = {
 					has_manpower > 999
 					BOS_has_x_available_administration_capacity = yes
 				}
+				bos_decision8_executing_visible = {
+					or = {
+						has_country_flag = BOS_AdmDigDeeper 
+						has_country_flag = BOS_AdmDigDeeperComplete 
+					}
+
+					if = {
+						limit = {
+							has_country_flag = BOS_AdmDigDeeperComplete 
+						}
+						set_temp_variable = { bos_decision8_executing_frame = 6 }
+						else = {
+							set_temp_variable = { bos_part = BOS_dig_deeper_time }
+							divide_temp_variable = { bos_part = 5 }
+							set_temp_variable = { bos_current = bos_part }
+							if = {
+								limit = {
+									check_variable = { BOS_dig_deeper_progress < bos_current }
+								}
+								set_temp_variable = { bos_decision8_executing_frame = 1 }
+							}
+							else_if = {
+								limit = {
+									add_to_temp_variable = {
+										bos_current = bos_part
+									}
+									check_variable = { BOS_dig_deeper_progress < bos_current }
+								}
+								set_temp_variable = { bos_decision8_executing_frame = 2 }
+							}
+							else_if = {
+								limit = {
+									add_to_temp_variable = {
+										bos_current = bos_part
+									}
+									check_variable = { BOS_dig_deeper_progress < bos_current }
+								}
+								set_temp_variable = { bos_decision8_executing_frame = 3 }
+							}
+							else_if = {
+								limit = {
+									add_to_temp_variable = {
+										bos_current = bos_part
+									}
+									check_variable = { BOS_dig_deeper_progress < bos_current }
+								}
+								set_temp_variable = { bos_decision8_executing_frame = 4 }
+							}
+							else_if = {
+								limit = {
+									add_to_temp_variable = {
+										bos_current = bos_part
+									}
+									check_variable = { BOS_dig_deeper_progress < bos_current }
+								}
+								set_temp_variable = { bos_decision8_executing_frame = 5 }
+							}
+						}
+					}
+				}
+				bos_decision8_complete_text_visible = {
+					has_country_flag = BOS_AdmDigDeeperComplete
+				}
 				bos_decision8_executing_text_visible = {
 					has_country_flag = BOS_AdmDigDeeper
 				}
 		}
-
-
-
 		properties = {
 			bos_decision1_executing = {
 				frame = bos_decision1_executing_frame

@@ -54,11 +54,6 @@ spriteTypes = {
 
 	# Decisions
 		spriteType = {
-			name = "GFX_bos_decisions_bg"
-			texturefile = "gfx/interface/gui/bos/decisionBG.dds"
-		}
-
-		spriteType = {
 			name = "GFX_bos_decisions_btn_bg"
 			texturefile = "gfx/interface/gui/bos/buttonbg.dds"
 		}
@@ -66,6 +61,11 @@ spriteTypes = {
 		spriteType = {
 			name = "GFX_bos_executing_btn_bg"
 			texturefile = "gfx/interface/gui/bos/executing.dds"
+			noOfFrames = 6
+		}
+		spriteType = {
+			name = "GFX_bos_small_exec_bg"
+			texturefile = "gfx/interface/gui/bos/smallExec.dds"
 			noOfFrames = 5
 		}
 }
