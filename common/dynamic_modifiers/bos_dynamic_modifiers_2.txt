@@ -1,3 +1,23 @@
 bos_admin_decision_active = {
 	bos_administration_capacity_usage = 1
 }
+
+bos_admin_decision_construct_active = {
+	production_speed_buildings_factor = 0.1
+}
+
+bos_admin_decision_production_active = {
+	industrial_capacity_factory = 0.1
+}
+
+bos_admin_decision_research_active = {
+	research_speed_factor = 0.1
+}
+
+bos_admin_decision_polit_active = {
+	political_power_factor = 0.1
+}
+
+bos_admin_decision_dig_deeper_active = {
+	political_power_factor = -0.5
+}

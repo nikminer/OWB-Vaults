@@ -1,5 +1,6 @@
 bos_underground_construction_decisions = {
-	bos_underground_expansion_decision = {
+	# Expand Decisions
+		bos_underground_expansion_decision = {
 		icon = GFX_decision_blueprint_2
 		fire_only_once = no
 		days_remove = 60
@@ -61,9 +62,399 @@ bos_underground_construction_decisions = {
 				}
 			}
 		}
-	}
+		}
+		bos_underground_dig_deeper_decision = {
+		icon = GFX_decision_welding
+		fire_only_once = yes
+		days_remove = 365
+		custom_cost_text = army_xp_more_than_100
+		cost = 300
+		# days_re_enable = 5
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 800
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 20
+				}
+				NOT = {
+					BOS_has_x_available_space = yes
+				}
+			}
+		}
+		visible = {
+			always = no
+		}
+		available = {
+			has_completed_focus = bos_nf_room_to_grow
+			custom_trigger_tooltip = {
+				tooltip = bos_underground_dig_deeper_decision_has_not_reached_the_bottom
+				NOT = {
+					check_variable = {
+						var = BOS_how_close_to_bottom
+						value = 10
+						compare = greater_than_or_equals
+					}
+				}
+			}
+			has_manpower > 999
+			BOS_has_x_available_administration_capacity = yes
+		}
+		modifier = {
+			bos_administration_capacity_usage = 1
+			political_power_factor = -0.5
+		}
+		complete_effect = {
+			add_manpower = -1000
+		}
+		remove_effect = {
+			add_to_variable = {
+				BOS_how_close_to_bottom = 1
+			}
+			set_temp_variable = {
+				BOS_maximum_space_to_change = 30
+			}
+			bos_change_maximum_space = yes
+			random_list = {
+				10 = {
+					add_manpower = 1000
+					modifier = {
+						factor = 2
+						BOS_has_safety_department = yes
+					}
+				}
+				30 = {
+					add_manpower = 900
+					modifier = {
+						factor = 1.5
+						BOS_has_safety_department = yes
+					}
+				}
+				30 = {
+					add_manpower = 500
+					modifier = {
+						factor = 0.5
+						BOS_has_safety_department = yes
+					}
+				}
+				25 = {
+					add_manpower = 200
+					modifier = {
+						factor = 0.5
+						BOS_has_safety_department = yes
+					}
+				}
+				5 = {
+					add_manpower = 5
+					modifier = {
+						factor = 0.5
+						BOS_has_safety_department = yes
+					}
+				}
+			}
+		}
+		}
 
-
+	# Effot Decisions
+		bos_underground_construction_boost_decision = {
+		icon = GFX_decision_wrench
+		fire_only_once = no
+		days_remove = 100
+		custom_cost_trigger = {
+			command_power > 24
+		}
+		visible = {
+			always = no
+		}
+		custom_cost_text = command_power_more_than_25
+		# days_re_enable = 5
+		ai_will_do = {
+			base = 200
+		}
+		available = {
+			has_completed_focus = bos_nf_engineers_of_peace
+			has_manpower > 99
+			BOS_has_x_available_administration_capacity = yes
+		}
+		modifier = {
+			bos_administration_capacity_usage = 1
+			production_speed_buildings_factor = 0.1
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+			}
+			add_manpower = -100
+		}
+		remove_effect = {
+			random_list = {
+				90 = {
+					add_manpower = 100
+					modifier = {
+						factor = 2
+						BOS_has_safety_department = yes
+					}
+				}
+				10 = {
+					add_manpower = 95
+				}
+			}
+		}
+		}
+		bos_underground_production_boost_decision = {
+		icon = GFX_decision_hammer
+		fire_only_once = no
+		days_remove = 100
+		custom_cost_trigger = {
+			command_power > 24
+		}
+		visible = {
+			always = no
+		}
+		custom_cost_text = command_power_more_than_25
+		# days_re_enable = 5
+		ai_will_do = {
+			base = 200
+		}
+		available = {
+			has_completed_focus = bos_nf_engineers_of_war
+			has_manpower > 99
+			BOS_has_x_available_administration_capacity = yes
+		}
+		modifier = {
+			bos_administration_capacity_usage = 1
+			industrial_capacity_factory = 0.1
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+			}
+			add_manpower = -100
+		}
+		remove_effect = {
+			random_list = {
+				90 = {
+					add_manpower = 100
+					modifier = {
+						factor = 2
+						BOS_has_safety_department = yes
+					}
+				}
+				10 = {
+					add_manpower = 95
+				}
+			}
+		}
+		}
+		bos_underground_research_boost_decision = {
+		icon = GFX_decision_category_research
+		fire_only_once = no
+		days_remove = 100
+		custom_cost_trigger = {
+			command_power > 24
+		}
+		visible = {
+			always = no
+		}
+		custom_cost_text = command_power_more_than_25
+		# days_re_enable = 5
+		ai_will_do = {
+			base = 200
+		}
+		available = {
+			has_completed_focus = bos_nf_keepers_of_knowledge
+			has_manpower > 99
+			BOS_has_x_available_administration_capacity = yes
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+			}
+			add_manpower = -100
+		}
+		modifier = {
+			bos_administration_capacity_usage = 1
+			research_speed_factor = 0.1
+		}
+		remove_effect = {
+			random_list = {
+				90 = {
+					add_manpower = 100
+					modifier = {
+						factor = 2
+						BOS_has_safety_department = yes
+					}
+				}
+				10 = {
+					add_manpower = 95
+				}
+			}
+		}
+		}
+		bos_underground_pp_boost_decision = {
+		icon = GFX_decision_intercom
+		fire_only_once = no
+		days_remove = 100
+		custom_cost_trigger = {
+			command_power > 24
+		}
+		custom_cost_text = command_power_more_than_25
+		# days_re_enable = 5
+		ai_will_do = {
+			base = 200
+		}
+		visible = {
+			always = no
+		}
+		available = {
+			has_completed_focus = bos_nf_bringers_of_progress
+			has_manpower > 99
+			BOS_has_x_available_administration_capacity = yes
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+			}
+			add_manpower = -100
+		}
+		modifier = {
+			bos_administration_capacity_usage = 1
+			political_power_factor = 0.1
+		}
+		remove_effect = {
+			random_list = {
+				90 = {
+					add_manpower = 100
+					modifier = {
+						factor = 2
+						BOS_has_safety_department = yes
+					}
+				}
+				10 = {
+					add_manpower = 95
+				}
+			}
+		}
+		}
+	
+	# Army Decisions
+		bos_underground_infantry_boost_decision = {
+		icon = GFX_decision_armor
+		fire_only_once = yes
+		days_remove = 90
+		custom_cost_trigger = {
+			has_army_experience > 9
+		}
+		custom_cost_text = army_xp_more_than_10
+		# days_re_enable = 5
+		ai_will_do = {
+			base = 800			#One time
+		}
+		visible = {
+			always = no
+		}
+		available = {
+			has_completed_focus = bos_nf_filled_with_purpose
+			has_manpower > 99
+			BOS_has_x_available_administration_capacity = yes
+		}
+		modifier = {
+			bos_administration_capacity_usage = 1
+		}
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -10
+			}
+			add_manpower = -100
+		}
+		remove_effect = {
+			add_tech_bonus = {
+				name = bos_underground_infantry_boost_decision
+				bonus = 1
+				uses = 1
+				ahead_reduction = 4
+				category = infantry_tech_category
+			}
+			random_list = {
+				80 = {
+					add_manpower = 100
+					modifier = {
+						factor = 2
+						BOS_has_safety_department = yes
+					}
+				}
+				10 = {
+					add_manpower = 95
+				}
+				10 = {
+					add_manpower = 70
+					modifier = {
+						factor = 0.5
+						BOS_has_safety_department = yes
+					}
+				}
+			}
+		}
+		}
+		bos_underground_power_armour_boost_decision = {
+		icon = GFX_decision_t51_vb_armor
+		fire_only_once = yes
+		days_remove = 90
+		custom_cost_trigger = {
+			has_army_experience > 9
+		}
+		custom_cost_text = army_xp_more_than_10
+		# days_re_enable = 5
+		ai_will_do = {
+			base = 800			#One time
+		}
+		visible = {
+			always = no
+		}
+		available = {
+			has_completed_focus = bos_nf_memories_of_heroes
+			has_manpower > 99
+			BOS_has_x_available_administration_capacity = yes
+		}
+		modifier = {
+			bos_administration_capacity_usage = 1
+		}
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -10
+			}
+			add_manpower = -100
+		}
+		remove_effect = {
+			add_tech_bonus = {
+				name = bos_underground_power_armour_boost_decision
+				bonus = 1
+				uses = 1
+				ahead_reduction = 4
+				category = power_armor_tech_category
+			}
+			random_list = {
+				80 = {
+					add_manpower = 100
+					modifier = {
+						factor = 2
+						BOS_has_safety_department = yes
+					}
+				}
+				10 = {
+					add_manpower = 95
+				}
+				10 = {
+					add_manpower = 70
+					modifier = {
+						factor = 0.5
+						BOS_has_safety_department = yes
+					}
+				}
+			}
+		}
+		}
+	# Building Decisions
 	bos_underground_build_civilian_workshop_decision = {
 		icon = GFX_decision_minning_helmet
 		fire_only_once = no
@@ -913,284 +1304,6 @@ bos_underground_construction_decisions = {
 			}
 		}
 	}
-	bos_underground_construction_boost_decision = {
-		icon = GFX_decision_wrench
-		fire_only_once = no
-		days_remove = 100
-		custom_cost_trigger = {
-			command_power > 24
-		}
-		custom_cost_text = command_power_more_than_25
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 200
-		}
-		available = {
-			has_completed_focus = bos_nf_engineers_of_peace
-			has_manpower > 99
-			BOS_has_x_available_administration_capacity = yes
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-			production_speed_buildings_factor = 0.1
-		}
-		complete_effect = {
-			hidden_effect = {
-				add_command_power = -25
-			}
-			add_manpower = -100
-		}
-		remove_effect = {
-			random_list = {
-				90 = {
-					add_manpower = 100
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
-					}
-				}
-				10 = {
-					add_manpower = 95
-				}
-			}
-		}
-	}
-	bos_underground_production_boost_decision = {
-		icon = GFX_decision_hammer
-		fire_only_once = no
-		days_remove = 100
-		custom_cost_trigger = {
-			command_power > 24
-		}
-		custom_cost_text = command_power_more_than_25
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 200
-		}
-		available = {
-			has_completed_focus = bos_nf_engineers_of_war
-			has_manpower > 99
-			BOS_has_x_available_administration_capacity = yes
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-			industrial_capacity_factory = 0.1
-		}
-		complete_effect = {
-			hidden_effect = {
-				add_command_power = -25
-			}
-			add_manpower = -100
-		}
-		remove_effect = {
-			random_list = {
-				90 = {
-					add_manpower = 100
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
-					}
-				}
-				10 = {
-					add_manpower = 95
-				}
-			}
-		}
-	}
-	bos_underground_research_boost_decision = {
-		icon = GFX_decision_category_research
-		fire_only_once = no
-		days_remove = 100
-		custom_cost_trigger = {
-			command_power > 24
-		}
-		custom_cost_text = command_power_more_than_25
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 200
-		}
-		available = {
-			has_completed_focus = bos_nf_keepers_of_knowledge
-			has_manpower > 99
-			BOS_has_x_available_administration_capacity = yes
-		}
-		complete_effect = {
-			hidden_effect = {
-				add_command_power = -25
-			}
-			add_manpower = -100
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-			research_speed_factor = 0.1
-		}
-		remove_effect = {
-			random_list = {
-				90 = {
-					add_manpower = 100
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
-					}
-				}
-				10 = {
-					add_manpower = 95
-				}
-			}
-		}
-	}
-	bos_underground_pp_boost_decision = {
-		icon = GFX_decision_intercom
-		fire_only_once = no
-		days_remove = 100
-		custom_cost_trigger = {
-			command_power > 24
-		}
-		custom_cost_text = command_power_more_than_25
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 200
-		}
-		available = {
-			has_completed_focus = bos_nf_bringers_of_progress
-			has_manpower > 99
-			BOS_has_x_available_administration_capacity = yes
-		}
-		complete_effect = {
-			hidden_effect = {
-				add_command_power = -25
-			}
-			add_manpower = -100
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-			political_power_factor = 0.1
-		}
-		remove_effect = {
-			random_list = {
-				90 = {
-					add_manpower = 100
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
-					}
-				}
-				10 = {
-					add_manpower = 95
-				}
-			}
-		}
-	}
-	bos_underground_infantry_boost_decision = {
-		icon = GFX_decision_armor
-		fire_only_once = yes
-		days_remove = 90
-		custom_cost_trigger = {
-			has_army_experience > 9
-		}
-		custom_cost_text = army_xp_more_than_10
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 800			#One time
-		}
-		available = {
-			has_completed_focus = bos_nf_filled_with_purpose
-			has_manpower > 99
-			BOS_has_x_available_administration_capacity = yes
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-		}
-		complete_effect = {
-			hidden_effect = {
-				army_experience = -10
-			}
-			add_manpower = -100
-		}
-		remove_effect = {
-			add_tech_bonus = {
-				name = bos_underground_infantry_boost_decision
-				bonus = 1
-				uses = 1
-				ahead_reduction = 4
-				category = infantry_tech_category
-			}
-			random_list = {
-				80 = {
-					add_manpower = 100
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
-					}
-				}
-				10 = {
-					add_manpower = 95
-				}
-				10 = {
-					add_manpower = 70
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
-					}
-				}
-			}
-		}
-	}
-	bos_underground_power_armour_boost_decision = {
-		icon = GFX_decision_t51_vb_armor
-		fire_only_once = yes
-		days_remove = 90
-		custom_cost_trigger = {
-			has_army_experience > 9
-		}
-		custom_cost_text = army_xp_more_than_10
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 800			#One time
-		}
-		available = {
-			has_completed_focus = bos_nf_memories_of_heroes
-			has_manpower > 99
-			BOS_has_x_available_administration_capacity = yes
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-		}
-		complete_effect = {
-			hidden_effect = {
-				army_experience = -10
-			}
-			add_manpower = -100
-		}
-		remove_effect = {
-			add_tech_bonus = {
-				name = bos_underground_power_armour_boost_decision
-				bonus = 1
-				uses = 1
-				ahead_reduction = 4
-				category = power_armor_tech_category
-			}
-			random_list = {
-				80 = {
-					add_manpower = 100
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
-					}
-				}
-				10 = {
-					add_manpower = 95
-				}
-				10 = {
-					add_manpower = 70
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
-					}
-				}
-			}
-		}
-	}
 	bos_underground_build_simulators_decision = {
 		icon = GFX_decision_terminal
 		fire_only_once = yes
@@ -1251,94 +1364,7 @@ bos_underground_construction_decisions = {
 			}
 		}
 	}
-	bos_underground_dig_deeper_decision = {
-		icon = GFX_decision_welding
-		fire_only_once = yes
-		days_remove = 365
-		custom_cost_text = army_xp_more_than_100
-		cost = 300
-		# days_re_enable = 5
-		ai_will_do = {
-			base = 0
-			modifier = {
-				add = 800
-				set_temp_variable = {
-					BOS_available_space_to_check_num = 20
-				}
-				NOT = {
-					BOS_has_x_available_space = yes
-				}
-			}
-		}
-		available = {
-			has_completed_focus = bos_nf_room_to_grow
-			custom_trigger_tooltip = {
-				tooltip = bos_underground_dig_deeper_decision_has_not_reached_the_bottom
-				NOT = {
-					check_variable = {
-						var = BOS_how_close_to_bottom
-						value = 10
-						compare = greater_than_or_equals
-					}
-				}
-			}
-			has_manpower > 999
-			BOS_has_x_available_administration_capacity = yes
-		}
-		modifier = {
-			bos_administration_capacity_usage = 1
-			political_power_factor = -0.5
-		}
-		complete_effect = {
-			add_manpower = -1000
-		}
-		remove_effect = {
-			add_to_variable = {
-				BOS_how_close_to_bottom = 1
-			}
-			set_temp_variable = {
-				BOS_maximum_space_to_change = 30
-			}
-			bos_change_maximum_space = yes
-			random_list = {
-				10 = {
-					add_manpower = 1000
-					modifier = {
-						factor = 2
-						BOS_has_safety_department = yes
-					}
-				}
-				30 = {
-					add_manpower = 900
-					modifier = {
-						factor = 1.5
-						BOS_has_safety_department = yes
-					}
-				}
-				30 = {
-					add_manpower = 500
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
-					}
-				}
-				25 = {
-					add_manpower = 200
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
-					}
-				}
-				5 = {
-					add_manpower = 5
-					modifier = {
-						factor = 0.5
-						BOS_has_safety_department = yes
-					}
-				}
-			}
-		}
-	}
+	
 }
 
 bos_paladin_soldiers_decisions = {

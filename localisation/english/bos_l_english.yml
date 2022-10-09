@@ -25,6 +25,26 @@
   LOST_HILLS_ADM_H: "Admin\nCenters\n[?BOS.BOS_underground_building_administration_centers]/[?BOS.BOS_maximum_admin_centers_allowed]"
  
   # Decisions
-  LOST_HILLS_EXEC_H: "Executing..."
+  LOST_HILLS_EFFOT_CONSTRUCTION_H: "Initate construction effot"
+  LOST_HILLS_EXEC_EFFOT_CONSTRUCTION_H: "[?BOS.BOS_construct_effot_progress]/[?BOS.BOS_construct_effot_time] Days"
+
+  LOST_HILLS_EFFOT_PRODUCTION_H: "Initate production effot"
+  LOST_HILLS_EXEC_EFFOT_PRODUCTION_H: "[?BOS.BOS_Production_effot_progress]/[?BOS.BOS_Production_effot_time] Days"
+
+  LOST_HILLS_EFFOT_RESEARCH_H: "Initate research effot"
+  LOST_HILLS_EXEC_EFFOT_RESEARCH_H: "[?BOS.BOS_research_effot_progress]/[?BOS.BOS_research_effot_time] Days"
+
+  LOST_HILLS_EFFOT_POLIT_H: "Initate political effot"
+  LOST_HILLS_EXEC_EFFOT_POLIT_H: "[?BOS.BOS_polit_effot_progress]/[?BOS.BOS_polit_effot_time] Days"
+
   LOST_HILLS_UNDEGROUND_EXPAND_H: "Underground expansion"
+  LOST_HILLS_EXEC_UNDEGROUND_EXPAND_H: "[?BOS.BOS_underground_construction_progress]/[?BOS.BOS_underground_construction_time] Days"
   LOST_HILLS_UNDEGROUND_EXPAND_TT: "Add §Y[?BOS.BOS_underground_construction_slots_to_add]§! underground §YConstruction Slots§!.\n§gUnderground Construction Slots are special slots we can fill with various buildings or installations.\nTo see, and utilize your Underground Construction Slots, see the relevant decision category.§!"
+
+  LOST_HILLS_EFFOT_PALADIN_H: "Refubish Paladin Equipment"
+  LOST_HILLS_EXEC_EFFOT_PALADIN_H: "[?BOS.BOS_equip_palad_progress]/[?BOS.BOS_equip_palad_time] Days"
+  LOST_HILLS_EFFOT_INIT_H: "Refubish Initiate Equipment"
+  LOST_HILLS_EXEC_EFFOT_INIT_H: "[?BOS.BOS_equip_init_progress]/[?BOS.BOS_equip_init_time] Days"
+
+  LOST_HILLS_DEEPER_DIG_H: "Dig deeper"
+  LOST_HILLS_EXEC_DEEPER_DIG_H: "[?BOS.BOS_dig_deeper_progress]/[?BOS.BOS_dig_deeper_time] Days"

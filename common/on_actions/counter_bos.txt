@@ -1,7 +1,159 @@
 on_actions = {
 	on_daily_BOS = {
 		effect = {
-			# Decision 5
+		# Decision 1
+			if = {
+				limit = {
+					has_country_flag = BOS_AdmInitEffotConst
+				}
+				add_to_variable = {
+					var = BOS_construct_effot_progress
+					value = 1
+				}
+			}
+
+			if = {
+				limit = {
+					check_variable = {
+						var = BOS_construct_effot_progress
+						value = BOS_construct_effot_time
+						compare = greater_than_or_equals
+					}
+				}
+				clr_country_flag = BOS_AdmInitEffotConst
+				set_variable = {
+					BOS_construct_effot_progress = 0
+				}
+
+				random_list = {
+					90 = {
+						add_manpower = 100
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
+					}
+					10 = {
+						add_manpower = 95
+					}
+				}
+			}
+
+		# Decision 2
+			if = {
+				limit = {
+					has_country_flag = BOS_AdmInitEffotProd
+				}
+				add_to_variable = {
+					var = BOS_Production_effot_progress
+					value = 1
+				}
+			}
+		
+			if = {
+				limit = {
+					check_variable = {
+						var = BOS_Production_effot_progress
+						value = BOS_Production_effot_time
+						compare = greater_than_or_equals
+					}
+				}
+				clr_country_flag = BOS_AdmInitEffotProd
+				set_variable = {
+					BOS_Production_effot_progress = 0
+				}
+		
+				random_list = {
+					90 = {
+						add_manpower = 100
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
+					}
+					10 = {
+						add_manpower = 95
+					}
+				}
+			}
+
+		# Decision 3
+			if = {
+				limit = {
+					has_country_flag = BOS_AdmInitEffotResearch
+				}
+				add_to_variable = {
+					var = BOS_research_effot_progress
+					value = 1
+				}
+			}
+		
+			if = {
+				limit = {
+					check_variable = {
+						var = BOS_research_effot_progress
+						value = BOS_research_effot_time
+						compare = greater_than_or_equals
+					}
+				}
+				clr_country_flag = BOS_AdmInitEffotResearch
+				set_variable = {
+					BOS_research_effot_progress = 0
+				}
+		
+				random_list = {
+					90 = {
+						add_manpower = 100
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
+					}
+					10 = {
+						add_manpower = 95
+					}
+				}
+			}
+
+		# Decision 4
+			if = {
+				limit = {
+					has_country_flag = BOS_AdmInitEffotPolit
+				}
+				add_to_variable = {
+					var = BOS_polit_effot_progress
+					value = 1
+				}
+			}
+		
+			if = {
+				limit = {
+					check_variable = {
+						var = BOS_polit_effot_progress
+						value = BOS_polit_effot_time
+						compare = greater_than_or_equals
+					}
+				}
+				clr_country_flag = BOS_AdmInitEffotPolit
+				set_variable = {
+					BOS_polit_effot_progress = 0
+				}
+		
+				random_list = {
+					90 = {
+						add_manpower = 100
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
+					}
+					10 = {
+						add_manpower = 95
+					}
+				}
+			}
+
+		# Decision 5
 			if = {
 				limit = {
 					has_country_flag = BOS_AdmUndergroundConstruction
@@ -23,10 +175,6 @@ on_actions = {
 				clr_country_flag = BOS_AdmUndergroundConstruction
 				set_variable = {
 					BOS_underground_construction_progress = 0
-				}
-
-				set_temp_variable = {
-					BOS_underground_construction_slots_to_add = 1
 				}
 
 				bos_add_underground_construction_slots = yes
@@ -58,13 +206,13 @@ on_actions = {
 				}
 			}
 
-			# Decision 6
+		# Decision 6
 			if = {
 				limit = {
-					has_country_flag = BOS_AdmDigDeeper
+					has_country_flag = BOS_AdmEquipPalad
 				}
 				add_to_variable = {
-					var = BOS_dig_deeper_progress
+					var = BOS_equip_palad_progress
 					value = 1
 				}
 			}
@@ -72,18 +220,45 @@ on_actions = {
 			if = {
 				limit = {
 					check_variable = {
-						var = BOS_dig_deeper_progress
-						value = BOS_dig_deeper_time
+						var = BOS_equip_palad_progress
+						value = BOS_equip_palad_time 
 						compare = greater_than_or_equals
 					}
 				}
-				clr_country_flag = BOS_AdmDigDeeper
+				clr_country_flag = BOS_AdmEquipPalad
 				set_variable = {
-					BOS_dig_deeper_progress = 0
+					BOS_equip_palad_progress = 0
+				}
+
+				add_tech_bonus = {
+					name = bos_underground_power_armour_boost_decision
+					bonus = 1
+					uses = 1
+					ahead_reduction = 4
+					category = power_armor_tech_category
+				}
+				random_list = {
+					80 = {
+						add_manpower = 100
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
+					}
+					10 = {
+						add_manpower = 95
+					}
+					10 = {
+						add_manpower = 70
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
 				}
 			}
 
-			# Decision 7
+		# Decision 7
 			if = {
 				limit = {
 					has_country_flag = BOS_AdmEquipInit
@@ -106,15 +281,42 @@ on_actions = {
 				set_variable = {
 					BOS_equip_init_progress = 0
 				}
+				
+				add_tech_bonus = {
+					name = bos_underground_infantry_boost_decision
+					bonus = 1
+					uses = 1
+					ahead_reduction = 4
+					category = infantry_tech_category
+				}
+				random_list = {
+					80 = {
+						add_manpower = 100
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
+					}
+					10 = {
+						add_manpower = 95
+					}
+					10 = {
+						add_manpower = 70
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
+				}
 			}
 
-			# Decision 8
+		# Decision 8
 			if = {
 				limit = {
-					has_country_flag = BOS_AdmEquipPalad
+					has_country_flag = BOS_AdmDigDeeper 
 				}
 				add_to_variable = {
-					var = BOS_equip_palad_progress
+					var = BOS_dig_deeper_progress
 					value = 1
 				}
 			}
@@ -122,14 +324,57 @@ on_actions = {
 			if = {
 				limit = {
 					check_variable = {
-						var = BOS_equip_palad_progress
-						value = BOS_equip_palad_time
+						var = BOS_dig_deeper_progress 
+						value = BOS_dig_deeper_time
 						compare = greater_than_or_equals
 					}
 				}
-				clr_country_flag = BOS_AdmEquipPalad
+				clr_country_flag = BOS_AdmDigDeeper
 				set_variable = {
-					BOS_equip_palad_progress = 0
+					BOS_dig_deeper_progress = 0
+				}
+
+				add_to_variable = {
+					BOS_how_close_to_bottom = 1
+				}
+				
+				bos_change_maximum_space = yes
+				random_list = {
+					10 = {
+						add_manpower = 1000
+						modifier = {
+							factor = 2
+							BOS_has_safety_department = yes
+						}
+					}
+					30 = {
+						add_manpower = 900
+						modifier = {
+							factor = 1.5
+							BOS_has_safety_department = yes
+						}
+					}
+					30 = {
+						add_manpower = 500
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
+					25 = {
+						add_manpower = 200
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
+					5 = {
+						add_manpower = 5
+						modifier = {
+							factor = 0.5
+							BOS_has_safety_department = yes
+						}
+					}
 				}
 			}
 		}

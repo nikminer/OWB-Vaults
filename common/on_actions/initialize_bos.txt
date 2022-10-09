@@ -2,36 +2,65 @@ on_actions = {
 	on_startup = {
 		effect = {
 			BOS = {
-				set_variable = {
-					BOS_underground_construction_slots_to_add = 1
-				}
-				set_variable = {
-					BOS_underground_construction_time = 5
-				}
-				set_variable = {
-					BOS_underground_construction_progress = 0
-				}
+				# Effot Decisions
+					set_variable = {
+						BOS_construct_effot_time = 100
+					}
+					set_variable = {
+						BOS_construct_effot_progress = 0
+					}
+					set_variable = {
+						BOS_Production_effot_time = 100
+					}
+					set_variable = {
+						BOS_Production_effot_progress = 0
+					}
+					set_variable = {
+						BOS_research_effot_time = 100
+					}
+					set_variable = {
+						BOS_research_effot_progress = 0
+					}
+					set_variable = {
+						BOS_polit_effot_time = 100
+					}
+					set_variable = {
+						BOS_polit_effot_progress = 0
+					}
+				# Army Decisions
+					set_variable = {
+						BOS_equip_init_time = 90
+					}
+					set_variable = {
+						BOS_equip_init_progress = 0
+					}
+					set_variable = {
+						BOS_equip_palad_time = 90
+					}
+					set_variable = {
+						BOS_equip_palad_progress = 0
+					}
 
-				set_variable = {
-					BOS_dig_deeper_time = 5
-				}
-				set_variable = {
-					BOS_dig_deeper_progress = 0
-				}
-
-				set_variable = {
-					BOS_equip_init_time = 5
-				}
-				set_variable = {
-					BOS_equip_init_progress = 0
-				}
-
-				set_variable = {
-					BOS_equip_palad_time = 5
-				}
-				set_variable = {
-					BOS_equip_palad_progress = 0
-				}
+				# Expand Decisions
+					set_variable = {
+						BOS_underground_construction_slots_to_add = 1
+					}
+					set_variable = {
+						BOS_underground_construction_time = 60
+					}
+					set_variable = {
+						BOS_underground_construction_progress = 0
+					}
+					set_variable = {
+						BOS_maximum_space_to_change = 30
+					}
+					set_variable = {
+						BOS_dig_deeper_time = 365
+					}
+					set_variable = {
+						BOS_dig_deeper_progress = 0
+					}
+				
 			}
 
 
