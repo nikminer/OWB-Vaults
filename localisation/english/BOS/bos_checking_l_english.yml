@@ -1,0 +1,27 @@
+﻿l_english:
+  BOS_TRIGGER_YES: "£trigger_yes"
+  BOS_TRIGGER_NO:  "£trigger_no"
+  
+  BOS_HAS_100Manpower: "[CheckManPower100] Has £manpower1_texticon §H100§! Manpower\n"
+  BOS_HAS_500Manpower: "[CheckManPower500] Has £manpower1_texticon §H500§! Manpower\n"
+  BOS_HAS_1000Manpower: "[CheckManPower1000] Has £manpower1_texticon §H1000§! Manpower\n"
+
+  BOS_HAS_10PolitPower:  "[CheckPolitPower10] Has £pol_power1_texticon §H10§! Political Power\n"
+  BOS_HAS_100PolitPower: "[CheckPolitPower100] Has £pol_power1_texticon §H100§! Political Power\n"
+  BOS_HAS_300PolitPower: "[CheckPolitPower300] Has £pol_power1_texticon §H300§! Political Power\n"
+  BOS_HAS_25CommandPower: "[CheckCommandPower25] Has £command_power §H25§! Command Power\n"
+  BOS_HAS_10ArmyXp: "[CheckArmyXp10] Has £army_experience §H10§! Army experience\n"
+  BOS_HAS_25ArmyXp: "[CheckArmyXp25] Has £army_experience §H25§! Army experience\n"
+
+  BOS_HasAdminCapacity: "[HasAdminCapacity] Has no used all of our §HAdministration capacity§!\n"
+  BOS_HasAvailableSlot: "[CheckAvailableSlot] Has at least §H1§! available §HConstruction Slot§!\n"
+  BOS_HasAvailableSpace: "[CheckAvailableSpace] Has §H1 Available Space.§!\n"
+  BOS_HasAvailableSpace2: "[CheckAvailableSpace2] Has §H2 Available Space.§!\n"
+  BOS_HasAvailableSpace10: "[CheckAvailableSpace10] Has §H10 Available Space.§!\n"
+  BOS_HasOffmapCivil: "[CheckAvailableOffmatCivil] Has §H5§! offmap §HCivilian Workshop.§!\n"
+  BOS_HasCivil: "[CheckCivil] Has §H1 Civilian Workshop§! in Lost Hills state.\n"
+  BOS_HasSmelt: "[CheckSmelt] Has §H1 Foundary§! in Lost Hills state.\n"
+  BOS_HasWater: "[CheckWater] Has §H1 Purification Station§! in Lost Hills state.\n"
+  BOS_HasCircuit: "[CheckCircuit] Has §H1 Fabrication Laboratory§! in Lost Hills state.\n"
+  BOS_HasArms: "[CheckArms] Has §H1 Arms Workshop§! in Lost Hills state.\n"
+  BOS_HasPower: "[CheckPower] Has §H1 Power Station§! in Lost Hills state.\n"

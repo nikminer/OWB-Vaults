@@ -17,9 +17,6 @@ bos_underground_construction_decisions = {
 					}
 				}
 			}
-			visible = {
-				always = no
-			}
 			available = {
 				has_manpower > 99
 				BOS_has_x_available_administration_capacity = yes
@@ -81,9 +78,6 @@ bos_underground_construction_decisions = {
 						BOS_has_x_available_space = yes
 					}
 				}
-			}
-			visible = {
-				always = no
 			}
 			available = {
 				has_completed_focus = bos_nf_room_to_grow
@@ -163,9 +157,6 @@ bos_underground_construction_decisions = {
 			custom_cost_trigger = {
 				command_power > 24
 			}
-			visible = {
-				always = no
-			}
 			custom_cost_text = command_power_more_than_25
 			# days_re_enable = 5
 			ai_will_do = {
@@ -207,9 +198,6 @@ bos_underground_construction_decisions = {
 			days_remove = 100
 			custom_cost_trigger = {
 				command_power > 24
-			}
-			visible = {
-				always = no
 			}
 			custom_cost_text = command_power_more_than_25
 			# days_re_enable = 5
@@ -253,9 +241,7 @@ bos_underground_construction_decisions = {
 			custom_cost_trigger = {
 				command_power > 24
 			}
-			visible = {
-				always = no
-			}
+
 			custom_cost_text = command_power_more_than_25
 			# days_re_enable = 5
 			ai_will_do = {
@@ -303,9 +289,7 @@ bos_underground_construction_decisions = {
 			ai_will_do = {
 				base = 200
 			}
-			visible = {
-				always = no
-			}
+
 			available = {
 				has_completed_focus = bos_nf_bringers_of_progress
 				has_manpower > 99
@@ -350,9 +334,7 @@ bos_underground_construction_decisions = {
 			ai_will_do = {
 				base = 800			#One time
 			}
-			visible = {
-				always = no
-			}
+
 			available = {
 				has_completed_focus = bos_nf_filled_with_purpose
 				has_manpower > 99
@@ -408,9 +390,7 @@ bos_underground_construction_decisions = {
 			ai_will_do = {
 				base = 800			#One time
 			}
-			visible = {
-				always = no
-			}
+
 			available = {
 				has_completed_focus = bos_nf_memories_of_heroes
 				has_manpower > 99
@@ -464,9 +444,7 @@ bos_underground_construction_decisions = {
 			ai_will_do = {
 				base = 400
 			}
-			visible = {
-				always = no
-			}
+
 			available = {
 				has_manpower > 499
 				set_temp_variable = {
@@ -541,9 +519,7 @@ bos_underground_construction_decisions = {
 			ai_will_do = {
 				base = 550
 			}
-			visible = {
-				always = no
-			}
+
 			available = {
 				has_completed_focus = bos_nf_new_developments
 				has_manpower > 99
@@ -600,9 +576,7 @@ bos_underground_construction_decisions = {
 			ai_will_do = {
 				base = 500
 			}
-			visible = {
-				always = no
-			}
+
 			available = {
 				has_manpower > 499
 				BOS_has_x_available_administration_capacity = yes
@@ -685,9 +659,7 @@ bos_underground_construction_decisions = {
 			ai_will_do = {
 				base = 400
 			}
-			visible = {
-				always = no
-			}
+
 			available = {
 				has_manpower > 499
 				set_temp_variable = {
@@ -758,9 +730,7 @@ bos_underground_construction_decisions = {
 			ai_will_do = {
 				base = 550			# Higher prio for civs and arms then resource buildings
 			}
-			visible = {
-				always = no
-			}
+
 			available = {
 				has_manpower > 499
 				set_temp_variable = {
@@ -839,9 +809,7 @@ bos_underground_construction_decisions = {
 			ai_will_do = {
 				base = 900			#Highest, this is always top priority
 			}
-			visible = {
-				always = no
-			}
+
 			available = {
 				has_manpower > 499
 				set_temp_variable = {
@@ -886,9 +854,7 @@ bos_underground_construction_decisions = {
 			ai_will_do = {
 				base = 500
 			}
-			visible = {
-				always = no
-			}
+
 			available = {
 				has_manpower > 499
 				set_temp_variable = {
@@ -963,9 +929,7 @@ bos_underground_construction_decisions = {
 			ai_will_do = {
 				base = 500
 			}
-			visible = {
-				always = no
-			}
+
 			available = {
 				has_manpower > 499
 				set_temp_variable = {
@@ -1041,9 +1005,7 @@ bos_underground_construction_decisions = {
 			ai_will_do = {
 				base = 500
 			}
-			visible = {
-				always = no
-			}
+
 			available = {
 				has_manpower > 499
 				set_temp_variable = {
@@ -1118,9 +1080,7 @@ bos_underground_construction_decisions = {
 			ai_will_do = {
 				base = 550			#Higher prio for civs and arms then resource buildings
 			}
-			visible = {
-				always = no
-			}
+
 			available = {
 				has_manpower > 499
 				set_temp_variable = {
@@ -1195,9 +1155,7 @@ bos_underground_construction_decisions = {
 			ai_will_do = {
 				base = 400
 			}
-			visible = {
-				always = no
-			}
+
 			available = {
 				has_manpower > 499
 				set_temp_variable = {
@@ -1268,9 +1226,7 @@ bos_underground_construction_decisions = {
 			ai_will_do = {
 				base = 500
 			}
-			visible = {
-				always = no
-			}
+
 			available = {
 				has_manpower > 499
 				set_temp_variable = {
@@ -1345,9 +1301,7 @@ bos_underground_construction_decisions = {
 			ai_will_do = {
 				base = 600
 			}
-			visible = {
-				always = no
-			}
+
 			available = {
 				has_manpower > 499
 				set_temp_variable = {

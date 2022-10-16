@@ -1,0 +1,20 @@
+spriteTypes = {
+	bitmapfont = {
+		name = "pipboy_18_white"
+		path = "gfx/fonts/pipboy_18"
+		color = 0xffFFFFFF
+	}
+
+	spriteType = {
+		name = "GFX_manpower1_texticon"
+		texturefile = "gfx/texticons/manpower_icon.dds"
+		legacy_lazy_load = no
+		noOfFrames = 1
+	}
+	spriteType = {
+		name = "GFX_pol_power1_texticon"
+		texturefile = "gfx/texticons/pol_power_icon.dds"
+		legacy_lazy_load = no
+		noOfFrames = 1
+	}
+}

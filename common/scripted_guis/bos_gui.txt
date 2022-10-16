@@ -454,7 +454,10 @@ scripted_gui = {
 					set_temp_variable = { bos_expedition_executing_frame = 5 }
 				}
 			}
-
+			bos_expedition_btn_executing_text_visible = {
+				has_country_flag = BOS_BuildExpedition
+			}
+			
 			bos_constructions_btn_visible = {
 				not = {
 					has_country_flag = BOS_BuildConstructions
@@ -537,6 +540,9 @@ scripted_gui = {
 					set_temp_variable = { bos_constructions_executing_frame = 5 }
 				}
 			}
+			bos_constructions_btn_executing_text_visible = {
+				has_country_flag = BOS_BuildConstructions
+			}
 
 			bos_simulator_btn_visible = {
 				not = {
@@ -608,6 +614,9 @@ scripted_gui = {
 					}
 					set_temp_variable = { bos_simulator_executing_frame = 5 }
 				}
+			}
+			bos_simulator_btn_executing_text_visible = {
+				has_country_flag = BOS_BuildSimulator
 			}
 
 			bos_training_btn_visible = {
@@ -685,6 +694,9 @@ scripted_gui = {
 					}
 					set_temp_variable = { bos_training_executing_frame = 5 }
 				}
+			}
+			bos_training_btn_executing_text_visible = {
+				has_country_flag = BOS_BuildTraining
 			}
 		}
 
@@ -1107,6 +1119,9 @@ scripted_gui = {
 					set_temp_variable = { bos_civil_executing_frame = 5 }
 				}
 			}
+			bos_civil_btn_executing_text_visible = {
+				has_country_flag = BOS_BuildCivil
+			}
 
 			bos_safety_btn_visible = {
 				not = {
@@ -1184,6 +1199,9 @@ scripted_gui = {
 					set_temp_variable = { bos_safety_executing_frame = 5 }
 				}
 			}
+			bos_safety_btn_executing_text_visible = {
+				has_country_flag = BOS_BuildSafety
+			}
 
 			bos_smelt_btn_visible = {
 				not = {
@@ -1256,6 +1274,9 @@ scripted_gui = {
 					set_temp_variable = { bos_smelt_executing_frame = 5 }
 				}
 			}
+			bos_smelt_btn_executing_text_visible = {
+				has_country_flag = BOS_BuildSmelt
+			}
 
 			bos_water_btn_visible = {
 				not = {
@@ -1327,6 +1348,9 @@ scripted_gui = {
 					}
 					set_temp_variable = { bos_water_executing_frame = 5 }
 				}
+			}
+			bos_water_btn_executing_text_visible = {
+				has_country_flag = BOS_BuildWater
 			}
 		}
 
@@ -1668,6 +1692,9 @@ scripted_gui = {
 					set_temp_variable = { bos_circuit_executing_frame = 5 }
 				}
 			}
+			bos_circuit_btn_executing_text_visible = {
+				has_country_flag = BOS_BuildCircuit
+			}
 
 			bos_arms_btn_visible = {
 				not = {
@@ -1739,6 +1766,9 @@ scripted_gui = {
 					}
 					set_temp_variable = { bos_arms_executing_frame = 5 }
 				}
+			}
+			bos_arms_btn_executing_text_visible = {
+				has_country_flag = BOS_BuildArms
 			}
 
 			bos_lab_btn_visible = {
@@ -1815,6 +1845,9 @@ scripted_gui = {
 					}
 					set_temp_variable = { bos_lab_executing_frame = 5 }
 				}
+			}
+			bos_lab_btn_executing_text_visible = {
+				has_country_flag = BOS_BuildLab
 			}
 		}
 
@@ -2076,6 +2109,9 @@ scripted_gui = {
 					set_temp_variable = { bos_admin_executing_frame = 5 }
 				}
 			}
+			bos_admin_btn_executing_text_visible = {
+				has_country_flag = BOS_BuildAdmin
+			}
 
 			bos_power_btn_visible = {
 				not = {
@@ -2147,6 +2183,9 @@ scripted_gui = {
 					}
 					set_temp_variable = { bos_power_executing_frame = 5 }
 				}
+			}
+			bos_power_btn_executing_text_visible = {
+				has_country_flag = BOS_BuildPower
 			}
 		}
 
@@ -3354,16 +3393,16 @@ scripted_gui = {
 				}
 				bos_decision8_click_enabled = {
 					has_completed_focus = bos_nf_room_to_grow
-					custom_trigger_tooltip = {
-						tooltip = bos_underground_dig_deeper_decision_has_not_reached_the_bottom
-						NOT = {
-							check_variable = {
-								var = BOS_how_close_to_bottom
-								value = 10
-								compare = greater_than_or_equals
-							}
-						}
-					}
+					#custom_trigger_tooltip = {
+					#	tooltip = bos_underground_dig_deeper_decision_has_not_reached_the_bottom
+					#	NOT = {
+					#		check_variable = {
+					#			var = BOS_how_close_to_bottom
+					#			value = 10
+					#			compare = greater_than_or_equals
+					#		}
+					#	}
+					#}
 					has_manpower > 999
 					BOS_has_x_available_administration_capacity = yes
 				}

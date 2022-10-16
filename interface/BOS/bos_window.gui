@@ -13,7 +13,7 @@ guiTypes = {
 		iconType = {
 			name = "TerminalBG"
 			spriteType = "GFX_terminal_window"
-			position = { x = 13 y = 10 }
+			position = { x = 14 y = 9 }
 		}
 		iconType = {
 			name = "TerminalBGOverlay"
@@ -24,7 +24,7 @@ guiTypes = {
 		# HEADER
 			containerWindowType = {
 				name = "header_window"
-				position = { x = 200 y = 553 }
+				position = { x = 200 y = 552 }
 				size = { width = 400 height = 35 }
 				instantTextBoxType = {
 					name = "header_text"
@@ -173,10 +173,21 @@ guiTypes = {
 			position = { x = 82 y = 160 }
 			frame = 1
 		}
+		instantTextBoxType = {
+			name = "bos_expedition_btn_executing_text"
+			position = { x = 47 y = 170 }
+			text = LOST_HILLS_EXPED_PROGRESS
+			format = center
+			font = "pipboy_18_white"
+			multiline = no
+			maxWidth = 175
+		}
 		buttonType = {
 			name = "bos_expedition_btn"
 			position = { x = 115 y = 160 }
 			spriteType = "GFX_bos_btn_construction"
+			pdx_tooltip = LOST_HILLS_EXPED_TT
+			pdx_tooltip_delayed = LOST_HILLS_EXPED_TTDel
 		}
 
 		instantTextBoxType = {
@@ -195,10 +206,21 @@ guiTypes = {
 			position = { x = 277 y = 160 }
 			frame = 1
 		}
+		instantTextBoxType = {
+			name = "bos_constructions_btn_executing_text"
+			position = { x = 242 y = 170 }
+			text = LOST_HILLS_CONSTRUCT_PROGRESS
+			format = center
+			font = "pipboy_18_white"
+			multiline = no
+			maxWidth = 175
+		}
 		buttonType = {
 			name = "bos_constructions_btn"
 			position = { x = 310 y = 160 }
 			spriteType = "GFX_bos_btn_construction"
+			pdx_tooltip = LOST_HILLS_CONSTRUCT_TT
+			pdx_tooltip_delayed = LOST_HILLS_CONSTRUCT_TTDel
 		}
 
 		instantTextBoxType = {
@@ -217,10 +239,20 @@ guiTypes = {
 			position = { x = 83 y = 300 }
 			frame = 1
 		}
+		instantTextBoxType = {
+			name = "bos_simulator_btn_executing_text"
+			position = { x = 47 y = 310 }
+			text = LOST_HILLS_SIMUL_PROGRESS
+			format = center
+			font = "pipboy_18_white"
+			multiline = no
+			maxWidth = 175
+		}
 		buttonType = {
 			name = "bos_simulator_btn"
 			position = { x = 115 y = 300 }
 			spriteType = "GFX_bos_btn_construction"
+			pdx_tooltip = LOST_HILLS_SIMUL_TT
 		}
 
 		instantTextBoxType = {
@@ -239,10 +271,22 @@ guiTypes = {
 			position = { x = 280 y = 290 }
 			frame = 1
 		}
+		instantTextBoxType = {
+			name = "bos_training_btn_executing_text"
+			position = { x = 245 y = 300 }
+			text = LOST_HILLS_TRAIN_PROGRESS
+			format = center
+			font = "pipboy_18_white"
+			multiline = no
+			maxWidth = 175
+			
+		}
 		buttonType = {
 			name = "bos_training_btn"
 			position = { x = 313 y = 290 }
 			spriteType = "GFX_bos_btn_construction"
+			pdx_tooltip = LOST_HILLS_TRAIN_TT
+			pdx_tooltip_delayed = LOST_HILLS_TRAIN_TTDel
 		}
 	}
 	containerWindowType = {
@@ -273,10 +317,20 @@ guiTypes = {
 			position = { x = 113 y = 160 }
 			frame = 1
 		}
+		instantTextBoxType = {
+			name = "bos_civil_btn_executing_text"
+			position = { x = 77 y = 170 }
+			text = LOST_HILLS_CIVIL_PROGRESS
+			format = center
+			font = "pipboy_18_white"
+			multiline = no
+			maxWidth = 175
+		}
 		buttonType = {
 			name = "bos_civil_btn"
 			position = { x = 145 y = 160 }
 			spriteType = "GFX_bos_btn_construction"
+			pdx_tooltip = LOST_HILLS_CIVIL_TT
 		}
 
 		instantTextBoxType = {
@@ -295,10 +349,21 @@ guiTypes = {
 			position = { x = 283 y = 160 }
 			frame = 1
 		}
+		instantTextBoxType = {
+			name = "bos_safety_btn_executing_text"
+			position = { x = 247 y = 170 }
+			text = LOST_HILLS_SAFETY_PROGRESS
+			format = center
+			font = "pipboy_18_white"
+			multiline = no
+			maxWidth = 175
+		}
 		buttonType = {
 			name = "bos_safety_btn"
 			position = { x = 315 y = 160 }
 			spriteType = "GFX_bos_btn_construction"
+			pdx_tooltip = LOST_HILLS_SAFETY_TT
+			pdx_tooltip_delayed = LOST_HILLS_SAFETY_TTDel
 		}
 
 		instantTextBoxType = {
@@ -317,10 +382,20 @@ guiTypes = {
 			position = { x = 113 y = 310 }
 			frame = 1
 		}
+		instantTextBoxType = {
+			name = "bos_smelt_btn_executing_text"
+			position = { x = 77 y = 320 }
+			text = LOST_HILLS_SMELT_PROGRESS
+			format = center
+			font = "pipboy_18_white"
+			multiline = no
+			maxWidth = 175
+		}
 		buttonType = {
 			name = "bos_smelt_btn"
 			position = { x = 145 y = 310 }
 			spriteType = "GFX_bos_btn_construction"
+			pdx_tooltip = LOST_HILLS_SMELT_TT
 		}
 
 		instantTextBoxType = {
@@ -339,10 +414,20 @@ guiTypes = {
 			position = { x = 283 y = 310 }
 			frame = 1
 		}
+		instantTextBoxType = {
+			name = "bos_water_btn_executing_text"
+			position = { x = 247 y = 320 }
+			text = LOST_HILLS_SMELT_PROGRESS
+			format = center
+			font = "pipboy_18_white"
+			multiline = no
+			maxWidth = 175
+		}
 		buttonType = {
 			name = "bos_water_btn"
 			position = { x = 315 y = 310 }
 			spriteType = "GFX_bos_btn_construction"
+			pdx_tooltip = LOST_HILLS_WATER_TT
 		}
 	}
 
@@ -374,10 +459,20 @@ guiTypes = {
 			position = { x = 93 y = 210 }
 			frame = 1
 		}
+		instantTextBoxType = {
+			name = "bos_circuit_btn_executing_text"
+			position = { x = 57 y = 220 }
+			text = LOST_HILLS_CIRCUIT_PROGRESS
+			format = center
+			font = "pipboy_18_white"
+			multiline = no
+			maxWidth = 175
+		}
 		buttonType = {
 			name = "bos_circuit_btn"
 			position = { x = 125 y = 210 }
 			spriteType = "GFX_bos_btn_construction"
+			pdx_tooltip = LOST_HILLS_CIRCUIT_TT
 		}
 
 		instantTextBoxType = {
@@ -396,10 +491,20 @@ guiTypes = {
 			position = { x = 247 y = 270 }
 			frame = 1
 		}
+		instantTextBoxType = {
+			name = "bos_arms_btn_executing_text"
+			position = { x = 212 y = 280 }
+			text = LOST_HILLS_ARMS_PROGRESS
+			format = center
+			font = "pipboy_18_white"
+			multiline = no
+			maxWidth = 175
+		}
 		buttonType = {
 			name = "bos_arms_btn"
 			position = { x = 280 y = 270 }
 			spriteType = "GFX_bos_btn_construction"
+			pdx_tooltip = LOST_HILLS_ARMS_TT
 		}
 
 		instantTextBoxType = {
@@ -418,10 +523,21 @@ guiTypes = {
 			position = { x = 255 y = 110 }
 			frame = 1
 		}
+		instantTextBoxType = {
+			name = "bos_lab_btn_executing_text"
+			position = { x = 220 y = 120 }
+			text = LOST_HILLS_LAB_PROGRESS
+			format = center
+			font = "pipboy_18_white"
+			multiline = no
+			maxWidth = 175
+		}
 		buttonType = {
 			name = "bos_lab_btn"
 			position = { x = 287 y = 110 }
 			spriteType = "GFX_bos_btn_construction"
+			pdx_tooltip = LOST_HILLS_LAB_TT
+			pdx_tooltip_delayed = LOST_HILLS_LAB_TTDel
 		}
 	}
 
@@ -453,10 +569,21 @@ guiTypes = {
 			position = { x = 105 y = 255 }
 			frame = 1
 		}
+		instantTextBoxType = {
+			name = "bos_admin_btn_executing_text"
+			position = { x = 68 y = 265 }
+			text = LOST_HILLS_ADM_PROGRESS
+			format = center
+			font = "pipboy_18_white"
+			multiline = no
+			maxWidth = 175
+		}
 		buttonType = {
 			name = "bos_admin_btn"
 			position = { x = 137 y = 255 }
 			spriteType = "GFX_bos_btn_construction"
+			pdx_tooltip = LOST_HILLS_ADM_TT
+			pdx_tooltip_delayed = LOST_HILLS_ADM_TTDel
 		}
 
 		instantTextBoxType = {
@@ -475,10 +602,20 @@ guiTypes = {
 			position = { x = 215 y = 255 }
 			frame = 1
 		}
+		instantTextBoxType = {
+			name = "bos_power_btn_executing_text"
+			position = { x = 178 y = 265 }
+			text = LOST_HILLS_POWER_PROGRESS
+			format = center
+			font = "pipboy_18_white"
+			multiline = no
+			maxWidth = 175
+		}
 		buttonType = {
 			name = "bos_power_btn"
 			position = { x = 247 y = 255 }
 			spriteType = "GFX_bos_btn_construction"
+			pdx_tooltip = LOST_HILLS_POWER_TT
 		}
 	}
 # Decisions
@@ -503,6 +640,7 @@ guiTypes = {
 			spriteType = "GFX_bos_executing_btn_bg"
 			position = { x = 0 y = 213 }
 			frame = 1
+			pdx_tooltip = LOST_HILLS_EFFOT_CONSTRUCTION_H
 		}
 		instantTextBoxType = {
 			name = "bos_decision1_executing_text"
@@ -512,6 +650,8 @@ guiTypes = {
 			font = "pipboy_18_white"
 			multiline = no
 			maxWidth = 175
+			maxHeight = 20
+			pdx_tooltip = LOST_HILLS_EFFOT_CONSTRUCTION_H
 		}
 		buttonType = {
 			name = "bos_decision1"
@@ -519,6 +659,7 @@ guiTypes = {
 			buttonText = LOST_HILLS_EFFOT_CONSTRUCTION_H
 			buttonFont = "pipboy_16_green"
 			spriteType = "GFX_bos_decisions_btn_bg"
+			pdx_tooltip = LOST_HILLS_EFFOT_CONSTRUCTION_TT
 		}
 
 		iconType = {
@@ -526,6 +667,7 @@ guiTypes = {
 			spriteType = "GFX_bos_executing_btn_bg"
 			position = { x = 0 y = 81 }
 			frame = 1
+			pdx_tooltip = LOST_HILLS_EXEC_EFFOT_PRODUCTION_H
 		}
 		instantTextBoxType = {
 			name = "bos_decision2_executing_text"
@@ -535,6 +677,8 @@ guiTypes = {
 			font = "pipboy_18_white"
 			multiline = no
 			maxWidth = 175
+			maxHeight = 20
+			pdx_tooltip = LOST_HILLS_EXEC_EFFOT_PRODUCTION_H
 		}
 		buttonType = {
 			name = "bos_decision2"
@@ -542,6 +686,7 @@ guiTypes = {
 			buttonText = LOST_HILLS_EFFOT_PRODUCTION_H
 			buttonFont = "pipboy_16_green"
 			spriteType = "GFX_bos_decisions_btn_bg"
+			pdx_tooltip = LOST_HILLS_EFFOT_PRODUCTION_TT
 		}
 
 		iconType = {
@@ -549,6 +694,7 @@ guiTypes = {
 			spriteType = "GFX_bos_executing_btn_bg"
 			position = { x = 0 y = 125 }
 			frame = 1
+			pdx_tooltip = LOST_HILLS_EXEC_EFFOT_RESEARCH_H
 		}
 		instantTextBoxType = {
 			name = "bos_decision3_executing_text"
@@ -558,6 +704,8 @@ guiTypes = {
 			font = "pipboy_18_white"
 			multiline = no
 			maxWidth = 175
+			maxHeight = 20
+			pdx_tooltip = LOST_HILLS_EXEC_EFFOT_RESEARCH_H
 		}
 		buttonType = {
 			name = "bos_decision3"
@@ -565,6 +713,7 @@ guiTypes = {
 			buttonText = LOST_HILLS_EFFOT_RESEARCH_H
 			buttonFont = "pipboy_16_green"
 			spriteType = "GFX_bos_decisions_btn_bg"
+			pdx_tooltip = LOST_HILLS_EFFOT_RESEARCH_TT
 		}
 
 		iconType = {
@@ -572,6 +721,7 @@ guiTypes = {
 			spriteType = "GFX_bos_executing_btn_bg"
 			position = { x = 0 y = 169 }
 			frame = 1
+			pdx_tooltip = LOST_HILLS_EXEC_EFFOT_POLIT_H
 		}
 		instantTextBoxType = {
 			name = "bos_decision4_executing_text"
@@ -581,6 +731,8 @@ guiTypes = {
 			font = "pipboy_18_white"
 			multiline = no
 			maxWidth = 175
+			maxHeight = 20
+			pdx_tooltip = LOST_HILLS_EXEC_EFFOT_POLIT_H
 		}
 		buttonType = {
 			name = "bos_decision4"
@@ -588,6 +740,7 @@ guiTypes = {
 			buttonText = LOST_HILLS_EFFOT_POLIT_H
 			buttonFont = "pipboy_16_green"
 			spriteType = "GFX_bos_decisions_btn_bg"
+			pdx_tooltip = LOST_HILLS_EFFOT_POLIT_TT
 		}
 
 		iconType = {
@@ -596,6 +749,7 @@ guiTypes = {
 			position = { x = 0 y = 37  }
 			frame = 1.
 			pdx_tooltip = LOST_HILLS_UNDEGROUND_EXPAND_H
+			pdx_tooltip_delayed = LOST_HILLS_UNDEGROUND_EXPAND_TTDel
 		}
 		instantTextBoxType = {
 			name = "bos_decision5_executing_text"
@@ -605,7 +759,9 @@ guiTypes = {
 			font = "pipboy_18_white"
 			multiline = no
 			maxWidth = 180
+			maxHeight = 20
 			pdx_tooltip = LOST_HILLS_UNDEGROUND_EXPAND_H
+			pdx_tooltip_delayed = LOST_HILLS_UNDEGROUND_EXPAND_TTDel
 		}
 		buttonType = {
 			name = "bos_decision5"
@@ -614,6 +770,7 @@ guiTypes = {
 			buttonFont = "pipboy_16_green"
 			spriteType = "GFX_bos_decisions_btn_bg"
 			pdx_tooltip = LOST_HILLS_UNDEGROUND_EXPAND_TT
+			pdx_tooltip_delayed = LOST_HILLS_UNDEGROUND_EXPAND_TTDel
 		}
 
 		iconType = {
@@ -621,6 +778,7 @@ guiTypes = {
 			spriteType = "GFX_bos_executing_btn_bg"
 			position = { x = 0 y = 257 }
 			frame = 1
+			pdx_tooltip = LOST_HILLS_EFFOT_PALADIN_H
 		}
 		instantTextBoxType = {
 			name = "bos_decision6_executing_text"
@@ -630,6 +788,8 @@ guiTypes = {
 			font = "pipboy_18_white"
 			multiline = no
 			maxWidth = 175
+			maxHeight = 20
+			pdx_tooltip = LOST_HILLS_EFFOT_PALADIN_H
 		}
 		instantTextBoxType = {
 			name = "bos_decision6_complete_text"
@@ -639,6 +799,8 @@ guiTypes = {
 			font = "pipboy_18_white"
 			multiline = no
 			maxWidth = 175
+			maxHeight = 20
+			pdx_tooltip = LOST_HILLS_EFFOT_PALADIN_H
 		}
 		buttonType = {
 			name = "bos_decision6"
@@ -646,6 +808,8 @@ guiTypes = {
 			buttonText = LOST_HILLS_EFFOT_PALADIN_H
 			buttonFont = "pipboy_16_green"
 			spriteType = "GFX_bos_decisions_btn_bg"
+			pdx_tooltip = LOST_HILLS_EFFOT_PALADIN_TT
+			pdx_tooltip_delayed = LOST_HILLS_EFFOT_INIT_TTDel
 		}
 		
 
@@ -654,8 +818,8 @@ guiTypes = {
 			spriteType = "GFX_bos_executing_btn_bg"
 			position = { x = 0 y = 301 }
 			frame = 1
+			pdx_tooltip = LOST_HILLS_EFFOT_INIT_H
 		}
-
 		instantTextBoxType = {
 			name = "bos_decision7_executing_text"
 			position = { x = 10 y = 318}
@@ -664,6 +828,8 @@ guiTypes = {
 			font = "pipboy_18_white"
 			multiline = no
 			maxWidth = 175
+			maxHeight = 20
+			pdx_tooltip = LOST_HILLS_EFFOT_INIT_H
 		}
 		instantTextBoxType = {
 			name = "bos_decision7_complete_text"
@@ -673,25 +839,26 @@ guiTypes = {
 			font = "pipboy_18_white"
 			multiline = no
 			maxWidth = 175
+			maxHeight = 20
+			pdx_tooltip = LOST_HILLS_EFFOT_INIT_H
 		}
-
 		buttonType = {
 			name = "bos_decision7"
 			position = { x = 0 y = 301 }
 			buttonText = LOST_HILLS_EFFOT_INIT_H
 			buttonFont = "pipboy_16_green"
 			spriteType = "GFX_bos_decisions_btn_bg"
+			pdx_tooltip = LOST_HILLS_EFFOT_INIT_TT
+			pdx_tooltip_delayed = LOST_HILLS_EFFOT_INIT_TTDel
 		}
-
-		
 
 		iconType = {
 			name = "bos_decision8_executing"
 			spriteType = "GFX_bos_executing_btn_bg"
 			position = { x = 0 y = 345 }
 			frame = 1
+			pdx_tooltip = LOST_HILLS_DEEPER_DIG_H
 		}
-
 		instantTextBoxType = {
 			name = "bos_decision8_executing_text"
 			position = { x = 10 y = 362}
@@ -700,8 +867,9 @@ guiTypes = {
 			font = "pipboy_18_white"
 			multiline = no
 			maxWidth = 175
+			maxHeight = 20
+			pdx_tooltip = LOST_HILLS_DEEPER_DIG_H
 		}
-
 		instantTextBoxType = {
 			name = "bos_decision8_complete_text"
 			position = { x = 10 y = 362}
@@ -710,14 +878,16 @@ guiTypes = {
 			font = "pipboy_18_white"
 			multiline = no
 			maxWidth = 175
+			maxHeight = 20
+			pdx_tooltip = LOST_HILLS_DEEPER_DIG_H
 		}
-
 		buttonType = {
 			name = "bos_decision8"
 			position = { x = 0 y = 345 }
 			buttonText = LOST_HILLS_DEEPER_DIG_H
 			buttonFont = "pipboy_16_green"
 			spriteType = "GFX_bos_decisions_btn_bg"
+			pdx_tooltip = LOST_HILLS_DEEPER_DIG_TT
 		}
 
 	}

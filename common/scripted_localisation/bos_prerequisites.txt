@@ -1,0 +1,742 @@
+# ManPower
+	defined_text = {
+		name = CheckManPower100
+		text = {
+			trigger = {
+				not = {
+					has_manpower > 99
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				has_manpower > 99
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+	defined_text = {
+		name = CheckManPower500
+		text = {
+			trigger = {
+				not = {
+					has_manpower > 499
+				}
+			}
+			localization_key = BOS_TRIGGER_YES 
+		}
+		text = {
+			trigger = {
+				has_manpower > 499
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+	defined_text = {
+		name = CheckManPower1000
+		text = {
+			trigger = {
+				not = {
+					has_manpower > 999
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				has_manpower > 999
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+# PP
+	defined_text = {
+		name = CheckPolitPower10
+		text = {
+			trigger = {
+				not = {
+					has_political_power > 9
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				has_political_power > 9
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+	defined_text = {
+		name = CheckPolitPower300
+		text = {
+			trigger = {
+				not = {
+					has_political_power > 299
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				has_political_power > 299
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+# Command power
+	defined_text = {
+		name = CheckCommandPower25
+		text = {
+			trigger = {
+				not = {
+					command_power > 24
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				command_power > 24
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+# Army Expirience
+	defined_text = {
+		name = CheckArmyXp10
+		text = {
+			trigger = {
+				not = {
+					has_army_experience > 9
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				has_army_experience > 9
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+	defined_text = {
+		name = CheckArmyXp25
+		text = {
+			trigger = {
+				not = {
+					has_army_experience > 24
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				has_army_experience > 24
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+# BOS Focus
+	defined_text = {
+		name = HasFocusRoomToGrow
+		text = {
+			trigger = {
+				not = {
+					has_completed_focus = bos_nf_room_to_grow
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				has_completed_focus = bos_nf_room_to_grow
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+	defined_text = {
+		name = HasFocusEnginersOfPeace
+		text = {
+			trigger = {
+				not = {
+					has_completed_focus = bos_nf_engineers_of_peace
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				has_completed_focus = bos_nf_engineers_of_peace
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+	defined_text = {
+		name = HasFocusEnginersOfWar
+		text = {
+			trigger = {
+				not = {
+					has_completed_focus = bos_nf_engineers_of_war
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				has_completed_focus = bos_nf_engineers_of_war
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+	defined_text = {
+		name = HasFocusKeepersOfKnowledge
+		text = {
+			trigger = {
+				not = {
+					has_completed_focus = bos_nf_keepers_of_knowledge
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				has_completed_focus = bos_nf_keepers_of_knowledge
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+	defined_text = {
+		name = HasFocusFilledWithPurpose
+		text = {
+			trigger = {
+				not = {
+					has_completed_focus = bos_nf_filled_with_purpose
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				has_completed_focus = bos_nf_filled_with_purpose
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+	defined_text = {
+		name = HasFocusBringersOfProgress
+		text = {
+			trigger = {
+				not = {
+					has_completed_focus = bos_nf_bringers_of_progress
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				has_completed_focus = bos_nf_bringers_of_progress
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+	defined_text = {
+		name = HasFocusMemoryOfHeroes
+		text = {
+			trigger = {
+				not = {
+					has_completed_focus = bos_nf_memories_of_heroes
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				has_completed_focus = bos_nf_memories_of_heroes
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+	defined_text = {
+		name = HasFocusNewDevelopments
+		text = {
+			trigger = {
+				not = {
+					has_completed_focus = bos_nf_new_developments
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				has_completed_focus = bos_nf_new_developments
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+# BOS Triggers
+	defined_text = {
+		name = HasAdminCapacity
+		text = {
+			trigger = {
+				not = {
+					BOS_has_x_available_administration_capacity = yes
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				BOS_has_x_available_administration_capacity = yes
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+	defined_text = {
+		name = CheckAvailableSlot
+		text = {
+			trigger = {
+				not = {
+					BOS = {
+						set_temp_variable = {
+							BOS_need_construction_slots_num = 1
+						}
+						BOS_has_x_available_construction_slots = yes			
+					}
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				BOS = {
+					set_temp_variable = {
+						BOS_need_construction_slots_num = 1
+					}
+					BOS_has_x_available_construction_slots = yes			
+				}
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+	defined_text = {
+		name = CheckAvailableSpace
+		text = {
+			trigger = {
+				not = {
+					BOS = {
+						set_temp_variable = {
+							BOS_available_space_to_check_num = 1
+						}
+						BOS_has_x_available_space = yes
+					}
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				BOS = {
+					set_temp_variable = {
+						BOS_available_space_to_check_num = 1
+					}
+					BOS_has_x_available_space = yes
+				}
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+	defined_text = {
+		name = CheckAvailableSpace2
+		text = {
+			trigger = {
+				not = {
+					set_temp_variable = {
+						BOS_available_space_to_check_num = 2
+					}
+					BOS_has_x_available_space = yes
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 2
+				}
+				BOS_has_x_available_space = yes
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+	defined_text = {
+		name = CheckAvailableSpace10
+		text = {
+			trigger = {
+				not = {
+					set_temp_variable = {
+						BOS_available_space_to_check_num = 10
+					}
+					BOS_has_x_available_space = yes
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				set_temp_variable = {
+					BOS_available_space_to_check_num = 10
+				}
+				BOS_has_x_available_space = yes
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+	defined_text = {
+		name = CheckAvailableOffmatCivil
+		text = {
+			trigger = {
+				not = {
+					check_variable = {
+						BOS_off_map_civs > 4
+					}
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				check_variable = {
+					BOS_off_map_civs > 4
+				}
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+	defined_text = {
+		name = CheckCivil
+		text = {
+			trigger = {
+				not = {
+					157 = {
+						industrial_complex > 0
+					}
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				157 = {
+					industrial_complex > 0
+				}
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+	defined_text = {
+		name = CheckSmelt
+		text = {
+			trigger = {
+				not = {
+					157 = {
+						metal_generator > 0
+					}
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				157 = {
+					industrial_complex > 0
+				}
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+	defined_text = {
+		name = CheckWater
+		text = {
+			trigger = {
+				not = {
+					157 = {
+						water_generator > 0
+					}
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				157 = {
+					water_generator > 0
+				}
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+	defined_text = {
+		name = CheckCircuit
+		text = {
+			trigger = {
+				not = {
+					157 = {
+						circuitry_generator > 0
+					}
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				157 = {
+					circuitry_generator > 0
+				}
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+	defined_text = {
+		name = CheckArms
+		text = {
+			trigger = {
+				not = {
+					157 = {
+						arms_factory > 0
+					}
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				157 = {
+					arms_factory > 0
+				}
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+	defined_text = {
+		name = CheckPower
+		text = {
+			trigger = {
+				not = {
+					157 = {
+						electricity_generator > 0
+					}
+				}
+			}
+			localization_key = BOS_TRIGGER_NO 
+		}
+		text = {
+			trigger = {
+				157 = {
+					electricity_generator > 0
+				}
+			}
+			localization_key = BOS_TRIGGER_YES
+		}
+	}
+
+# Complete Text
+	# PP
+		defined_text = {
+			name = Has10Polit
+			text = {
+				trigger = {
+				}
+				localization_key = BOS_HAS_10PolitPower 
+			}
+		}
+		defined_text = {
+			name = Has300Polit
+			text = {
+				trigger = {
+				}
+				localization_key = BOS_HAS_300PolitPower 
+			}
+		}
+
+	# Manpower
+		defined_text = {
+			name = Has100Manpower
+			text = {
+				trigger = {
+				}
+				localization_key = BOS_HAS_100Manpower 
+			}
+		}
+		defined_text = {
+			name = Has500Manpower
+			text = {
+				trigger = {
+				}
+				localization_key = BOS_HAS_500Manpower 
+			}
+		}
+		defined_text = {
+			name = Has1000Manpower
+			text = {
+				trigger = {
+				}
+				localization_key = BOS_HAS_1000Manpower 
+			}
+		}
+	# Command power
+		defined_text = {
+			name = HasCommandPower25
+			text = {
+				trigger = {
+				}
+				localization_key = BOS_HAS_25CommandPower
+			}
+		}
+	# Army Expirience
+		defined_text = {
+			name = HasArmyXp10
+			text = {
+				trigger = {
+				}
+				localization_key = BOS_HAS_10ArmyXp
+			}
+		}
+		defined_text = {
+			name = HasArmyXp25
+			text = {
+				trigger = {
+				}
+				localization_key = BOS_HAS_25ArmyXp
+			}
+		}
+	
+	# BOS Triggers
+		defined_text = {
+			name = HasAdmin
+			text = {
+				trigger = {
+				}
+				localization_key = BOS_HasAdminCapacity 
+			}
+		}
+
+		defined_text = {
+			name = HasAvailableSlot
+			text = {
+				trigger = {
+				}
+				localization_key = BOS_HasAvailableSlot 
+			}
+		}
+		defined_text = {
+			name = HasAvailableSpace
+			text = {
+				trigger = {
+				}
+				localization_key = BOS_HasAvailableSpace
+			}
+		}
+		defined_text = {
+			name = HasAvailableSpace2
+			text = {
+				trigger = {
+				}
+				localization_key = BOS_HasAvailableSpace2 
+			}
+		}
+		defined_text = {
+			name = HasAvailableSpace10
+			text = {
+				trigger = {
+				}
+				localization_key = BOS_HasAvailableSpace10 
+			}
+		}
+		defined_text = {
+			name = HasOffMapCivil
+			text = {
+				trigger = {
+				}
+				localization_key = BOS_HasOffmapCivil 
+			}
+		}
+
+		defined_text = {
+			name = HasCivil
+			text = {
+				trigger = {
+				}
+				localization_key = BOS_HasCivil
+			}
+		}
+
+		defined_text = {
+			name = HasSmelt
+			text = {
+				trigger = {
+				}
+				localization_key = BOS_HasSmelt
+			}
+		}
+
+		defined_text = {
+			name = HasWater
+			text = {
+				trigger = {
+				}
+				localization_key = BOS_HasWater
+			}
+		}
+
+		defined_text = {
+			name = HasCircuit
+			text = {
+				trigger = {
+				}
+				localization_key = BOS_HasCircuit
+			}
+		}
+
+		defined_text = {
+			name = HasArms
+			text = {
+				trigger = {
+				}
+				localization_key = BOS_HasArms
+			}
+		}
+
+		defined_text = {
+			name = HasPower
+			text = {
+				trigger = {
+				}
+				localization_key = BOS_HasPower
+			}
+		}
