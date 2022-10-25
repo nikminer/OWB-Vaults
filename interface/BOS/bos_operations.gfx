@@ -1,4 +1,4 @@
-guiTypes = {
+spriteTypes = {
 	spriteType = {
 		name = "GFX_operation_infiltrate_lost_hills"
 		texturefile = "gfx/interface/operations/infiltrate_lost_hills.dds"

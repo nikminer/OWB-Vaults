@@ -1,4 +1,4 @@
-version="1.0"
+version="0.5"
 tags={
 	"Map"
 	"Gameplay"
@@ -6,5 +6,5 @@ tags={
 dependencies={
 	"Old World Blues"
 }
-name="OWB: Vaults"
+name="OWB: Bunker Blues"
 supported_version="1.12.*"

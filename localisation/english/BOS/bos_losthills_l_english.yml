@@ -42,6 +42,7 @@
   LOST_HILLS_SAFETY_H: "Safety\nDepartment"
   LOST_HILLS_SAFETY_PROGRESS: "[?BOS.BOS_build_safety_progress]/[?BOS.BOS_construction_time]"
   LOST_HILLS_SAFETY_TT: "§HPrerequisites:§!\n[BOS.Has10Polit][BOS.Has500Manpower][BOS.HasAvailableSpace10][BOS.HasAvailableSlot][BOS.HasAdmin]\nTime: §H[?BOS.BOS_construction_time]§! days.\n\n§HEffect:§!\Add §H1 Safety Department§! to offmap"
+
   LOST_HILLS_SAFETY_TTDel: "§gHaving a Safety Department greatly reduces the risks of accidents when doing in Lost Hills, greatly increasing the amount of manpower we get back on average,§!"
   # Level 3
   LOST_HILLS_CIRCUIT_H: "Circuitry\nPlants"
@@ -55,6 +56,7 @@
   LOST_HILLS_LAB_H: "Laboratories\n[?BOS.BOS_underground_building_lab]/[?BOS.BOS_maximum_labs_allowed]"
   LOST_HILLS_LAB_PROGRESS: "[?BOS.BOS_build_lab_progress]/[?BOS.BOS_construction_time]"
   LOST_HILLS_LAB_TT: "§HPrerequisites:§!\n[BOS.Has10Polit][BOS.Has500Manpower][BOS.HasAvailableSpace2][BOS.HasAvailableSlot][BOS.HasAdmin]\nTime: §H[?BOS.BOS_construction_time]§! days.\n\n§HEffect:§!\nAdd §H1 Laboratory§! to offmap"
+
   LOST_HILLS_LAB_TTDel: "§gEach Laboratory gives us +2% increased Research Speed.§!"
   # Level 4
   LOST_HILLS_POWER_H: "Power\nFacilities"
@@ -64,6 +66,7 @@
   LOST_HILLS_ADM_H: "Admin\nCenters\n[?BOS.BOS_underground_building_administration_centers]/[?BOS.BOS_maximum_admin_centers_allowed]"
   LOST_HILLS_ADM_PROGRESS: "[?BOS.BOS_build_admin_progress]/[?BOS.BOS_construction_time]"
   LOST_HILLS_ADM_TT: "§HPrerequisites:§!\n[BOS.Has10Polit][BOS.Has500Manpower][BOS.HasAvailableSpace10][BOS.HasAvailableSlot][BOS.HasAdmin]\nTime: §H[?BOS.BOS_construction_time]§! days.\n\n§HEffect:§!\nAdd §H1 Administration Center! to offmap"
+
   LOST_HILLS_ADM_TTDel: "§gEach Administration Center gives us +1 increased Administration Capacity.§!"
  
   # Decisions
