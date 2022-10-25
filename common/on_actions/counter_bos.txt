@@ -685,7 +685,9 @@ on_actions = {
 					set_variable = {
 						BOS_build_smelt_progress = 0
 					}
-
+					add_to_variable = {
+						BOS_build_smelt_count = 1
+					}
 					add_offsite_building = {
 						type = metal_generator
 						level = 1
@@ -739,7 +741,9 @@ on_actions = {
 					set_variable = {
 						BOS_build_water_progress = 0
 					}
-
+					add_to_variable = {
+						BOS_build_water_count = 1
+					}
 					add_offsite_building = {
 						type = water_generator
 						level = 1
@@ -793,7 +797,9 @@ on_actions = {
 					set_variable = {
 						BOS_build_circuit_progress = 0
 					}
-
+					add_to_variable = {
+						BOS_build_circuit_count = 1
+					}
 					add_offsite_building = {
 						type = circuitry_generator
 						level = 1
@@ -847,7 +853,9 @@ on_actions = {
 					set_variable = {
 						BOS_build_arms_progress = 0
 					}
-
+					add_to_variable = {
+						BOS_build_arms_count = 1
+					}
 					add_offsite_building = {
 						type = arms_factory
 						level = 1
@@ -1003,7 +1011,9 @@ on_actions = {
 					set_variable = {
 						BOS_build_power_progress = 0
 					}
-
+					add_to_variable = {
+						BOS_build_power_count = 1
+					}
 					add_offsite_building = {
 						type = electricity_generator
 						level = 1

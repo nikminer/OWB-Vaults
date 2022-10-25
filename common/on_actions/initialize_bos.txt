@@ -69,17 +69,32 @@ on_actions = {
 						BOS_build_civil_progress = 0
 					}
 					set_variable = {
+						BOS_build_smelt_count = 0
+					}
+					set_variable = {
 						BOS_build_smelt_progress = 0
 					}
 					set_variable = {
+						BOS_build_safety_count = 0
+					}
+					set_variable = {
 						BOS_build_safety_progress = 0
+					}
+					set_variable = {
+						BOS_build_water_count = 0
 					}
 					set_variable = {
 						BOS_build_water_progress = 0
 					}
 				# Level 3
 					set_variable = {
+						BOS_build_circuit_count = 0
+					}
+					set_variable = {
 						BOS_build_circuit_progress = 0
+					}
+					set_variable = {
+						BOS_build_arms_count = 0
 					}
 					set_variable = {
 						BOS_build_arms_progress = 0
@@ -90,6 +105,9 @@ on_actions = {
 				# Level 4
 					set_variable = {
 						BOS_build_admin_progress = 0
+					}
+					set_variable = {
+						BOS_build_power_count = 0
 					}
 					set_variable = {
 						BOS_build_power_progress = 0

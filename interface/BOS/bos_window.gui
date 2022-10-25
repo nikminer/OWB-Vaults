@@ -67,15 +67,15 @@ guiTypes = {
 				maxWidth = 350
 			}
 			
-			instantTextBoxType = {
-				name = "bos_works"
-				position = { x = 400 y = 90 }
-				text = LOST_HILLS_WORKS_H
-				format = right
-				font = "pipboy_18_green"
-				multiline = no
-				maxWidth = 340
-			}
+			#instantTextBoxType = {
+			#	name = "bos_works"
+			#	position = { x = 400 y = 90 }
+			#	text = LOST_HILLS_WORKS_H
+			#	format = right
+			#	font = "pipboy_18_green"
+			#	multiline = no
+			#	maxWidth = 340
+			#}
 	}
 # LEVELS SWITCHER
 	containerWindowType = {
