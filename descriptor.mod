@@ -7,4 +7,4 @@ dependencies={
 	"Old World Blues"
 }
 name="OWB: Vaults"
-supported_version="1.11.*"
+supported_version="1.12.*"

@@ -25,7 +25,7 @@
 					has_manpower > 499
 				}
 			}
-			localization_key = BOS_TRIGGER_YES 
+			localization_key = BOS_TRIGGER_NO 
 		}
 		text = {
 			trigger = {

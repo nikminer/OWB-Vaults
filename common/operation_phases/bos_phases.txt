@@ -1,0 +1,20 @@
+
+#finding_in_glow = {
+#	name = finding_in_glow
+#	desc = finding_in_glow_desc
+#	outcome = neutralize_robots_outcome
+#	picture = "GFX_phase_facility"
+#	icon = "GFX_phase_facility_small"
+#	requirements = {}
+#	equipment = {}
+#}
+
+#become_an_initiate = {
+#	name = become_an_initiate
+#	desc = become_an_initiate_desc
+#	outcome = neutralize_robots_outcome
+#	picture = "GFX_phase_facility"
+#	icon = "GFX_phase_facility_small"
+#	requirements = {}
+#	equipment = {}
+#}

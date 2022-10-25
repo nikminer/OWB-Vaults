@@ -1,0 +1,692 @@
+guiTypes = {
+	containerWindowType = {
+		name = "open_trade_node_state_view_window"
+		position = { x = 477 y = 220 }
+		size = { width = 50 height = 50 }
+
+		buttonType = {
+			name = "open_button"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_state_node_view_open"
+			pdx_tooltip = "OPEN_TRADE_NODE_WINDOW_TT"
+		}
+
+		buttonType = {
+			name = "close_button"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_state_node_view_close"
+			pdx_tooltip = "CLOSE_TRADE_NODE_WINDOW_TT"
+		}
+	}
+
+	containerWindowType = {
+		name = "trade_node_state_view_window"
+		position = { x = 522 y = 75 }
+		size = { width = 700 height = 500 }
+
+		fade_time = 300
+		fade_type = linear
+
+		clipping = no
+
+		background = {
+			name = "background"
+			spriteType = "GFX_tiled_window"
+		}
+		containerWindowType = {
+			name = "header_window"
+			position = { x = 11 y = 11 }
+			size = { width = 678 height = 50 }
+
+			background = {
+				name = "background"
+				spriteType = "GFX_tiled_header_1"
+			}
+
+			instantTextBoxType = {
+				name = "header_text"
+				position = { x = 20 y = 10 }
+				text = "TRADE_NODE_NAME"
+				format = center
+				font = "hoi_30header"
+				maxWidth = 638
+				multiline = no
+				pdx_tooltip_delayed = "TRADE_NODE_NAME_TRIGGER"
+			}
+		}
+
+		containerWindowType = {
+			name = "entry_window"
+			position = { x = 11 y = 59 }
+			size = { width = 678 height = 430 }
+
+			background = {
+				name = "background"
+				spriteType = "GFX_tiled_paper_bg2"
+			}
+
+			iconType = {
+				name = "main_node_icon"
+				position = { x = 412 y = 23 }
+				spriteType = "GFX_trade_node_main_icon"
+				pdx_tooltip = "TRADE_NODE_MAIN_NODE_TT"
+			}
+
+			containerWindowType = {
+				name = "node_level_window"
+				position = { x = 190 y = 10 }
+				size = { width = 200 height = 34 }
+
+				background = {
+					name = "background"
+					spriteType = "GFX_tiled_generic_bg_1"
+				}
+
+				instantTextBoxType = {
+					name = "node_level_text"
+					position = { x = 10 y = 7 }
+					text = "TRADE_NODE_LEVEL"
+					format = center
+					font = "hoi_18mbs"
+					maxWidth = 180
+					multiline = no
+					pdx_tooltip = "TRADE_NODE_LEVEL_TT"
+					pdx_tooltip_delayed = "TRADE_NODE_LEVEL_TRIGGER"
+				}
+			}
+
+			containerWindowType = {
+				name = "node_progress_bar_window"
+				position = { x = 192 y = 54 }
+				size = { width = 196 height = 30 }
+
+				background = {
+					name = "background"
+					spriteType = "GFX_tiled_window_transparent_transparent"
+				}
+
+				iconType = {
+					name = "progress_bar"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_trade_node_progress_bar"
+					pdx_tooltip = "TRADE_NODE_PROGRESS_TT"
+					pdx_tooltip_delayed = "TRADE_NODE_PROGRESS_TRIGGER"
+				}
+				buttonType = {
+					name = "progress_bar_overlay"
+					position = { x = -2 y = -2 }
+					spriteType = "GFX_tiled_generic_bg_1"
+					size = { x = 200 y = 34 }
+					alwaystransparent = yes
+				}
+				buttonType = {
+					name = "progress_bar_upgrade"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_trade_node_progress_bar_upgrade"
+					size = { x = 200 y = 34 }
+					alwaystransparent = yes
+				}
+				instantTextBoxType = {
+					name = "node_progress_text"
+					position = { x = -2 y = 5 }
+					text = "TRADE_NODE_PROGRESS"
+					format = center
+					font = "hoi_18mbs"
+					maxWidth = 200
+					multiline = no
+					pdx_tooltip = "TRADE_NODE_PROGRESS_TT"
+					pdx_tooltip_delayed = "TRADE_NODE_PROGRESS_TRIGGER"
+				}
+			}
+
+			containerWindowType = {
+				name = "infrastructure_window"
+				position = { x = 20 y = 10 }
+				size = { width = 56 height = 77 }
+
+				background = {
+					name = "background"
+					spriteType = "GFX_tiled_generic_bg_1"
+				}
+
+				iconType = {
+					name = "building_icon"
+					position = { x = 5 y = 5 }
+					spriteType = "GFX_buildings_strip"
+					frame = 3
+					pdx_tooltip = "TRADE_NODE_INFRASTRUCTURE_LEVEL_TT"
+				}
+
+				instantTextBoxType = {
+					name = "buildig_level_text"
+					position = { x = 5 y = 52 }
+					text = "TRADE_NODE_INFRASTRUCTURE_LEVEL"
+					format = center
+					font = "hoi_18mbs"
+					maxWidth = 46
+					multiline = no
+					pdx_tooltip = "TRADE_NODE_INFRASTRUCTURE_LEVEL_TT"
+				}
+			}
+
+			containerWindowType = {
+				name = "economic_development_window"
+				position = { x = 80 y = 10 }
+				size = { width = 56 height = 77 }
+
+				background = {
+					name = "background"
+					spriteType = "GFX_tiled_generic_bg_1"
+				}
+
+				iconType = {
+					name = "population_icon"
+					position = { x = 5 y = 5 }
+					spriteType = "GFX_trade_economic_level_up_icon"
+					scale = 1
+					pdx_tooltip = "TRADE_NODE_ECONOMIC_DEVELOPMENT_TT"
+					pdx_tooltip_delayed = "TRADE_NODE_ECONOMIC_DEVELOPMENT_TRIGGER"
+				}
+
+				instantTextBoxType = {
+					name = "population_text"
+					position = { x = 5 y = 52 }
+					text = "TRADE_NODE_ECONOMIC_DEVELOPMENT"
+					format = center
+					font = "hoi_18mbs"
+					maxWidth = 46
+					multiline = no
+					pdx_tooltip = "TRADE_NODE_ECONOMIC_DEVELOPMENT_TT"
+					pdx_tooltip_delayed = "TRADE_NODE_ECONOMIC_DEVELOPMENT_TRIGGER"
+				}
+			}
+
+			containerWindowType = {
+				name = "naval_base_window"
+				position = { x = 482 y = 10 }
+				size = { width = 56 height = 77 }
+
+				background = {
+					name = "background"
+					spriteType = "GFX_tiled_generic_bg_1"
+				}
+
+				iconType = {
+					name = "building_icon"
+					position = { x = 5 y = 5 }
+					spriteType = "GFX_buildings_strip"
+					frame = 4
+					pdx_tooltip = "TRADE_NODE_NAVAL_BASE_LEVEL_TT"
+				}
+
+				instantTextBoxType = {
+					name = "buildig_level_text"
+					position = { x = 5 y = 52 }
+					text = "TRADE_NODE_NAVAL_BASE_LEVEL"
+					format = center
+					font = "hoi_18mbs"
+					maxWidth = 46
+					multiline = no
+					pdx_tooltip = "TRADE_NODE_NAVAL_BASE_LEVEL_TT"
+				}
+			}
+
+			containerWindowType = {
+				name = "arms_factory_window"
+				position = { x = 542 y = 10 }
+				size = { width = 56 height = 77 }
+
+				background = {
+					name = "background"
+					spriteType = "GFX_tiled_generic_bg_1"
+				}
+
+				iconType = {
+					name = "building_icon"
+					position = { x = 5 y = 5 }
+					spriteType = "GFX_buildings_strip"
+					frame = 2
+					pdx_tooltip = "TRADE_NODE_ARMS_FACTORY_LEVEL_TT"
+				}
+
+				instantTextBoxType = {
+					name = "buildig_level_text"
+					position = { x = 5 y = 52 }
+					text = "TRADE_NODE_ARMS_FACTORY_LEVEL"
+					format = center
+					font = "hoi_18mbs"
+					maxWidth = 46
+					multiline = no
+					pdx_tooltip = "TRADE_NODE_ARMS_FACTORY_LEVEL_TT"
+				}
+			}
+
+			containerWindowType = {
+				name = "industrial_complex_window"
+				position = { x = 602 y = 10 }
+				size = { width = 56 height = 77 }
+
+				background = {
+					name = "background"
+					spriteType = "GFX_tiled_generic_bg_1"
+				}
+
+				iconType = {
+					name = "building_icon"
+					position = { x = 5 y = 5 }
+					spriteType = "GFX_buildings_strip"
+					frame = 1
+					pdx_tooltip = "TRADE_NODE_INDUSTRIAL_COMPLEX_LEVEL_TT"
+				}
+
+				instantTextBoxType = {
+					name = "buildig_level_text"
+					position = { x = 5 y = 52 }
+					text = "TRADE_NODE_INDUSTRIAL_COMPLEX_LEVEL"
+					format = center
+					font = "hoi_18mbs"
+					maxWidth = 46
+					multiline = no
+					pdx_tooltip = "TRADE_NODE_INDUSTRIAL_COMPLEX_LEVEL_TT"
+				}
+			}
+
+			containerWindowType = {
+				name = "node_base_value_window"
+				position = { x = 20 y = 100 }
+				size = { width = 150 height = 50 }
+
+				background = {
+					name = "background"
+					spriteType = "GFX_tiled_generic_bg_1"
+				}
+
+				instantTextBoxType = {
+					name = "node_base_value_text"
+					position = { x = 5 y = 4 }
+					text = "TRADE_NODE_BASE_VALUE"
+					format = center
+					vertical_alignment = center
+					font = "hoi_18mbs"
+					maxWidth = 140
+					maxHeight = 40
+					pdx_tooltip = "TRADE_NODE_BASE_VALUE_TT"
+					pdx_tooltip_delayed = "TRADE_NODE_BASE_VALUE_TRIGGER"
+				}
+			}
+
+			containerWindowType = {
+				name = "node_trade_value_window"
+				position = { x = 20 y = 160 }
+				size = { width = 150 height = 50 }
+
+				background = {
+					name = "background"
+					spriteType = "GFX_tiled_generic_bg_1"
+				}
+
+				instantTextBoxType = {
+					name = "node_trade_value_text"
+					position = { x = 5 y = 4 }
+					text = "TRADE_NODE_TRADE_VALUE"
+					format = center
+					vertical_alignment = center
+					font = "hoi_18mbs"
+					maxWidth = 140
+					maxHeight = 40
+					pdx_tooltip = "TRADE_NODE_TRADE_VALUE_TT"
+					pdx_tooltip_delayed = "TRADE_NODE_TRADE_VALUE_TRIGGER"
+				}
+			}
+
+			containerWindowType = {
+				name = "node_total_value_window"
+				position = { x = 20 y = 220 }
+				size = { width = 150 height = 50 }
+
+				background = {
+					name = "background"
+					spriteType = "GFX_tiled_generic_bg_1"
+				}
+
+				instantTextBoxType = {
+					name = "node_total_value_text"
+					position = { x = 5 y = 4 }
+					text = "TRADE_NODE_TOTAL_VALUE"
+					format = center
+					vertical_alignment = center
+					font = "hoi_18mbs"
+					maxWidth = 140
+					maxHeight = 40
+					pdx_tooltip = "TRADE_NODE_TOTAL_VALUE_TT"
+					pdx_tooltip_delayed = "TRADE_NODE_TOTAL_VALUE_TT_DELAYED"
+				}
+			}
+
+
+			containerWindowType = {
+				name = "node_image_window"
+				position = { x = 190 y = 100 }
+				size = { width = 218 height = 318 }
+
+				background = {
+					name = "background_1"
+					spriteType = "GFX_tiled_generic_bg_1"
+				}
+				background = {
+					name = "background_2"
+					spriteType = "GFX_blue_tiled_research_bg"
+				}
+
+				iconType = {
+					name = "node_center_image"
+					position = { x = 9 y = 9 }
+					spriteType = "GFX_trade_node_image"
+					frame = 1
+				}
+			}
+			buttonType = {
+				name = "promote_node_button"
+				position = { x = 25 y = 395 }
+				spriteType = "GFX_sort_button_140x29"
+				frame = 2
+				#scale = 0.3
+				buttonFont = "hoi_18mbs"
+				buttonText = "TRADE_NODE_PROMOTE_BUTTON"
+				pdx_tooltip = "TRADE_NODE_PROMOTE_BUTTON_TT"
+				pdx_tooltip_delayed = "TRADE_NODE_PROMOTE_BUTTON_TRIGGER"
+			}
+		}
+		containerWindowType = {
+			name = "organization_list_anchor"
+			position = {
+				x = 0
+				y = 0
+			}
+			size = {
+				width = 100%%
+				height = 100%%
+			}
+		}
+	}
+
+	containerWindowType = {
+		name = "trade_node_state_view_member_states_list_window"
+		position = { x = 438 y = 159 }
+		size = { width = 230 height = 150 }
+
+		background = {
+			name = "background"
+			spriteType = "GFX_tiled_generic_bg_1"
+		}
+
+		instantTextBoxType = {
+			name = "node_member_states_list_title"
+			position = { x = 10 y = 5 }
+			text = "TRADE_NODE_MEMBER_STATES_LIST_TITLE"
+			format = left
+			font = "hoi_18mbs"
+			maxWidth = 130
+			multiline = no
+			pdx_tooltip = "TRADE_NODE_MEMBER_STATES_LIST_TITLE_TT"
+		}
+
+		containerWindowType = {
+			name = "entry_window"
+			position = { x = 0 y = 23 }
+			size = { width = 100%% height = 100%% }
+			margin = { left = 12 right = 24 top = 12 bottom = 12 }
+			verticalScrollbar = "right_vertical_slider"
+
+			background = {
+				name = "background"
+				spriteType = "GFX_tiled_window_1b_border"
+			}
+
+			gridboxtype = {
+				name = "node_member_states_list_gridbox"
+				position = { x = 0 y = 0 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 1 height = 1 }
+				add_horizontal = no
+				max_slots_horizontal = 1
+				format = "UPPER_LEFT"
+			}
+		}
+	}
+
+	containerWindowType = {
+		name = "trade_node_state_view_organization_list_window"
+		position = { x = 31 y = 340 }
+		size = { width = 150 height = 109 }
+
+		background = {
+			name = "background"
+			spriteType = "GFX_tiled_generic_bg_1"
+		}
+
+		instantTextBoxType = {
+			name = "node_member_states_list_title"
+			position = { x = 0 y = 5 }
+			text = "Organizations:"
+			format = center
+			font = "hoi_18mbs"
+			maxWidth = 150
+			multiline = no
+			pdx_tooltip = "TRADE_NODE_MEMBER_ORG_LIST_TITLE_TT"
+		}
+
+		containerWindowType = {
+			name = "entry_window"
+			position = { x = 0 y = 23 }
+			size = { width = 100%% height = 100%% }
+			margin = { left = 5 right = 5 top = 5 bottom = 3 }
+			verticalScrollbar = "right_vertical_slider"
+
+			background = {
+				name = "background"
+				spriteType = "GFX_tiled_window_transparent"
+			}
+
+			gridboxtype = {
+				name = "node_member_states_list_gridbox"
+				position = { x = 0 y = 0 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 1 height = 1 }
+				add_horizontal = no
+				max_slots_horizontal = 1
+				format = "UPPER_LEFT"
+			}
+		}
+	}
+	containerWindowType = {
+		name = "trade_node_trade_route_list_window"
+		position = { x = 438 y = 320 }
+		size = { width = 230 height = 125 }
+		clipping = no
+		background = {
+			name = "background"
+			spriteType = "GFX_tiled_generic_bg_11"
+		}
+
+		instantTextBoxType = {
+			name = "node_trade_route_title"
+			position = { x = 0 y = 6 }
+			text = "TRADE_NODE_TRADE_ROUTE_TITLE"
+			format = center
+			font = "hoi_18mbs"
+			maxWidth = 229
+			multiline = no
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "node_trade_route_desc"
+			position = { x = 40 y = 50 }
+			text = "TRADE_NODE_TRADE_ROUTE_DESC"
+			format = left
+			font = "hoi_16mbs"
+			maxWidth = 170
+			maxHeight = 50
+			fixedsize = yes
+		}
+		containerWindowType = {
+			name = "gridbox_container"
+			margin = { top = 6 bottom = 6 right = 10 left = 10 }
+			clipping = yes
+			position = {
+				x = 0
+				y = 25
+			}
+			size = { width = 230 height = 100 }
+			background = {
+				name = "gridbox_bg"
+				spriteType = "GFX_tiled_window_transparent_transparent"
+			}
+			verticalScrollbar = "right_vertical_slider"
+			gridboxtype = {
+				name = "node_trade_routes_list_box"
+				position = { x = 0 y = 0 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 1 height = 1 }
+				add_horizontal = no
+				max_slots_horizontal = 1
+				format = "UPPER_LEFT"
+			}
+		}
+		buttonType = {
+			name = "set_trade_route_button"
+			position = { x = 40 y = 130 }
+			spriteType = "GFX_sort_button_140x29"
+			frame = 1
+			buttonFont = "hoi_16mbs"
+			buttonText = "TRADE_NODE_TRADE_ROUTE_BUTTON"
+			pdx_tooltip = "TRADE_NODE_TRADE_ROUTE_BUTTON_TT"
+			pdx_tooltip_delayed = "TRADE_NODE_TRADE_ROUTE_BUTTON_TRIGGER"
+		}
+	}
+	containerWindowType = {
+		name = "trade_node_state_view_center_state_info_window"
+		position = { x = 519 y = 159 }
+		size = { width = 150 height = 170 }
+
+		containerWindowType = {
+			name = "center_state_info_window"
+			position = { x = 0 y = 0 }
+			size = { width = 150 height = 80 }
+
+			background = {
+				name = "background"
+				spriteType = "GFX_tiled_generic_bg_1"
+			}
+
+			instantTextBoxType = {
+				name = "node_center_state_info_title"
+				position = { x = 10 y = 5 }
+				text = "TRADE_NODE_CENTER_STATE_INFO_TITLE"
+				format = left
+				font = "hoi_18mbs"
+				maxWidth = 130
+				maxHeight = 40
+				fixedsize = yes
+			}
+
+			buttonType = {
+				name = "center_state_button"
+				position = { x = 5 y = 45 }
+				spriteType = "GFX_sort_button_140x29"
+				frame = 2
+				buttonFont = "hoi_18mbs"
+				buttonText = "TRADE_NODE_CENTER_STATE_INFO_BUTTON"
+				pdx_tooltip = "TRADE_NODE_CENTER_STATE_INFO_BUTTON_TT"
+				pdx_tooltip_delayed = "TRADE_NODE_CENTER_STATE_INFO_BUTTON_TT_DELAYED"
+			}
+		}
+
+		containerWindowType = {
+			name = "node_info_window"
+			position = { x = 0 y = 90 }
+			size = { width = 150 height = 80 }
+
+			background = {
+				name = "background"
+				spriteType = "GFX_tiled_generic_bg_1"
+			}
+
+			instantTextBoxType = {
+				name = "node_info_text"
+				position = { x = 10 y = -2 }
+				text = "TRADE_NODE_INFO"
+				format = center
+				vertical_alignment = center
+				font = "hoi_18mbs"
+				maxWidth = 130
+				maxHeight = 80
+				fixedsize = yes
+			}
+		}
+	}
+
+	containerWindowType = {
+		name = "node_member_states_list_entry"
+		position = { x = 0 y = 0 }
+		size = { width = 193 height = 25 }
+
+		buttonType = {
+			name = "entry_button"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_tiling_sort_button"
+			size = { x = 193 y = 24 }
+			buttonFont = "hoi_18mbs"
+			buttonText = "TRADE_NODE_MEMBER_STATES_LIST_ENTRY"
+			pdx_tooltip = "TRADE_NODE_MEMBER_STATES_LIST_ENTRY_TT"
+			pdx_tooltip_delayed = "TRADE_NODE_MEMBER_STATES_LIST_ENTRY_TT_DELAYED"
+		}
+	}
+
+	containerWindowType = {
+		name = "node_state_organizations_entry"
+		position = { x = 0 y = 0 }
+		size = { width = 120 height = 25 }
+
+		buttonType = {
+			name = "org_entry_button"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_tiling_sort_button"
+			size = { x = 120 y = 25 }
+			buttonFont = "hoi_18mbs"
+			buttonText = TRADE_NODE_ORGANIZATION_LIST_ENTRY
+			pdx_tooltip_delayed = "TRADE_NODE_ORGANIZATION_LIST_ENTRY_TRIGGER"
+			#pdx_tooltip_delayed = "TRADE_NODE_MEMBER_STATES_LIST_ENTRY_TT_DELAYED"
+			#alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "node_state_routes_entry"
+		position = { x = 0 y = 0 }
+		size = { width = 194 height = 25 }
+
+		buttonType = {
+			name = "route_entry_button"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_tiling_sort_button"
+			size = { x = 194 y = 25 }
+			buttonFont = "hoi_18mbs"
+			buttonText = TRADE_NODE_TRADE_ROUTE_ENTRY_BUTTON
+			pdx_tooltip= "TRADE_NODE_TRADE_ROUTE_ENTRY_BUTTON_TT"
+			#pdx_tooltip_delayed = "TRADE_NODE_MEMBER_STATES_LIST_ENTRY_TT_DELAYED"
+			#alwaystransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "_trade_node_disabled_window"
+		size = { width = 700 height = 500 }
+		iconType = {
+			name = "state_disable_overlay"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_state_disabled_overlay"
+			pdx_tooltip = "Trade Node Disabled"
+		}
+	}
+}

@@ -1,0 +1,29 @@
+#operation_infiltrate_lost_hills = {
+#	icon = GFX_operation_infiltrate_lost_hills
+#	map_icon = GFX_operation_infiltrate_lost_hills_map
+#	name = operation_infiltrate_lost_hills
+#	desc = operation_infiltrate_lost_hills_desc
+#	days = 90
+#	operatives = 1
+#	network_strength = 35
+#
+#	visible = {
+#		ROOT = {
+#			NOT = {
+#				original_tag = BOS
+#			}
+#		}
+#	}
+#
+#	phases = {
+#		infiltration_border = { base = 50 }
+#	}
+#
+#	phases = {
+#		neutralize_robots = { base = 100 }
+#	}
+#
+#	phases = {
+#		become_an_initiate = { base = 10 }
+#	}
+#}

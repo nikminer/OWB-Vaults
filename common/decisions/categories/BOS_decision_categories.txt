@@ -3,7 +3,7 @@ bos_underground_construction_decisions = {
 		tag = BOS
 	}
 	visible = {
-		always = no
+		is_ai = yes
 		has_country_flag = bos_administrative_decisions_enabled
 	}
 	icon = GFX_decision_mainframe_2

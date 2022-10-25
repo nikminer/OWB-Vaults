@@ -1,7 +1,7 @@
 guiTypes = {
 	containerWindowType = {
 		name = "bos_window_btn"
-		position = { x = 438 y = 245 }
+		position = { x = 477 y = 275 }
 		size = { width = 50 height = 50 }
 
 		buttonType = {
