@@ -27,15 +27,15 @@
   LOST_HILLS_TRAIN_TTDel: "§gEach Training Facilities gives us +2% increased Paladin Attack and Defense.§!"
 
   # Level 2
-  LOST_HILLS_CIVIL_H: "Civilian\nFacilities [BOS.BOS_off_map_civs]"
+  LOST_HILLS_CIVIL_H: "Civilian\nFacilities [?BOS.BOS_off_map_civs]"
   LOST_HILLS_CIVIL_PROGRESS: "[?BOS.BOS_build_civil_progress]/[?BOS.BOS_construction_time]"
   LOST_HILLS_CIVIL_TT: "§HPrerequisites:§!\n[BOS.Has10Polit][BOS.Has500Manpower][BOS.HasCivil][BOS.HasAvailableSpace][BOS.HasAvailableSlot][BOS.HasAdmin]\nTime: §H[?BOS.BOS_construction_time]§! days.\n\n§HEffect:§!\nRelocate §H1 Civilian Workshop§! to offmap"
 
-  LOST_HILLS_SMELT_H: "Smelters\nFacilities [BOS.BOS_build_smelt_count]"
+  LOST_HILLS_SMELT_H: "Smelters\nFacilities [?BOS.BOS_build_smelt_count]"
   LOST_HILLS_SMELT_PROGRESS: "[?BOS.BOS_build_smelt_progress]/[?BOS.BOS_construction_time]"
   LOST_HILLS_SMELT_TT: "§HPrerequisites:§!\n[BOS.Has10Polit][BOS.Has500Manpower][BOS.HasSmelt][BOS.HasAvailableSpace][BOS.HasAvailableSlot][BOS.HasAdmin]\nTime: §H[?BOS.BOS_construction_time]§! days.\n\n§HEffect:§!\nRelocate §H1 Foundary§! to offmap"
 
-  LOST_HILLS_WATER_H: "Water\nPurifiers [BOS.BOS_build_safety_count]"
+  LOST_HILLS_WATER_H: "Water\nPurifiers [?BOS.BOS_build_safety_count]"
   LOST_HILLS_WATER_PROGRESS: "[?BOS.BOS_build_water_progress]/[?BOS.BOS_construction_time]"
   LOST_HILLS_WATER_TT: "§HPrerequisites:§!\n[BOS.Has10Polit][BOS.Has500Manpower][BOS.HasWater][BOS.HasAvailableSpace][BOS.HasAvailableSlot][BOS.HasAdmin]\nTime: §H[?BOS.BOS_construction_time]§! days.\n\n§HEffect:§!\nRelocate §H1 Purification Station§! to offmap"
 
@@ -45,11 +45,11 @@
 
   LOST_HILLS_SAFETY_TTDel: "§gHaving a Safety Department greatly reduces the risks of accidents when doing in Lost Hills, greatly increasing the amount of manpower we get back on average,§!"
   # Level 3
-  LOST_HILLS_CIRCUIT_H: "Circuitry\nPlants [BOS.BOS_build_circuit_count]"
+  LOST_HILLS_CIRCUIT_H: "Circuitry\nPlants [?BOS.BOS_build_circuit_count]"
   LOST_HILLS_CIRCUIT_PROGRESS: "[?BOS.BOS_build_circuit_progress]/[?BOS.BOS_construction_time]"
   LOST_HILLS_CIRCUIT_TT: "§HPrerequisites:§!\n[BOS.Has10Polit][BOS.Has500Manpower][BOS.HasCircuit][BOS.HasAvailableSpace][BOS.HasAvailableSlot][BOS.HasAdmin]\nTime: §H[?BOS.BOS_construction_time]§! days.\n\n§HEffect:§!\nRelocate §H1 Fabrication Laboratory§! to offmap"
 
-  LOST_HILLS_ARMS_H: "Arms\nFacilities [BOS.BOS_build_arms_count]"
+  LOST_HILLS_ARMS_H: "Arms\nFacilities [?BOS.BOS_build_arms_count]"
   LOST_HILLS_ARMS_PROGRESS: "[?BOS.BOS_build_arms_progress]/[?BOS.BOS_construction_time]"
   LOST_HILLS_ARMS_TT: "§HPrerequisites:§!\n[BOS.Has10Polit][BOS.Has500Manpower][BOS.HasArms][BOS.HasAvailableSpace][BOS.HasAvailableSlot][BOS.HasAdmin]\nTime: §H[?BOS.BOS_construction_time]§! days.\n\n§HEffect:§!\nRelocate §H1 Arms Workshop§! to offmap"
 
@@ -59,7 +59,7 @@
 
   LOST_HILLS_LAB_TTDel: "§gEach Laboratory gives us +2% increased Research Speed.§!"
   # Level 4
-  LOST_HILLS_POWER_H: "Power\nFacilities [BOS.BOS_build_power_count]"
+  LOST_HILLS_POWER_H: "Power\nFacilities [?BOS.BOS_build_power_count]"
   LOST_HILLS_POWER_PROGRESS: "[?BOS.BOS_build_power_progress]/[?BOS.BOS_construction_time]"
   LOST_HILLS_POWER_TT: "§HPrerequisites:§!\n[BOS.Has10Polit][BOS.Has500Manpower][BOS.HasPower][BOS.HasAvailableSpace][BOS.HasAvailableSlot][BOS.HasAdmin]\nTime: §H[?BOS.BOS_construction_time]§! days.\n\n§HEffect:§!\nRelocate §H1 Power Station§! to offmap"
 
