@@ -41,7 +41,7 @@
 
   LOST_HILLS_SAFETY_H: "Safety\nDepartment"
   LOST_HILLS_SAFETY_PROGRESS: "[?BOS.BOS_build_safety_progress]/[?BOS.BOS_construction_time]"
-  LOST_HILLS_SAFETY_TT: "§HPrerequisites:§!\n[BOS.Has10Polit][BOS.Has500Manpower][BOS.HasAvailableSpace10][BOS.HasAvailableSlot][BOS.HasAdmin]\nTime: §H[?BOS.BOS_construction_time]§! days.\n\n§HEffect:§!\Add §H1 Safety Department§! to offmap"
+  LOST_HILLS_SAFETY_TT: "§HPrerequisites:§!\n[BOS.Has10Polit][BOS.Has500Manpower][BOS.HasAvailableSpace10][BOS.HasAvailableSlot][BOS.HasAdmin]\nTime: §H[?BOS.BOS_construction_time]§! days.\n\n§HEffect:§!\nAdd §H1 Safety Department§! to offmap"
 
   LOST_HILLS_SAFETY_TTDel: "§gHaving a Safety Department greatly reduces the risks of accidents when doing in Lost Hills, greatly increasing the amount of manpower we get back on average,§!"
   # Level 3
