@@ -1,20 +1,150 @@
+# operation become an initiate
+	find_agent = {
+		name = find_agent
+		desc = find_agent_desc
+		outcome = find_agent_outcome
+		picture = GFX_phase_mystery_man
+		icon = GFX_phase_mystery_man_small
+		requirements = {}
+		equipment = {
+		}
+	}
 
-#finding_in_glow = {
-#	name = finding_in_glow
-#	desc = finding_in_glow_desc
-#	outcome = neutralize_robots_outcome
-#	picture = "GFX_phase_facility"
-#	icon = "GFX_phase_facility_small"
-#	requirements = {}
-#	equipment = {}
-#}
+	finding_in_glow = {
+		name = finding_in_glow
+		desc = finding_in_glow_desc
+		outcome = finding_in_glow_outcome
+		picture = GFX_phase_glow
+		icon = GFX_phase_glow_small
+		requirements = {}
+		equipment = {
+			spec_ops_equipment = 10
+		}
+	}
 
-#become_an_initiate = {
-#	name = become_an_initiate
-#	desc = become_an_initiate_desc
-#	outcome = neutralize_robots_outcome
-#	picture = "GFX_phase_facility"
-#	icon = "GFX_phase_facility_small"
-#	requirements = {}
-#	equipment = {}
-#}
+	become_an_initiate = {
+		name = become_an_initiate
+		desc = become_an_initiate_desc
+		outcome = become_an_initiate_outcome
+		picture = GFX_phase_initiate
+		icon = GFX_phase_initiate_small
+		requirements = {}
+		equipment = {}
+	}
+
+
+# operation promotion
+	go_on_patrol = {
+		name = go_on_patrol
+		desc = go_on_patrol_desc
+		outcome = go_on_patrol_outcome
+		picture = GFX_phase_patrol
+		icon = GFX_phase_patrol_small
+		requirements = {}
+		equipment = {}
+	}
+
+	save_initiate = {
+		name = save_initiate
+		desc = save_initiate_desc
+		outcome = save_initiate_outcome
+		outcome_extra =save_initiate_extra
+
+		picture = GFX_phase_prisoner_2
+		icon = GFX_phase_prisoner_2_small
+		requirements = {}
+		equipment = {
+			infantry_equipment = 20
+			spec_ops_equipment = 5
+		}
+	}
+
+	destroy_raider_camp = {
+		name = destroy_raider_camp
+		desc = destroy_raider_camp_desc
+		outcome = destroy_raider_camp_outcome
+		outcome_extra = destroy_raider_camp_extra
+
+		picture = GFX_phase_mercs
+		icon = GFX_phase_mercs_small
+		requirements = {}
+		equipment = {
+			spec_ops_equipment = 5
+		}
+	}
+
+	find_and_extract_technology = {
+		name = find_and_extract_technology
+		desc = find_and_extract_technology_desc
+		outcome = find_and_extract_technology_outcome
+		outcome_extra = find_and_extract_technology_extra
+
+		picture = GFX_phase_checkpoint
+		icon = GFX_phase_checkpoint_small
+		requirements = {}
+		equipment = {}
+	}
+
+	
+
+	return_lost_hills_knight = {
+		name = return_lost_hills
+		desc = return_lost_hills_desc
+		outcome = return_lost_hills_outcome
+		outcome_extra = return_lost_hills_knight_extra
+
+		picture = GFX_phase_initiate
+		icon = GFX_phase_initiate_small
+		requirements = {}
+		equipment = {}
+	}
+
+# operation support scribes
+	throw_power_armor = {
+		name = throw_power_armor
+		desc = throw_power_armor_desc
+		outcome = throw_power_armor_outcome
+		picture = GFX_phase_cave
+		icon = GFX_phase_cave_small
+		requirements = {}
+		equipment = {
+			#power_armor_equipment = 1
+		}
+	}
+
+	fix_power_armor = {
+		name = fix_power_armor
+		desc = fix_power_armor_desc
+		outcome = fix_power_armor_outcome
+		outcome_extra = fix_power_armor_extra
+		picture = GFX_fix_armor
+		icon = GFX_fix_armor_small
+		requirements = {}
+		equipment = {}
+	}
+
+	integrate_scribes = {
+		name = integrate_scribes
+		desc = integrate_scribes_desc
+		outcome = integrate_scribes_outcome
+		outcome_extra = integrate_scribes_extra
+		picture = GFX_phase_initiate
+		icon = GFX_phase_initiate_small
+		requirements = {}
+		equipment = {}
+	}
+
+# operation recruit paladin
+	scout_northern_wastes = {
+		name = scout_northern_wastes
+		desc = scout_northern_wastes_desc
+		outcome = scout_northern_wastes_outcome
+		outcome_extra = scout_northern_wastes_extra
+
+		picture = GFX_phase_road
+		icon = GFX_phase_road_small
+		requirements = {}
+		equipment = {
+			spec_ops_equipment = 5
+		}
+	}

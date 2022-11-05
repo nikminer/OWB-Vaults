@@ -1,0 +1,72 @@
+spriteTypes = {
+	# Operations
+		spriteType = {
+			name = "GFX_operation_infiltrate_lost_hills"
+			texturefile = "gfx/interface/operations/infiltrate_lost_hills.dds"
+		}
+		spriteType = {
+			name = "GFX_operation_help_scribes"
+			texturefile = "gfx/interface/operations/help_scribes.dds"
+		}
+		spriteType = {
+			name = "GFX_operation_promote_knight"
+			texturefile = "gfx/interface/operations/promote_knight.dds"
+		}
+		spriteType = {
+			name = "GFX_operation_recrute_elder"
+			texturefile = "gfx/interface/operations/recruit_elder.dds"
+		}
+		spriteType = {
+			name = "GFX_operation_recrute_paladin"
+			texturefile = "gfx/interface/operations/recruit_paladin.dds"
+		}
+	# Map Operations
+		spriteType = {
+			name = "GFX_operation_infiltrate_lost_hills_map"
+			texturefile = "gfx/interface/operations/map/infiltrate_lost_hills_map.dds"
+		}
+		spriteType = {
+			name = "GFX_operation_help_scribes_map"
+			texturefile = "gfx/interface/operations/map/help_scribes.dds"
+		}
+		spriteType = {
+			name = "GFX_operation_promote_knight_map"
+			texturefile = "gfx/interface/operations/map/promote_knight.dds"
+		}
+		spriteType = {
+			name = "GFX_operation_recrute_elder_map"
+			texturefile = "gfx/interface/operations/map/recruit_elder.dds"
+		}
+		spriteType = {
+			name = "GFX_operation_recrute_paladin_map"
+			texturefile = "gfx/interface/operations/map/recruit_paladin.dds"
+		}
+
+	# Phases
+		spriteType = {
+			name = "GFX_phase_glow"
+			texturefile = "gfx/interface/operations/images/ancientdisk.dds"
+		}
+		spriteType = {
+			name = "GFX_phase_glow_small"
+			texturefile = "gfx/interface/operations/phases_small/ancientdisk.dds"
+		}
+		spriteType = {
+			name = "GFX_phase_initiate"
+			texturefile = "gfx/interface/operations/images/becomeInitiate.dds"
+		}
+		spriteType = {
+			name = "GFX_phase_initiate_small"
+			texturefile = "gfx/interface/operations/phases_small/becomeInitiate.dds"
+		}
+		spriteType = {
+			name = "GFX_fix_armor"
+			texturefile = "gfx/interface/operations/images/fixarmor.dds"
+		}
+		spriteType = {
+			name = "GFX_fix_armor_small"
+			texturefile = "gfx/interface/operations/phases_small/fixarmor.dds"
+		}
+
+		
+}

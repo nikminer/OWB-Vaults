@@ -1,0 +1,25 @@
+BOS_bop_category = {
+	BOS_bop_test1 = {
+		priority = 100
+		icon = GFX_decision_eng_trade_unions_demand
+
+		allowed = {
+			tag = BOS
+		}
+
+		visible = {
+			tag = BOS
+		}
+
+		available = {
+
+		}
+
+		cost = 100
+
+		complete_effect = {
+			BOS_bop_medium_increase_effect = yes
+			
+		}
+	}
+}

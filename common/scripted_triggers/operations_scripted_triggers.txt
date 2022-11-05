@@ -1,0 +1,13 @@
+use_generic_operations = {
+	NOT = { has_unique_operations = yes }
+}
+
+has_unique_operations = {
+	OR = {
+		NOT = {
+			original_tag = bos
+		}
+		#tags go here
+		has_country_flag = has_unique_operations
+	}
+}

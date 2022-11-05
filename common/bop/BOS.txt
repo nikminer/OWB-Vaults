@@ -2,6 +2,7 @@ BOS_balance_power_bop = {
 	initial_value = 0
 	left_side = BOS_bop_scribes
 	right_side = BOS_bop_paladins
+	decision_category = BOS_bop_category
 
 	range = {
 		id = BOS_bop_balanced 

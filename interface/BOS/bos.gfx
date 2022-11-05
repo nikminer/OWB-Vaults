@@ -52,6 +52,11 @@ spriteTypes = {
 			texturefile = "gfx/interface/gui/bos/construction.dds"
 		}
 
+		spriteType = {
+			name = "GFX_bos_need_access"
+			texturefile = "gfx/interface/gui/bos/need_access.dds"
+		}
+
 	# Decisions
 		spriteType = {
 			name = "GFX_bos_decisions_btn_bg"

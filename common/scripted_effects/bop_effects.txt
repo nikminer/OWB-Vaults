@@ -1,0 +1,6 @@
+BOS_bop_medium_increase_effect = {
+	add_power_balance_value = {
+		id = BOS_balance_power_bop
+		value = 0.15
+	}
+}

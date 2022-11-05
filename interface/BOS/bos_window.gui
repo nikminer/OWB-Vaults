@@ -618,6 +618,39 @@ guiTypes = {
 			pdx_tooltip = LOST_HILLS_POWER_TT
 		}
 	}
+
+	containerWindowType = {
+		name = "bos_need_access_window"
+		position = { x = 75 y = 75 }
+		size = { width = 400 height = 400 }
+		clipping = no
+
+		iconType = {
+			name = "bos_need_access"
+			spriteType = "GFX_bos_need_access"
+			position = { x = 175 y = 35 }
+		}
+
+		instantTextBoxType = {
+			name = "bos_no_acess_text"
+			position = { x = 175 y = 350 }
+			text = "ACCESS DENIED"
+			format = center
+			font = "pipboy_32_green"
+			multiline = no
+			maxWidth = 300
+		}
+
+		instantTextBoxType = {
+			name = "bos_no_acess1_text"
+			position = { x = 175 y = 375 }
+			text = "Unauthorized user"
+			format = center
+			font = "pipboy_32_green"
+			multiline = no
+			maxWidth = 300
+		}
+	}
 # Decisions
 	containerWindowType = {
 		name = "bos_decisions_panel"

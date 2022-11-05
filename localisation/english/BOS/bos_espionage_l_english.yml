@@ -1,0 +1,76 @@
+﻿l_english:
+  # Tokens
+    OPERATION_TOKEN_INITIATE: "Initiate Infiltrate"
+    OPERATION_TOKEN_INITIATE_DESC: "We have an infiltrate agent in the rank of Initiate"
+    OPERATION_TOKEN_SCRIBES: "Scribes support"
+    OPERATION_TOKEN_SCRIBES_DESC: "The infiltrated agent enlisted the support of one of the scribes of the Brotherhood of steel."
+    OPERATION_TOKEN_KNIGHT: "Knight infiltrate"
+    OPERATION_TOKEN_KNIGHT_DESC: "Our agent promoted to Knight"
+    OPERATION_TOKEN_PALADIN_SUPPORT: "Pladin support"
+    OPERATION_TOKEN_PALADIN_SUPPORT_DESC: "Infiltrated agent recruited one of the brotherhood's paladins to our side"
+    OPERATION_TOKEN_ELDER: "Elder support"
+    OPERATION_TOKEN_ELDER_DESC: "Infiltrated agent recruited one of the Elder sympathizing with us to our side"
+  # Operations
+    operation_become_an_initiate: "Operation \"Initiation\""
+    operation_become_an_initiate_desc: "Our agents can set up a spy network outside, but the brotherhood of steel is a closed community from the wasteland, and for the most part it is located inside the Lost Hills bunker, however, to get inside, the usual methods of establishing a network will not be effective."
+    
+    operation_promotion: "Operation \"Promotion\""
+    operation_promotion_desc: "After the introduction of the agent as a novice, it turned out that there is an internal security service of the brotherhood, which monitors all initiates, in case they do not steal technology or damage the internal processes of the bunker, so that the security guards lag behind the agent, we need to give them confidence, we assume that after receiving the title of knight, the security guards will lag behind the agent."
+
+    operation_recruit_scribes: "Recruit scribes"
+    operation_recruit_scribes_desc: "Some technological sectors are closed to most of the inhabitants of the Lost Hills bunker, but you can try to recruit or ingratiate yourself with the scribes of the brotherhood of steel if you help them with routine matters."
+  #Phases
+    find_agent: "Recruit an agent in the wastelands"
+    find_agent_desc: "To successfully infiltrate the brotherhood of steel, you need to recruit a person who is not connected with us in any way, then under the guise   of an ordinary inhabitant of the wasteland, he will try to infiltrate the brotherhood of steel."
+    find_agent_outcome: "In the Hub, we managed to find a person willing to help us, although in return he wanted his family to be taken care of."
+    finding_in_glow: "Find ancient brotherhood disk"
+    finding_in_glow_desc: "By order of high elder Maxson, in order to join the brotherhood of steel, it is necessary to complete a suicidal quest in the Glow."
+    finding_in_glow_outcome: "In the Glow, we managed to find the ancient disk of the brotherhood, although our team picked up a huge dose of radiation."
+    become_an_initiate: "Become an initiate"
+    become_an_initiate_desc: "After receiving the title of initiate, we will get access to Lost Hills"
+    become_an_initiate_outcome: "After the return of the disk, our agent was accepted into the brotherhood of steel with the rank of initiated, however, due to the radiation dose received, the agent needs some time before he can get in touch again."
+
+    go_on_patrol: "Go on patrol"
+    go_on_patrol_desc: "To get a promotion, an agent needs to prove himself, so he asked for a brotherhood patrol."
+    go_on_patrol_outcome: "To get a promotion, an agent needs to prove himself, so he asked for a brotherhood patrol."
+
+    save_initiate: "Save the initiated"
+    save_initiate_desc: "One of the brotherhood's patrols was captured by mercenaries disguised as raiders, now the squad with our agent needs to prove themselves during the rescue."
+    save_initiate_outcome: "Our agent screwed up, instead of distinguishing himself, he only got in the way of other knights of the brotherhood."
+    save_initiate_extra: "Our agent was able to join the brotherhood squad perfectly and fought no worse than other knights, according to the agent's report, the squad leader praised him and promised to mention his merits in his report."
+
+    destroy_raider_camp: "Destroy the Raider camp"
+    destroy_raider_camp_desc: "A group of raiders has found an advanced technology, this is enough to attract the brotherhood, our operatives will conduct a reconnaissance of their camp and hand it over to our agent."
+    destroy_raider_camp_outcome: "Our operatives failed to convey information about the camp to the agent, so the agent decided not to risk trying to distinguish himself during the storming of the camp and covered the rear of the knights."
+    destroy_raider_camp_extra: "Our operatives successfully transmitted intelligence about the raider camp, so our agent was able to prove himself as a good scout, thanks to which the patrol unit was able to destroy all the raiders in the camp without losses."
+
+    find_and_extract_technology: "Find and capture technologies"
+    find_and_extract_technology_desc: "We have leaked to the Brotherhood of steel data about one of the pre-war facilities on our territory, it has already been cleaned by our operatives and we have thrown them a useless old device."
+    find_and_extract_technology_outcome: "The Brotherhood patrol arrived at the facility, however, they could not find any technology, the object simply did not turn out, perhaps the passing residents of the wasteland got to it earlier."
+    find_and_extract_technology_extra: "The Brotherhood squad arrived and began searching the pre-war facility, our agent immediately led them to the technology and was able to establish himself as a good seeker of pre-war technologies."
+
+    return_lost_hills: "Back to Lost Hills"
+    return_lost_hills_desc: "Then you need to go back to Lost Hills and wait for the results."
+    return_lost_hills_outcome: "The agent successfully returned to Lost Hills, but he failed to advance in his goals."
+    return_lost_hills_knight_extra: "The agent successfully returned to Lost Hills, the management appreciated his merits and promoted him to the rank of Knight of the Brotherhood of Steel. The security service will soon completely dump our agent from their accounts."
+    return_lost_hills_paladin_extra: "The agent and the paladin successfully returned to Lost Hills, the agent successfully ingratiated himself into the confidence of the paladin of the Brotherhood of Steel. After some time, the paladin will begin to perceive the agent as a friend and will slowly begin to leak data about the Brotherhood."
+
+    throw_power_armor: "Throw power armor"
+    throw_power_armor_desc: "Our operatives will throw power armor to the Brotherhood of steel, we will give it a pre-war look and pass information about the breakdown and location armor to our agent."
+    throw_power_armor_outcome: "The agent during the patrol successfully found the broken power armor left by us and delivered it to Lost Hills."
+
+    fix_power_armor: "Help in repairing power armor"
+    fix_power_armor_desc: "Due to the fact that the agent found this armor, he can help in repairing it and will receive it in the future."
+    fix_power_armor_outcome: "The agent was unlucky, he got an experienced and well-trained scribe who easily repaired the power armor."
+    fix_power_armor_extra: "The agent was lucky, because of the great employment of scribes, a not particularly experienced scribe was thrown for repair, who for the first time began to repair power armor, thanks to the agent's help they managed to fix it."
+
+    integrate_scribes: "Try to ingratiate yourself scribe"
+    integrate_scribes_desc: "After helping to repair the armor, the agent can try to establish friendly relations with the scribe."
+    integrate_scribes_outcome: "When trying to establish friendly relations with the scribe, he turned out to be arrogant and refused to have any conversations with a person below him in intelligence."
+    integrate_scribes_extra: "After helping with the repair, the scribe easily made contact with the agent and the scribe has already begun to slowly merge data on the Lost Hills technology sector."
+
+
+    scout_northern_wastes: "Scout the wasteland"
+    scout_northern_wastes_desc: ""
+    scout_northern_wastes_outcome: ""
+    scout_northern_wastes_extra: ""

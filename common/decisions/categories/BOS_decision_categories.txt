@@ -10,6 +10,7 @@ bos_underground_construction_decisions = {
 	picture = GFX_event_BOS_underground_construction
 }
 
+
 bos_paladin_soldiers_decisions = {
 	allowed = {
 		tag = BOS

@@ -1,0 +1,67 @@
+token_bos_initiate = {
+	name = OPERATION_TOKEN_INITIATE
+	desc = OPERATION_TOKEN_INITIATE_DESC
+	icon = GFX_infiltrate_civilian_bg
+	text_icon = GFX_text_infiltrate_civilian_token
+
+	intel_source = civilian
+	intel_gain = 20
+
+	intel_source = army
+	intel_gain = 10
+
+	intel_source = airforce
+	intel_gain = 10
+}
+
+token_bos_scribes = {
+	name = OPERATION_TOKEN_SCRIBES
+	desc = OPERATION_TOKEN_SCRIBES_DESC
+	icon = GFX_infiltrate_civilian_bg
+	text_icon = GFX_text_infiltrate_civilian_token
+
+	intel_source = civilian
+	intel_gain = 30
+}
+
+token_bos_knight = {
+	name = OPERATION_TOKEN_KNIGHT
+	desc = OPERATION_TOKEN_KNIGHT_DESC
+	icon = GFX_infiltrate_army_bg
+	text_icon = GFX_text_infiltrate_army_token
+
+	intel_source = army
+	intel_gain = 20
+
+	intel_source = airforce
+	intel_gain = 20
+}
+
+token_bos_paladin = {
+	name = OPERATION_TOKEN_PALADIN_SUPPORT
+	desc = OPERATION_TOKEN_PALADIN_SUPPORT_DESC
+	icon = GFX_infiltrate_army_bg
+	text_icon = GFX_text_infiltrate_army_token
+
+	intel_source = army
+	intel_gain = 20
+
+	intel_source = airforce
+	intel_gain = 2
+}
+
+token_bos_elder = {
+	name = OPERATION_TOKEN_ELDER
+	desc = OPERATION_TOKEN_ELDER_DESC
+	icon = GFX_infiltrate_army_bg
+	text_icon = GFX_text_infiltrate_army_token
+
+	intel_source = civilian
+	intel_gain = 30
+
+	intel_source = army
+	intel_gain = 20
+
+	intel_source = airforce
+	intel_gain = 20
+}

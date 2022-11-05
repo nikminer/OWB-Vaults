@@ -1,29 +1,291 @@
-#operation_infiltrate_lost_hills = {
-#	icon = GFX_operation_infiltrate_lost_hills
-#	map_icon = GFX_operation_infiltrate_lost_hills_map
-#	name = operation_infiltrate_lost_hills
-#	desc = operation_infiltrate_lost_hills_desc
-#	days = 90
-#	operatives = 1
-#	network_strength = 35
-#
-#	visible = {
-#		ROOT = {
-#			NOT = {
-#				original_tag = BOS
-#			}
-#		}
-#	}
-#
-#	phases = {
-#		infiltration_border = { base = 50 }
-#	}
-#
-#	phases = {
-#		neutralize_robots = { base = 100 }
-#	}
-#
-#	phases = {
-#		become_an_initiate = { base = 10 }
-#	}
-#}
+operation_become_an_initiate = {
+	icon = GFX_operation_infiltrate_lost_hills
+	map_icon = GFX_operation_infiltrate_lost_hills_map
+	name = operation_become_an_initiate 
+	desc = operation_become_an_initiate_desc
+	days = 90
+	operatives = 1
+	network_strength = 0
+
+	visible = {
+		any_neighbor_country = {
+			original_tag = BOS
+		}
+
+		network_national_coverage = {
+			target = FROM
+			value > 35
+		}
+
+		not = {
+			has_operation_token = {
+				tag = FROM
+				token = token_bos_initiate
+			}
+		}
+	}
+
+	equipment = {
+		spec_ops_equipment = 10
+	}
+
+	return_on_complete = yes
+
+	operation_target = {
+		targets = { 
+			BOS
+		}
+	}
+
+	awarded_tokens = {
+		token_bos_initiate
+	}
+
+
+	risk_chance = 0.4
+	outcome_extra_chance = 0.25
+
+	risk_modifiers = { operation_infiltrate_risk operation_risk operation_steal_tech_risk }
+	cost_modifiers = { operation_infiltrate_cost operation_cost operation_steal_tech_cost }
+	outcome_modifiers = { operation_infiltrate_outcome operation_outcome operation_steal_tech_outcome }
+
+	outcome_execute = {
+		ROOT = {
+			add_operation_token = {
+				tag = FROM
+				token = token_bos_initiate
+			}
+		}
+	}
+
+	outcome_extra_execute = { 
+		ROOT = {
+			add_operation_token = {
+				tag = FROM
+				token = token_bos_initiate
+			}
+			add_intel = {
+				target = FROM
+				civilian_intel = 10
+			}
+			add_political_power = 25
+		}
+	}
+
+	outcome_potential = {
+		ROOT = {
+			add_operation_token = {
+				tag = FROM
+				token = token_bos_initiate
+			}
+		}
+	}
+
+
+	phases = {
+		find_agent = { base = 100 }
+	}
+
+	phases = {
+		finding_in_glow = { base = 100 }
+	}
+
+	phases = {
+		become_an_initiate = { base = 100 }
+	}
+}
+
+operation_promotion = {
+	icon = GFX_operation_promote_knight
+	map_icon = GFX_operation_promote_knight_map
+	name = operation_promotion
+	desc = operation_promotion_desc
+	days = 30
+	operatives = 1
+	network_strength = 35
+
+	visible = {
+		any_neighbor_country = {
+			original_tag = BOS
+		}
+
+		network_national_coverage = {
+			target = FROM
+			value > 35
+		}
+
+		not = {
+			has_operation_token = {
+				tag = FROM
+				token = token_bos_knight
+			}
+		}
+	}
+
+	equipment = {
+		
+	}
+
+	required_tokens = {
+		token_bos_initiate
+	}
+
+	operation_target = {
+		targets = { 
+			BOS
+		}
+	}
+
+	awarded_tokens = {
+		token_bos_knight
+	}
+
+	risk_chance = 0.5
+	outcome_extra_chance = 0.35
+
+	risk_modifiers = { operation_infiltrate_risk operation_risk }
+	cost_modifiers = { operation_infiltrate_cost operation_cost }
+	outcome_modifiers = { operation_outcome }
+
+	outcome_execute = {
+		ROOT = {
+			add_intel = {
+				target = FROM
+				army_intel = 5
+			}
+		}
+	}
+
+	outcome_extra_execute = { 
+		ROOT = {
+			add_operation_token = {
+				tag = FROM
+				token = token_bos_knight
+			}
+			add_intel = {
+				target = FROM
+				army_intel = 10
+			}
+		}
+	}
+
+	outcome_potential = {
+		ROOT = {
+			add_operation_token = {
+				tag = FROM
+				token = token_bos_knight
+			}
+		}
+	}
+
+
+	phases = {
+		go_on_patrol = { base = 100 }
+	}
+
+	phases = {
+		save_initiate = { base = 33 }
+		destroy_raider_camp = { base = 33 }
+		find_and_extract_technology = { base = 33 }
+	}
+
+	phases = {
+		return_lost_hills_knight = { base = 100 }
+	}
+}
+
+operation_recruit_scribes = {
+	icon = GFX_operation_help_scribes
+	map_icon = GFX_operation_help_scribes_map
+	name = operation_recruit_scribes
+	desc = operation_recruit_scribes_desc
+	days = 90
+	operatives = 1
+	network_strength = 0
+
+	visible = {
+		any_neighbor_country = {
+			original_tag = BOS
+		}
+
+		network_national_coverage = {
+			target = FROM
+			value > 35
+		}
+		
+		not = {
+			has_operation_token = {
+				tag = FROM
+				token = token_bos_scribes
+			}
+		}
+	}
+
+	equipment = {
+	}
+
+	operation_target = {
+		targets = { 
+			BOS
+		}
+	}
+
+	required_tokens = {
+		token_bos_knight
+	}
+
+	awarded_tokens = {
+		token_bos_scribes
+	}
+
+	risk_chance = 0.35
+	outcome_extra_chance = 0.35
+
+	risk_modifiers = { operation_risk operation_steal_tech_risk }
+	cost_modifiers = { operation_cost operation_steal_tech_cost }
+	outcome_modifiers = { operation_outcome }
+
+	outcome_execute = {
+		ROOT = {
+			add_intel = {
+				target = FROM
+				civilian_intel = 5
+			}
+		}
+	}
+
+	outcome_extra_execute = { 
+		ROOT = {
+			add_operation_token = {
+				tag = FROM
+				token = token_bos_scribes
+			}
+			add_intel = {
+				target = FROM
+				civilian_intel = 10
+			}
+		}
+	}
+
+	outcome_potential = {
+		ROOT = {
+			add_operation_token = {
+				tag = FROM
+				token = token_bos_scribes
+			}
+		}
+	}
+
+
+	phases = {
+		throw_power_armor = { base = 100 }
+	}
+
+	phases = {
+		fix_power_armor = { base = 100 }
+	}
+
+	phases = {
+		integrate_scribes = { base = 100 }
+	}
+}

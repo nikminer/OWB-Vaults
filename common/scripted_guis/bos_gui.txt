@@ -49,14 +49,117 @@ scripted_gui = {
 			}
 			has_BOS = yes
 		}
+
+		triggers = {
+			bos_space_visible = {
+				or = {
+					FROM = {
+						has_operation_token = {
+							tag = BOS
+							token = token_bos_elder
+						}
+					}
+					root = {
+						controls_state = 157
+					}	
+				}
+			}
+
+			bos_admin_visible = {
+				or = {
+					FROM = {
+						has_operation_token = {
+							tag = BOS
+							token = token_bos_elder
+						}
+					}
+					root = {
+						controls_state = 157
+					}
+				}
+			}
+
+			bos_slots_visible = {
+				or = {
+					FROM = {
+						has_operation_token = {
+							tag = BOS
+							token = token_bos_elder
+						}
+					}
+					root = {
+						controls_state = 157
+					}
+				}
+			}
+		}
 	}
 
 # Levels 
+	bos_need_access_window = {
+		window_name = "bos_need_access_window"
+		parent_window_name = "bos_window_instance"
+		visible = {
+			not = {
+				or = {
+					controls_state = 157
+					and = {
+						has_country_flag = bos_level1Flag
+						FROM = {
+							has_operation_token = {
+								tag = BOS
+								token = token_bos_knight 
+							}
+						}
+					}
+
+					and = {
+						has_country_flag = bos_level2Flag
+						FROM = {
+							has_operation_token = {
+								tag = BOS
+								token = token_bos_initiate 
+							}
+						}
+					}
+
+					and = {
+						has_country_flag = bos_level3Flag
+						FROM = {
+							has_operation_token = {
+								tag = BOS
+								token = token_bos_scribes 
+							}
+						}
+					}
+
+					and = {
+						has_country_flag = bos_level4Flag
+						FROM = {
+							has_operation_token = {
+								tag = BOS
+								token = token_bos_paladin 
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	bos_level_1_window = {
 		window_name = "bos_level_1_window"
 		parent_window_name = "bos_window_instance"
 		visible = {
 			has_country_flag = bos_level1Flag
+			or = {
+				FROM = {
+					has_operation_token = {
+						tag = BOS
+						token = token_bos_knight 
+					}
+				}
+				controls_state = 157
+			}
 		}
 
 		effects = {
@@ -382,7 +485,7 @@ scripted_gui = {
 				not = {
 					has_country_flag = BOS_BuildExpedition
 				}
-
+				controls_state = 157
 				set_temp_variable = {
 					BOS_temp_building_to_test = BOS.BOS_expeditionary_departments
 				}
@@ -462,6 +565,7 @@ scripted_gui = {
 				not = {
 					has_country_flag = BOS_BuildConstructions
 				}
+				controls_state = 157
 				set_temp_variable = {
 					BOS_temp_building_to_test = BOS_condensed_civilian_workshop
 				}
@@ -551,6 +655,7 @@ scripted_gui = {
 						has_country_flag = simulator_decisions_enabled
 					}
 				}
+				controls_state = 157
 			}
 			bos_simulator_btn_click_enabled = {
 				
@@ -623,7 +728,7 @@ scripted_gui = {
 				not = {
 					has_country_flag = BOS_BuildTraining
 				}
-
+				controls_state = 157
 				set_temp_variable = {
 					BOS_temp_building_to_test = BOS_underground_building_training
 				}
@@ -721,6 +826,15 @@ scripted_gui = {
 		parent_window_name = "bos_window_instance"
 		visible = {
 			has_country_flag = bos_level2Flag
+			or = {
+				FROM = {
+					has_operation_token = {
+						tag = BOS
+						token = token_bos_initiate
+					}
+				}
+				controls_state = 157
+			}
 		}
 
 		effects = {
@@ -1052,6 +1166,7 @@ scripted_gui = {
 				not = {
 					has_country_flag = BOS_BuildCivil
 				}
+				controls_state = 157
 			}
 			bos_civil_btn_click_enabled = {
 				has_manpower > 499
@@ -1127,7 +1242,7 @@ scripted_gui = {
 				not = {
 					has_country_flag = BOS_BuildSafety
 				}
-
+				controls_state = 157
 				set_temp_variable = {
 					BOS_temp_building_to_test = BOS_underground_building_safety_department
 				}
@@ -1207,6 +1322,7 @@ scripted_gui = {
 				not = {
 					has_country_flag = BOS_BuildSmelt
 				}
+				controls_state = 157
 			}
 			bos_smelt_btn_click_enabled = {
 				has_manpower > 499
@@ -1282,6 +1398,7 @@ scripted_gui = {
 				not = {
 					has_country_flag = BOS_BuildWater
 				}
+				controls_state = 157
 			}
 			bos_water_btn_click_enabled = {
 				has_manpower > 499
@@ -1375,6 +1492,15 @@ scripted_gui = {
 		parent_window_name = "bos_window_instance"
 		visible = {
 			has_country_flag = bos_level3Flag
+			or = {
+				FROM = {
+					has_operation_token = {
+						tag = BOS
+						token = token_bos_scribes
+					}
+				}
+				controls_state = 157
+			}
 		}
 
 		effects = {
@@ -1625,6 +1751,7 @@ scripted_gui = {
 				not = {
 					has_country_flag = BOS_BuildCircuit
 				}
+				controls_state = 157
 			}
 			bos_circuit_btn_click_enabled = {
 				has_political_power > 9
@@ -1700,6 +1827,7 @@ scripted_gui = {
 				not = {
 					has_country_flag = BOS_BuildArms
 				}
+				controls_state = 157
 			}
 			bos_arms_btn_click_enabled = {
 				has_political_power > 9
@@ -1775,6 +1903,7 @@ scripted_gui = {
 				not = {
 					has_country_flag = BOS_BuildLab
 				}
+				controls_state = 157
 				set_temp_variable = {
 					BOS_temp_building_to_test = BOS_underground_building_lab
 				}
@@ -1869,6 +1998,15 @@ scripted_gui = {
 		parent_window_name = "bos_window_instance"
 		visible = {
 			has_country_flag = bos_level4Flag
+			or = {
+				FROM = {
+					has_operation_token = {
+						tag = BOS
+						token = token_bos_paladin
+					}
+				}
+				controls_state = 157
+			}
 		}
 
 		effects = {
@@ -2037,7 +2175,7 @@ scripted_gui = {
 				not = {
 					has_country_flag = BOS_BuildAdmin
 				}
-
+				controls_state = 157
 				set_temp_variable = {
 					BOS_temp_building_to_test = BOS.BOS_underground_building_administration_centers
 				}
@@ -2117,6 +2255,7 @@ scripted_gui = {
 				not = {
 					has_country_flag = BOS_BuildPower
 				}
+				controls_state = 157
 			}
 			bos_power_btn_click_enabled = {
 				has_political_power > 9
@@ -2283,7 +2422,15 @@ scripted_gui = {
 		window_name = "bos_decisions_panel"
 		parent_window_name = "bos_window_instance"
 		visible = {
-			tag = BOS
+			or = {
+				FROM = {
+					has_operation_token = {
+						tag = BOS
+						token = token_bos_elder
+					}
+				}
+				controls_state = 157
+			}
 		}
 		effects = {
 			bos_decision1_click = {
@@ -2899,6 +3046,7 @@ scripted_gui = {
 					has_completed_focus = bos_nf_engineers_of_peace
 					has_manpower > 99
 					BOS_has_x_available_administration_capacity = yes
+					controls_state = 157
 				}
 				bos_decision1_executing_visible = {
 					has_country_flag = BOS_AdmInitEffotConst
@@ -2965,6 +3113,7 @@ scripted_gui = {
 					has_completed_focus = bos_nf_engineers_of_war
 					has_manpower > 99
 					BOS_has_x_available_administration_capacity = yes
+					controls_state = 157
 				}
 				bos_decision2_executing_visible = {
 					has_country_flag = BOS_AdmInitEffotProd
@@ -3031,6 +3180,7 @@ scripted_gui = {
 					has_completed_focus = bos_nf_keepers_of_knowledge
 					has_manpower > 99
 					BOS_has_x_available_administration_capacity = yes
+					controls_state = 157
 				}
 				bos_decision3_executing_visible = {
 					has_country_flag = BOS_AdmInitEffotResearch
@@ -3097,6 +3247,7 @@ scripted_gui = {
 					has_completed_focus = bos_nf_bringers_of_progress
 					has_manpower > 99
 					BOS_has_x_available_administration_capacity = yes
+					controls_state = 157
 				}
 				bos_decision4_executing_visible = {
 					has_country_flag = BOS_AdmInitEffotPolit
@@ -3162,6 +3313,7 @@ scripted_gui = {
 					has_political_power > 9
 					has_manpower > 99
 					BOS_has_x_available_administration_capacity = yes
+					controls_state = 157
 				}
 				bos_decision5_executing_visible = {
 					has_country_flag = BOS_AdmUndergroundConstruction
@@ -3231,6 +3383,7 @@ scripted_gui = {
 					has_manpower > 99
 					has_army_experience > 9
 					BOS_has_x_available_administration_capacity = yes
+					controls_state = 157
 				}
 				bos_decision6_executing_visible = {
 					or = {
@@ -3313,6 +3466,7 @@ scripted_gui = {
 					has_manpower > 99
 					has_army_experience > 9
 					BOS_has_x_available_administration_capacity = yes
+					controls_state = 157
 				}
 				bos_decision7_executing_visible = {
 					or = {
@@ -3393,6 +3547,7 @@ scripted_gui = {
 				}
 				bos_decision8_click_enabled = {
 					has_completed_focus = bos_nf_room_to_grow
+					controls_state = 157
 					#custom_trigger_tooltip = {
 					#	tooltip = bos_underground_dig_deeper_decision_has_not_reached_the_bottom
 					#	NOT = {
