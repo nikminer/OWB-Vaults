@@ -19,6 +19,12 @@
 
     operation_recruit_scribes: "Recruit scribes"
     operation_recruit_scribes_desc: "Some technological sectors are closed to most of the inhabitants of the Lost Hills bunker, but you can try to recruit or ingratiate yourself with the scribes of the brotherhood of steel if you help them with routine matters."
+
+    operation_recruit_paladin: "Opearation \"Paladin\""
+    operation_recruit_paladin_desc: "One of the brotherhood's paladins decided to attract additional forces for the next task, this is a great chance to ingratiate himself with the most skillful warriors of the Brotherhood of Steel."
+
+    operation_compromat: "Opearation \"Compromising evidence\""
+    operation_compromat_desc: "The elders of the Brotherhood of Steel are the highest leadership of Lost Hills, so it is extremely difficult to get close to them, it will not work to convince them, so they can only be replaced by another elder more loyal to us."
   #Phases
     find_agent: "Recruit an agent in the wastelands"
     find_agent_desc: "To successfully infiltrate the brotherhood of steel, you need to recruit a person who is not connected with us in any way, then under the guise   of an ordinary inhabitant of the wasteland, he will try to infiltrate the brotherhood of steel."
@@ -69,8 +75,34 @@
     integrate_scribes_outcome: "When trying to establish friendly relations with the scribe, he turned out to be arrogant and refused to have any conversations with a person below him in intelligence."
     integrate_scribes_extra: "After helping with the repair, the scribe easily made contact with the agent and the scribe has already begun to slowly merge data on the Lost Hills technology sector."
 
+    join_paladin_squad: "Join the Paladin Squad"
+    join_paladin_squad_desc: "One of the Brotherhood's paladins decided to attract additional forces for the next task."
+    join_paladin_squad_outcome: "With a little disbelief, but our agent joined the paladin squad."
 
     scout_northern_wastes: "Scout the wasteland"
-    scout_northern_wastes_desc: ""
-    scout_northern_wastes_outcome: ""
-    scout_northern_wastes_extra: ""
+    scout_northern_wastes_desc: "One of the paladins has been assigned the task of scouting information about our troops, he is preparing a secret sortie into our territory, our operatives will prepare a false camp to leak false information to them."
+    scout_northern_wastes_outcome: "The Paladin successfully swallowed false information about the location of troops on our territory, but he did not appreciate the efforts of our agent."
+    scout_northern_wastes_extra: "The Paladin successfully swallowed false information about the location of troops on our territory, our agent showed himself well and liked the paladin."
+
+    kill_mutants: "Purge the mutant lair"
+    kill_mutants_desc: "Not far from Lost Hills, a patrol squad of the Brotherhood of Steel discovered a lair of mutants that could threaten the brotherhood's activities in the future, the paladin decided to nip the threat in the bud."
+    kill_mutants_outcome: "The cleaning of the lair went according to plan, the cleaning of the lair took place with minimal losses, however, some operatives were discovered, fortunately the agent was not disclosed."
+    kill_mutants_extra: "The clearing of the lair did not go according to plan, most of the squad disappeared, which is why our operatives had to intervene in the clearing of the lair to save the agent and the paladin, now the paladin has become sympathetic to us and we can recruit him."
+
+
+    establish_surveillance: "Establish surveillance of the elder"
+    establish_surveillance_desc: "To get rid of the elder, it will be necessary to establish constant surveillance of him, what he does, when, at what time, with whom he communicates and so on."
+    establish_surveillance_outcome: "The agent set up surveillance on the elder."
+
+    incite_security: "Incite the security service against the elder"
+    incite_security_desc: "To pass discrediting information to the elder to the security service of the brotherhood."
+    incite_security_outcome: "It turned out that the elder was selling some technologies with external agents, it is not clear why he needed it, but this data interested the security service of the brotherhood and after an internal investigation, the elder went missing."
+
+    kill_elder: "Kill the Elder"
+    kill_elder_desc: "This elder is clean, but you can arrange an accident, for example, infect a protective turret with a computer virus, or replace his pills."
+    kill_elder_outcome: "Our agent managed to arrange an accident and causing malfunctions in the laser barrier, the elder tragically died."
+
+    new_elder_decision: "Wait for the new elder's decision"
+    new_elder_decision_desc: "After the elder is eliminated, it will take some time for the chief elder to appoint a new elder to replace the old one."
+    new_elder_decision_outcome: "A new one has been appointed to replace the old elder, but this elder does not sympathize with us in any way."
+    new_elder_decision_extra: "In place of the old elder, a new one was appointed, already sympathetic to us, now we have full access to Lost Hills."

@@ -135,6 +135,18 @@
 	}
 
 # operation recruit paladin
+	join_paladin_squad = {
+		name = join_paladin_squad
+		desc = join_paladin_squad_desc
+		outcome = join_paladin_squad_outcome
+
+		picture = GFX_phase_patrol
+		icon = GFX_phase_patrol_small
+		requirements = {}
+		equipment = {
+		}
+	}
+
 	scout_northern_wastes = {
 		name = scout_northern_wastes
 		desc = scout_northern_wastes_desc
@@ -147,4 +159,81 @@
 		equipment = {
 			spec_ops_equipment = 5
 		}
+	}
+
+	kill_mutants = {
+		name = kill_mutants
+		desc = kill_mutants_desc
+		outcome = kill_mutants_outcome
+		outcome_extra = kill_mutants_extra
+
+		picture = GFX_phase_gecko
+		icon = GFX_phase_gecko_small
+		requirements = {}
+		equipment = {
+			spec_ops_equipment = 10
+		}
+	}
+
+	return_lost_hills_paladin = {
+		name = return_lost_hills
+		desc = return_lost_hills_desc
+		outcome = return_lost_hills_outcome
+		outcome_extra = return_lost_hills_paladin_extra
+
+		picture = GFX_phase_initiate
+		icon = GFX_phase_initiate_small
+		requirements = {}
+		equipment = {}
+	}
+
+# operation recruit Elder
+	establish_surveillance = {
+		name = establish_surveillance
+		desc = establish_surveillance_desc
+		outcome = establish_surveillance_outcome
+
+		picture = GFX_phase_mystery_man
+		icon = GFX_phase_mystery_man_small
+
+		requirements = {}
+		equipment = {
+		}
+	}
+
+	incite_security = {
+		name = incite_security
+		desc = incite_security_desc
+		outcome = incite_security_outcome
+
+		picture = GFX_phase_vertibird
+		icon =GFX_phase_vertibird_small
+		requirements = {}
+		equipment = {
+		}
+	}
+
+	kill_elder = {
+		name = kill_elder
+		desc = kill_elder_desc
+		outcome = kill_elder_outcome
+
+		picture = GFX_phase_terminal
+		icon = GFX_phase_terminal_small
+		requirements = {}
+		equipment = {
+			spec_ops_equipment = 10
+		}
+	}
+
+	new_elder_decision = {
+		name = new_elder_decision
+		desc = new_elder_decision_desc
+		outcome = new_elder_decision_outcome
+		outcome_extra = new_elder_decision_extra
+
+		picture = GFX_phase_initiate
+		icon = GFX_phase_initiate_small
+		requirements = {}
+		equipment = {}
 	}

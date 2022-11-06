@@ -3,7 +3,7 @@ operation_become_an_initiate = {
 	map_icon = GFX_operation_infiltrate_lost_hills_map
 	name = operation_become_an_initiate 
 	desc = operation_become_an_initiate_desc
-	days = 90
+	days = 60
 	operatives = 1
 	network_strength = 0
 
@@ -199,7 +199,7 @@ operation_recruit_scribes = {
 	map_icon = GFX_operation_help_scribes_map
 	name = operation_recruit_scribes
 	desc = operation_recruit_scribes_desc
-	days = 90
+	days = 60
 	operatives = 1
 	network_strength = 0
 
@@ -287,5 +287,199 @@ operation_recruit_scribes = {
 
 	phases = {
 		integrate_scribes = { base = 100 }
+	}
+}
+
+operation_recruit_paladin = {
+	icon = GFX_operation_recrute_paladin
+	map_icon = GFX_operation_recrute_paladin_map
+	name = operation_recruit_paladin
+	desc = operation_recruit_paladin_desc
+	days = 90
+	operatives = 1
+	network_strength = 35
+
+	visible = {
+		any_neighbor_country = {
+			original_tag = BOS
+		}
+
+		network_national_coverage = {
+			target = FROM
+			value > 35
+		}
+
+		not = {
+			has_operation_token = {
+				tag = FROM
+				token = token_bos_paladin
+			}
+		}
+	}
+
+	equipment = {
+	}
+
+	required_tokens = {
+		token_bos_knight
+	}
+
+	operation_target = {
+		targets = { 
+			BOS
+		}
+	}
+
+	awarded_tokens = {
+		token_bos_paladin
+	}
+
+	risk_chance = 0.75
+	outcome_extra_chance = 0.35
+
+	risk_modifiers = { operation_infiltrate_risk operation_risk }
+	cost_modifiers = { operation_infiltrate_cost operation_cost }
+	outcome_modifiers = { operation_outcome }
+
+	outcome_execute = {
+		ROOT = {
+			add_intel = {
+				target = FROM
+				army_intel = 5
+			}
+		}
+	}
+
+	outcome_extra_execute = { 
+		ROOT = {
+			add_operation_token = {
+				tag = FROM
+				token = token_bos_paladin
+			}
+			add_intel = {
+				target = FROM
+				army_intel = 10
+			}
+		}
+	}
+
+	outcome_potential = {
+		ROOT = {
+			add_operation_token = {
+				tag = FROM
+				token = token_bos_paladin
+			}
+		}
+	}
+
+
+	phases = {
+		join_paladin_squad = { base = 100 }
+	}
+
+	phases = {
+		scout_northern_wastes = { base = 50 }
+		kill_mutants = { base = 50 }
+	}
+
+	phases = {
+		return_lost_hills_paladin = { base = 100 }
+	}
+}
+
+operation_compromat = {
+	icon = GFX_operation_recrute_elder
+	map_icon = GFX_operation_recrute_elder_map
+	name = operation_compromat
+	desc = operation_compromat_desc
+	days = 120
+	operatives = 0
+	network_strength = 75
+
+	visible = {
+		any_neighbor_country = {
+			original_tag = BOS
+		}
+
+		network_national_coverage = {
+			target = FROM
+			value > 35
+		}
+
+		not = {
+			has_operation_token = {
+				tag = FROM
+				token = token_bos_elder
+			}
+		}
+	}
+
+	equipment = {
+	}
+
+	required_tokens = {
+		token_bos_paladin
+	}
+
+	operation_target = {
+		targets = { 
+			BOS
+		}
+	}
+
+	awarded_tokens = {
+		token_bos_elder
+	}
+
+	risk_chance = 0.35
+	outcome_extra_chance = 0.35
+
+	risk_modifiers = { operation_risk }
+	cost_modifiers = { operation_cost }
+	outcome_modifiers = { operation_outcome }
+
+	outcome_execute = {
+		ROOT = {
+			add_intel = {
+				target = FROM
+				army_intel = 5
+			}
+		}
+	}
+
+	outcome_extra_execute = { 
+		ROOT = {
+			add_operation_token = {
+				tag = FROM
+				token = token_bos_elder
+			}
+			add_intel = {
+				target = FROM
+				army_intel = 10
+			}
+		}
+	}
+
+	outcome_potential = {
+		ROOT = {
+			add_operation_token = {
+				tag = FROM
+				token = token_bos_elder
+			}
+		}
+	}
+
+
+	phases = {
+		join_paladin_squad = { base = 100 }
+	}
+
+	phases = {
+		scout_northern_wastes = { base = 50 }
+		kill_mutants = { base = 50 }
+	}
+
+	phases = {
+		return_lost_hills_paladin = { base = 100 }
 	}
 }
