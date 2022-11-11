@@ -42,7 +42,7 @@ operation_become_an_initiate = {
 	}
 
 
-	risk_chance = 0.4
+	risk_chance = 0.1
 	outcome_extra_chance = 0.25
 
 	risk_modifiers = { operation_infiltrate_risk operation_risk operation_steal_tech_risk }
@@ -483,3 +483,5 @@ operation_compromat = {
 		return_lost_hills_paladin = { base = 100 }
 	}
 }
+
+

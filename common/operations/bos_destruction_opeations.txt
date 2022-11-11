@@ -1,0 +1,76 @@
+operation_rescue_operative_bos = {
+	icon = GFX_operations_rescue_captured_operative
+	map_icon = GFX_operations_rescue_captured_operative_map
+	name = operation_rescue_operative
+	desc = operation_rescue_operative_desc
+	priority = 0
+	prevent_captured_operative_to_die = yes
+
+
+	days = 35
+	network_strength = 30
+	operatives = 0
+
+	visible = {
+		has_operation_token = {
+			tag = FROM
+			token = token_bos_initiate
+		}
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+		FROM = {
+			has_captured_operative = ROOT
+		}
+	}
+
+	required_tokens = {
+		token_bos_initiate
+	}
+
+	available = {
+		has_operation_token = {
+			tag = FROM
+			token = token_bos_initiate
+		}
+	}
+
+	equipment = {}
+	risk_chance = 0.1
+	experience = 2
+	cost_multiplier = 0
+
+	outcome_execute = {
+		ROOT = {
+			free_random_operative = {
+				captured_by = FROM
+				all = yes
+			}
+		}
+		ROOT = {
+			hidden_effect = {
+				set_country_flag = just_freed_operative_flag
+			}
+		}
+	}
+
+	outcome_potential = {
+		ROOT = {
+			free_random_operative = {
+				captured_by = FROM
+				all = yes
+			}
+		}
+	}
+
+	phases = {
+		infiltration_border = { base = 100 }
+	}
+	phases = {
+		free_operative_smuggle_in_escape_gear = { base = 100 }
+	}
+	phases = {
+		exfiltration_border = { base = 100 }
+	}
+}
