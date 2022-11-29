@@ -1,0 +1,33 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			417 = {
+				set_variable = {
+					helios_level = 1
+				}
+				set_variable = {
+					helios_power_per_level = 5
+				}
+				set_variable = {
+					helios_power = 5
+				}
+
+				set_variable = {
+					helios_archimede_cooldown = 60
+				}
+				set_variable = {
+					helios_level_archimede_cooldown = 60
+				}
+
+				add_dynamic_modifier = {
+					modifier = helios_one
+				}
+
+				set_state_flag = helios_state
+			}	
+			137 = {
+				set_state_flag = helios_state
+			}
+		}
+	}
+}

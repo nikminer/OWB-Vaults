@@ -1,0 +1,23 @@
+update_helios_level = {
+	add_to_variable ={
+		var = 417.helios_level
+		value = 1
+	}
+
+	set_variable = {
+		417.helios_power = 417.helios_power_per_level
+	}
+	multiply_variable = {
+		var = 417.helios_power
+		value = 417.helios_level
+	}
+	
+	417 = {
+		force_update_dynamic_modifier = yes
+	}
+
+	# Archimed II
+	set_variable = {
+		417.helios_level_archimede_cooldown = 417.helios_archimede_cooldown
+	}
+}

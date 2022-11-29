@@ -1,0 +1,6 @@
+helios_one = {
+	enable = { always = yes }
+	icon = GFX_goal_MOJ_energy_boom
+
+	state_resource_energy = 417.helios_power
+}

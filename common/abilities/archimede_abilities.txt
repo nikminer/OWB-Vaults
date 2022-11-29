@@ -1,0 +1,104 @@
+ability = {
+	use_archimedes_ii = {
+		name = ABILITY_USE_ARCHIMEDES_II
+		desc = ABILITY_USE_ARCHIMEDES_II_DESC
+
+		sound_effect = use_psycho
+
+		type = army_leader
+		cost = 0.30
+		allowed = {
+			NOT = { has_trait = exhausted_order_trait}
+			is_leading_army_group = no
+			OWNER = {
+				controls_province = 5764
+				has_country_flag = archimedes_ii
+				NOT = { has_idea = moj_archimedes_ii_cooldown }
+			}
+		}
+		duration = 168
+
+		one_time_effect = {
+			add_timed_unit_leader_trait = {
+				trait = exhausted_order_trait
+				days = 20
+			}
+			add_temporary_buff_to_units = {
+				combat_offense = 0.8
+				combat_breakthrough = 0.8
+				org_damage_multiplier = -1.0
+				str_damage_multiplier = -0.30
+				cannot_retreat_while_attacking = 1.0
+
+				days = 7
+				tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+			OWNER = {
+				if = {
+					limit = {
+						check_variable = { 417.helios_level = 1}
+					}
+
+					add_timed_idea = {
+						idea = archimedes_cooldown_1
+						days = 25
+					}
+				}
+				if ={
+					limit = {
+						check_variable = { 417.helios_level = 2}
+					}
+
+					add_timed_idea = {
+						idea = archimedes_cooldown_2
+						days = 23
+					}
+				}
+				if ={
+					limit = {
+						check_variable = { 417.helios_level = 3}
+					}
+
+					add_timed_idea = {
+						idea = archimedes_cooldown_3
+						days = 21
+					}
+				}
+				if ={
+					limit = {
+						check_variable = { 417.helios_level = 4}
+					}
+
+					add_timed_idea = {
+						idea = archimedes_cooldown_4
+						days = 19
+					}
+				}				
+				if ={
+					limit = {
+						check_variable = { 417.helios_level = 5}
+					}
+
+					add_timed_idea = {
+						idea = archimedes_cooldown_5
+						days = 17
+					}
+				}
+			}
+		}
+
+
+		ai_will_do = {
+			factor = -1
+			modifier = {
+				check_variable = { num_units_defensive_combats > 6 }
+
+				set_temp_variable = { temp = avg_defensive_combat_status }
+				check_variable = { temp < 0.40 }
+				check_variable = { ai_random > temp }
+
+				add = 2
+			}
+		}
+	}
+}

@@ -7,4 +7,20 @@ spriteTypes = {
 		name = "GFX_terminal_overlay"
 		texturefile = "gfx/interface/gui/terminal_background_overlay.dds"
 	}
+
+	spriteType = {
+		name = "GFX_terminal_window_600"
+		texturefile = "gfx/interface/gui/terminal_window 600.dds"
+	}
+	spriteType = {
+		name = "GFX_terminal_overlay_600"
+		texturefile = "gfx/interface/gui/terminal_background_overlay 600.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terminal_btn_construction"
+		texturefile = "gfx/interface/gui/construction.dds"
+	}
+
 }

@@ -74,3 +74,28 @@ operation_rescue_operative_bos = {
 		exfiltration_border = { base = 100 }
 	}
 }
+
+#operation_sbatage_production_bos = {
+#	#icon = 
+#	#map_icon = 
+#	name = operation_sbatage_production_bos
+#	desc = operation_sbatage_production_bos_desc
+#	days = 100
+#	operatives = 1
+#	network_strength = 35
+#	phases = { }
+#}
+
+#operation_sabatage_bos
+
+#operation_sabatage_politic_bos
+
+#operation_infect_terminal_bos
+
+
+
+#operation_destroy_expedition_department_bos
+#opeartion_destroy_civil_facility_bos
+#operation_destroy_arms_facility_bos
+
+#operation_destroy_bos

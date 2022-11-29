@@ -1,0 +1,27 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_helios_view_open"
+		texturefile = "gfx/interface/gui/power_btn.dds"
+	}
+
+	spriteType = {
+		name = "GFX_helios_view_close"
+		texturefile = "gfx/interface/gui/power_btn_pressed.dds"
+	}
+
+	spriteType = {
+		name = "GFX_helios_array"
+		texturefile = "gfx/interface/gui/helios_one/helios_one_array.dds"
+		noOfFrames = 5
+	}
+
+	spriteType = {
+		name = "GFX_helios_tower"
+		texturefile = "gfx/interface/gui/helios_one/tower.dds"
+	}
+
+	spriteType = {
+		name = "GFX_helios_archimede"
+		texturefile = "gfx/interface/gui/helios_one/archimede.dds"
+	}
+}

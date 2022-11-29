@@ -13,6 +13,13 @@ hide_all_state_windows = {
 		clr_country_flag = show_bos_state_interface
 	}
 
+	if = {
+		limit = {
+			has_country_flag = show_helios_state_interface
+		}
+		clr_country_flag = show_helios_state_interface
+	}
+
 	#if = {
 	#	limit = {
 	#		has_country_flag = show_vault_state_interface

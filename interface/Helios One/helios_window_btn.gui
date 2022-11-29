@@ -1,0 +1,21 @@
+guiTypes = {
+	containerWindowType = {
+		name = "helios_window_btn"
+		position = { x = 477 y = 275 }
+		size = { width = 50 height = 50 }
+
+		buttonType = {
+			name = "open_button"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_helios_view_open"
+			pdx_tooltip = "OPEN_HELIOS_WINDOW_TT"
+		}
+
+		buttonType = {
+			name = "close_button"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_helios_view_close"
+			pdx_tooltip = "CLOSE_HELIOS_WINDOW_TT"
+		}
+	}
+}

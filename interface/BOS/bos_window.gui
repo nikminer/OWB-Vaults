@@ -185,7 +185,7 @@ guiTypes = {
 		buttonType = {
 			name = "bos_expedition_btn"
 			position = { x = 115 y = 160 }
-			spriteType = "GFX_bos_btn_construction"
+			spriteType = "GFX_terminal_btn_construction"
 			pdx_tooltip = LOST_HILLS_EXPED_TT
 			pdx_tooltip_delayed = LOST_HILLS_EXPED_TTDel
 		}
@@ -218,7 +218,7 @@ guiTypes = {
 		buttonType = {
 			name = "bos_constructions_btn"
 			position = { x = 310 y = 160 }
-			spriteType = "GFX_bos_btn_construction"
+			spriteType = "GFX_terminal_btn_construction"
 			pdx_tooltip = LOST_HILLS_CONSTRUCT_TT
 			pdx_tooltip_delayed = LOST_HILLS_CONSTRUCT_TTDel
 		}
@@ -251,7 +251,7 @@ guiTypes = {
 		buttonType = {
 			name = "bos_simulator_btn"
 			position = { x = 115 y = 300 }
-			spriteType = "GFX_bos_btn_construction"
+			spriteType = "GFX_terminal_btn_construction"
 			pdx_tooltip = LOST_HILLS_SIMUL_TT
 		}
 
@@ -284,7 +284,7 @@ guiTypes = {
 		buttonType = {
 			name = "bos_training_btn"
 			position = { x = 313 y = 290 }
-			spriteType = "GFX_bos_btn_construction"
+			spriteType = "GFX_terminal_btn_construction"
 			pdx_tooltip = LOST_HILLS_TRAIN_TT
 			pdx_tooltip_delayed = LOST_HILLS_TRAIN_TTDel
 		}
@@ -329,7 +329,7 @@ guiTypes = {
 		buttonType = {
 			name = "bos_civil_btn"
 			position = { x = 145 y = 160 }
-			spriteType = "GFX_bos_btn_construction"
+			spriteType = "GFX_terminal_btn_construction"
 			pdx_tooltip = LOST_HILLS_CIVIL_TT
 		}
 
@@ -361,7 +361,7 @@ guiTypes = {
 		buttonType = {
 			name = "bos_safety_btn"
 			position = { x = 315 y = 160 }
-			spriteType = "GFX_bos_btn_construction"
+			spriteType = "GFX_terminal_btn_construction"
 			pdx_tooltip = LOST_HILLS_SAFETY_TT
 			pdx_tooltip_delayed = LOST_HILLS_SAFETY_TTDel
 		}
@@ -394,7 +394,7 @@ guiTypes = {
 		buttonType = {
 			name = "bos_smelt_btn"
 			position = { x = 145 y = 310 }
-			spriteType = "GFX_bos_btn_construction"
+			spriteType = "GFX_terminal_btn_construction"
 			pdx_tooltip = LOST_HILLS_SMELT_TT
 		}
 
@@ -426,7 +426,7 @@ guiTypes = {
 		buttonType = {
 			name = "bos_water_btn"
 			position = { x = 315 y = 310 }
-			spriteType = "GFX_bos_btn_construction"
+			spriteType = "GFX_terminal_btn_construction"
 			pdx_tooltip = LOST_HILLS_WATER_TT
 		}
 	}
@@ -471,7 +471,7 @@ guiTypes = {
 		buttonType = {
 			name = "bos_circuit_btn"
 			position = { x = 125 y = 210 }
-			spriteType = "GFX_bos_btn_construction"
+			spriteType = "GFX_terminal_btn_construction"
 			pdx_tooltip = LOST_HILLS_CIRCUIT_TT
 		}
 
@@ -503,7 +503,7 @@ guiTypes = {
 		buttonType = {
 			name = "bos_arms_btn"
 			position = { x = 280 y = 270 }
-			spriteType = "GFX_bos_btn_construction"
+			spriteType = "GFX_terminal_btn_construction"
 			pdx_tooltip = LOST_HILLS_ARMS_TT
 		}
 
@@ -535,7 +535,7 @@ guiTypes = {
 		buttonType = {
 			name = "bos_lab_btn"
 			position = { x = 287 y = 110 }
-			spriteType = "GFX_bos_btn_construction"
+			spriteType = "GFX_terminal_btn_construction"
 			pdx_tooltip = LOST_HILLS_LAB_TT
 			pdx_tooltip_delayed = LOST_HILLS_LAB_TTDel
 		}
@@ -581,7 +581,7 @@ guiTypes = {
 		buttonType = {
 			name = "bos_admin_btn"
 			position = { x = 137 y = 255 }
-			spriteType = "GFX_bos_btn_construction"
+			spriteType = "GFX_terminal_btn_construction"
 			pdx_tooltip = LOST_HILLS_ADM_TT
 			pdx_tooltip_delayed = LOST_HILLS_ADM_TTDel
 		}
@@ -614,7 +614,7 @@ guiTypes = {
 		buttonType = {
 			name = "bos_power_btn"
 			position = { x = 247 y = 255 }
-			spriteType = "GFX_bos_btn_construction"
+			spriteType = "GFX_terminal_btn_construction"
 			pdx_tooltip = LOST_HILLS_POWER_TT
 		}
 	}

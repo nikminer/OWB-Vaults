@@ -1,0 +1,59 @@
+scripted_gui = {
+	helios_window_btn = {
+		context_type = selected_state_context
+		parent_window_token = selected_state_view
+		
+		window_name = "helios_window_btn"
+
+		effects = {
+			open_button_click = {
+				ROOT = {
+					hide_all_state_windows = yes
+					set_country_flag = show_helios_state_interface
+				}
+			}
+			close_button_click = {
+				ROOT = {
+					clr_country_flag = show_helios_state_interface
+				}
+			}
+		}
+
+		triggers = {
+			open_button_visible = {
+				has_state_flag = helios_state
+				ROOT = {
+					controls_province = 5764 
+					NOT = { has_country_flag = show_helios_state_interface }
+				}
+			}
+			close_button_visible = {
+				has_state_flag = helios_state
+				ROOT = {
+					controls_province = 5764 
+					has_country_flag = show_helios_state_interface
+				}
+			}
+		}
+	}
+
+	helios_window = {
+		context_type = selected_state_context
+		parent_window_token = selected_state_view
+		window_name = "helios_window"
+		
+		visible = {
+			ROOT = {
+				is_ai = no
+				has_country_flag = show_helios_state_interface
+			}
+			has_state_flag = helios_state
+		}
+
+		properties = {
+			helios_array = {
+				frame = 417.helios_level
+			}
+		}
+	}
+}

@@ -1,0 +1,63 @@
+ideas = {
+	country = {
+		archimedes_cooldown_1 = {
+			picture = MOJ_idea_a_forgotten_weapon
+			allowed = {
+				always = no
+			}
+		
+			removal_cost = -1
+			modifier = {
+				fuel_gain_factor = -0.25
+			}
+		}
+
+		archimedes_cooldown_2 = {
+			picture = MOJ_idea_a_forgotten_weapon
+			allowed = {
+				always = no
+			}
+		
+			removal_cost = -1
+			modifier = {
+				fuel_gain_factor = -0.20
+			}
+		}
+
+		archimedes_cooldown_3 = {
+			picture = MOJ_idea_a_forgotten_weapon
+			allowed = {
+				always = no
+			}
+		
+			removal_cost = -1
+			modifier = {
+				fuel_gain_factor = -0.15
+			}
+		}
+
+		archimedes_cooldown_4 = {
+			picture = MOJ_idea_a_forgotten_weapon
+			allowed = {
+				always = no
+			}
+		
+			removal_cost = -1
+			modifier = {
+				fuel_gain_factor = -0.10
+			}
+		}
+
+		archimedes_cooldown_5 = {
+			picture = MOJ_idea_a_forgotten_weapon
+			allowed = {
+				always = no
+			}
+		
+			removal_cost = -1
+			modifier = {
+				fuel_gain_factor = -0.05
+			}
+		}
+	}
+}
